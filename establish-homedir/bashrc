@@ -1,8 +1,6 @@
-
-if [ -d "$HOME/bin" ] ; then
-    PATH="$PATH:$HOME/bin"
+if [ -d "$HOME/scripts/bin" ] ; then
+    PATH="$PATH:$HOME/scripts/bin"
 fi
 
 export EDITOR="/usr/bin/vim"
 export PAGER=less       # reader for MAN pages
-

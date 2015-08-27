@@ -1,22 +1,23 @@
 #!/bin/bash
-# version: 20091202
+# version: 200150827
 
-# Configure some preferences in a bash homedir. (aliases, vimrc, and some handy scripts)
+## Configure some preferences in a bash HOMEDIR. (aliases, vimrc, and some handy scripts)
 
-#homedir=test;
-homedir=~;
+[ "$1" == "" ] && echo -e "Usage: install.sh [PATH]\nFor install homedir add as argument: ~" &&  exit;
 
-echo -e "Installing in dir: $homedir \\nMake sure this is your homedir...";
+HOMEDIR=$1;
 
-cp bash_aliases $homedir/.bash_aliases;
-cp vimrc $homedir/.vimrc;
-cp toprc $homedir/.toprc;
-#mkdir $homedir/bin;
-#cp -r bin/ $homedir/;
-#chmod a+x $homedir/bin/*;
+echo -e "Installing in dir: $HOMEDIR \\nMake sure this is your HOMEDIR...";
 
-cat bashrc >> $homedir/.bashrc
-#echo 'export EDITOR="/usr/bin/vim"' >> $homedir/.bashrc
-#echo "export PAGER=less       # reader for MAN pages" >> $homedir/.bashrc
+cp bash_aliases $HOMEDIR/.bash_aliases;
+cp vimrc $HOMEDIR/.vimrc;
+#cp toprc $HOMEDIR/.toprc;
+#mkdir $HOMEDIR/bin;
+#cp -r bin/ $HOMEDIR/;
+#chmod a+x $HOMEDIR/bin/*;
+NOW=$(date +%Y-%m-%d)
+echo -e "\n## BEGIN establish-homedir on $NOW" >> $HOMEDIR/.bashrc
+cat bashrc >> $HOMEDIR/.bashrc
+echo -e "## END establish-homedir on $NOW\n" >> $HOMEDIR/.bashrc
 
 echo "Done.";
