@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 # version: 200150827
 
 ## Configure some preferences in a bash HOMEDIR. (aliases, vimrc, and some handy scripts)
-
+## Download it directly with: wget -O - https://raw.githubusercontent.com/rachidbm/scripts/master/establish-homedir/install.sh
 [ "$1" == "" ] && echo -e "Usage: install.sh [PATH]\nFor install homedir add as argument: ~" &&  exit;
 
 HOMEDIR=$1;
