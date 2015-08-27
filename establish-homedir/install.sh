@@ -9,15 +9,23 @@ HOMEDIR=$1;
 
 echo -e "Installing in dir: $HOMEDIR \\nMake sure this is your HOMEDIR...";
 
-cp bash_aliases $HOMEDIR/.bash_aliases;
-cp vimrc $HOMEDIR/.vimrc;
+#cp bash_aliases $HOMEDIR/.bash_aliases;
+#cp vimrc $HOMEDIR/.vimrc;
+URL=https://raw.githubusercontent.com/rachidbm/scripts/master/establish-homedir
+echo "Downloading files from: $URL"
+wget -q $URL/vimrc -O $HOMEDIR/.vimrc;
+wget -q $URL/bash_aliases -O $HOMEDIR/.bash_aliases;
+
 #cp toprc $HOMEDIR/.toprc;
 #mkdir $HOMEDIR/bin;
 #cp -r bin/ $HOMEDIR/;
 #chmod a+x $HOMEDIR/bin/*;
+
+wget -q $URL/bashrc -O /tmp/bashrc
 NOW=$(date +%Y-%m-%d)
 echo -e "\n## BEGIN establish-homedir on $NOW" >> $HOMEDIR/.bashrc
-cat bashrc >> $HOMEDIR/.bashrc
+cat /tmp/bashrc >> $HOMEDIR/.bashrc
 echo -e "## END establish-homedir on $NOW\n" >> $HOMEDIR/.bashrc
 
 echo "Done.";
+
