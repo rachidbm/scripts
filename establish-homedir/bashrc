@@ -1,0 +1,8 @@
+
+if [ -d "$HOME/bin" ] ; then
+    PATH="$PATH:$HOME/bin"
+fi
+
+export EDITOR="/usr/bin/vim"
+export PAGER=less       # reader for MAN pages
+

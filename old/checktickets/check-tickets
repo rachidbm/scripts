@@ -1,0 +1,70 @@
+#!/bin/bash
+
+EMAIL_ADDRESS=rachidbm@gmail.com 
+MAIL_BY_AANTAL=2
+may_mail=0;
+
+main() {
+
+	log "--------------------";
+	log "Checking for tickets"
+	URL="http://www.eventim.nl/cgi-bin/a-campingflight-to-lowlands-paradise-tickets.html?affiliate=lol&fun=tdetaila&doc=erdetaila&key=307045"
+  
+  CMD=`./get-html-from-url.py $URL | grep -ic "Tickets beschikbaar"`;
+
+  TICKETS_AVAIL=$CMD
+  log "aantal tickets: $TICKETS_AVAIL, need $MAIL_BY_AANTAL to send a mail"
+  
+  if [ $MAIL_BY_AANTAL -gt $TICKETS_AVAIL  ]
+  then 
+  log "Helaas";
+  else
+  	log "Er is 1 ticket!! :-D";
+  	mailNotification
+  fi
+}
+
+
+mayMail() {
+  if [ -f lastmailed ]
+	then
+		TODAY=$(date +%Y%m%d);
+	  log "checking if already mailed today"
+
+		if [ `grep -c $TODAY lastmailed` -gt 0 ] 
+		then
+			return 0;
+		else
+			log "not mailed yet today"
+		fi
+
+	else
+	  log "no lastmailed file"
+	fi
+	may_mail=1
+	return 1;
+}
+
+mailNotification() {
+	mayMail;
+	if [ $may_mail -gt 0 ]
+	then 
+	  log "Sending notification mail..."; 
+	  #echo 'a test mail.' | mail -v -s 'test' rachidbm@gmail.com
+	  MESSAGE="Er is een ticket beschikbaar op: $URL" ;
+	 	echo $MESSAGE | mail -s 'Ticket beschikbaar!'  $EMAIL_ADDRESS;
+		date +%Y%m%d > lastmailed
+	  log "gemaild...";
+	fi
+}
+
+
+log() {
+	echo $(date +%d-%m\ %T)  -  $1
+}
+
+
+main;
+log "done";
+
+

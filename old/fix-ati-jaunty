@@ -1,0 +1,30 @@
+#!/bin/bash
+
+#http://tan-com.com/posts/technology/fix-ubuntu-904-ati-driver-issue
+
+##Downgrade ATI drivers to intrepid drivers
+
+# backup sources.list
+cp /etc/apt/sources.list /etc/apt/sources.list.bak
+
+# Replace jaunty by intrepid
+echo "____replace jaunty by intrepid!!"
+sed -i "s/jaunty/intrepid/g" /etc/apt/sources.list
+
+# update
+apt-get update
+
+# Remove current drivers
+apt-get autoremove xserver-xorg gnome-session fast-user-switch-applet
+
+# Install older drivers
+sudo apt-get -y install xserver-xorg fglrx-amdcccle fglrx-kernel-source xorg-driver-fglrx libdrm2 gnome-session fast-user-switch-applet
+
+# hold the older packages for update
+dpkg --get-selections | grep -E '(fglrx|xserver-xorg|fast-user-switch-applet|gnome-session|libdrm2)' | awk '{print $1 " hold"}' | dpkg --set-selections
+
+# set jaunty sources.list back
+cp /etc/apt/sources.list.bak /etc/apt/sources.list
+
+# update again
+apt-get update

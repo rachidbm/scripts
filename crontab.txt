@@ -1,0 +1,2 @@
+# m h  dom mon dow   command
+1 * * * *  chmod +x ~/scripts/bin/*; chmod -R +x ~/scripts/*sh

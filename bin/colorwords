@@ -1,0 +1,22 @@
+#!/bin/bash
+# version: 20090527
+
+escape() {
+	echo -e "\033[$1"
+}
+echoColor() {	# $1=color $2=text
+	echo $1$2$c_reset;
+} 
+
+c_reset=`escape 0m`;
+cf_red=`escape 31m`
+
+#if [ "$1" == "" ] || [ "$2" == "" ]; then 
+if [ "$1" == "" ]; then 
+	echo "usage: cat txtfile | colorwords [STRING]";
+#	echo "usage: colorwords [FILENAME] [STRING]";
+else
+	sed 's/\('$1'\)/'$(echoColor $cf_red'\1')'/g';
+fi
+
+#echo -e "\033[31m meuh\033[0m"

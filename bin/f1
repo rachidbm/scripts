@@ -1,0 +1,15 @@
+#!/bin/bash
+
+p="$2"
+if [ "$2" == "" ];
+then
+	p='.'
+fi
+
+if [ "$1" == "" ];
+then 
+  echo "Enter the query to search for";
+else
+  query="$1";
+  find $p -maxdepth 1 -iname "*$query*" | grep -i --color=always $query;
+fi

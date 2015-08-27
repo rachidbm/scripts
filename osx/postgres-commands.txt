@@ -1,0 +1,14 @@
+Install PostgresQL using MAC ports:
+
+sudo port install postgresql91 postgresql91-server
+sudo mkdir -p /opt/local/var/db/postgresql91/defaultdb
+sudo chown postgres:postgres /opt/local/var/db/postgresql91/defaultdb
+
+https://wiki-bsse.ethz.ch/display/ITDOC/Install+PostgreSQL+on+Mac+OS+X
+
+
+
+Start Postgres:
+    /opt/local/lib/postgresql93/bin/postgres -D /opt/local/var/db/postgresql93/defaultdb
+or
+    /opt/local/lib/postgresql93/bin/pg_ctl -D /opt/local/var/db/postgresql93/defaultdb -l logfile start

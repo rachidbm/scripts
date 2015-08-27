@@ -1,0 +1,81 @@
+#!/bin/bash
+#
+# Utility to view WMV-stream from nos.nl
+#
+# Description...: Normally, pages from nos.nl concerning sports events like the Olympics, 
+#                 are 'protected' by Silverlight. However, there is always an unprotected 
+#                 wmv-stream. This tool extracts the url of the stream from a given URL, and
+#                 than plays it with Totem.
+# Author........: Mark Baaijens
+# Copyright.....: See Author
+# Creation date.: 2010-15-02
+#
+# Requirements..: Ubuntu Desktop. Created and tested on Karmic, but lower releases should also work.
+# Example URL...: http://nos.nl/os2010/video/136917-geen-derde-rodelgoud-zoggeler.html
+#
+
+# Command to launch media player
+MEDIA_PLAYER=totem;
+
+cleanup()
+{
+  rm -f $source_page
+  rm -f $xml_page
+}
+
+# Temp-var definition
+source_page='temp.html'
+xml_page='temp.xml' 
+
+# Do some cleanup
+cleanup
+
+# Ask for a URL
+source_url=`zenity --width=500 --entry --text="Geef de URL op:"`
+if [ ! -n "$source_url" ]
+then
+  exit
+fi
+
+# Get the given page 
+wget $source_url -O $source_page --quiet
+if [ ! -n "`cat $source_page`" ]
+then
+  zenity --info --text="Pagina $source_url niet gevonden."
+  cleanup
+  exit
+fi
+
+# Extract xml-url from within the given page
+xml_url=`cat $source_page | awk 'BEGIN{FS="var ster = new SterCommercials"}{print $2}' | awk 'BEGIN{FS=","}{print $1}' | sed -e 's/'\''//g' | sed -e 's/'\('//g'`
+if [ ! -n "$xml_url" ]
+then
+  zenity --info --text="Pagina $xml_page bevat geen geldige XML-verwijzing."
+  cleanup
+  exit
+fi
+
+# Get the xml-page 
+wget $xml_url -O $xml_page --quiet
+if [ ! -n "`cat $xml_page`" ]
+then
+  zenity --info --text="Pagina $xml_url niet gevonden."
+  cleanup
+  exit
+fi
+
+# Extract the wmv-stream from within the xml-page
+wmv_stream=`cat $xml_page | awk 'BEGIN{FS="location"}{print $2}' | awk 'BEGIN{FS="location"}{print $1}' | cut -c11- | awk 'sub(".....$", "")' `
+if [ ! -n "$wmv_stream" ]
+then
+  zenity --info --text="Pagina $xml_page bevat geen geldige verwijzing naar een WMV-stream."
+  cleanup
+  exit
+fi
+
+# Do some cleanup
+cleanup
+
+# Show the file by a media player
+$MEDIA_PLAYER $wmv_stream
+

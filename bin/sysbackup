@@ -1,0 +1,46 @@
+#!/bin/bash
+
+## version nr: 20130101
+
+# This script backups /etc and dot files from homedir
+# The backup is stored in ~/backups/HOSTNAME
+# Backups older than 30 days are deleted
+
+source `dirname $(readlink -f $0)`/functions.sh			# include funtions
+ 
+homedir=/home/rachid
+backup_path=$homedir/backup/`hostname`;				# set backup_path to store the backup files
+backup_file=sysbackup-`hostname`;
+keep_backup_days=60;
+
+if [ "$1" == "" ]; then
+  log "Usage: $0 [PATH]";
+	log "storing backup in the default backup_path: $backup_path";
+else
+	backup_path=$1;
+	log "storing backup in: $backup_path";
+fi
+
+## Make backup dir
+mkdir -p $backup_path;
+
+## Touch newest backups to secure it from deletion
+#ls -t $backup_path/$backup_file*.tgz | head -1 | xargs touch;
+#cd -;
+# cron: cat /var/spool/cron/crontabs/rachid
+
+## Make recent list of partitions
+sudo fdisk -l > $homedir/.fdisk.txt
+sudo sfdisk -d > $homedir/.sfdisk.txt
+
+# Make the backup
+backup_file_fullpath=$backup_path/$backup_file-$(date +%Y%m%d);
+CONFIG="`find $homedir -maxdepth 1 -type f -name '.*'` /etc $homedir/.filezilla $homedir/fdisk.txt $homedir/.local/share/rhythmbox/playlists.xml";
+sudo tar -zcf $backup_file_fullpath.tgz $CONFIG;
+#sudo chown $USER $backup_file_fullpath.tgz;
+log "backup is stored: $backup_file_fullpath.tgz";
+
+## Delete backups older than 1 month
+log "Removing backups older than $keep_backup_days days...";
+find $backup_path -mtime +$keep_backup_days -name "$backup_file*tgz" -exec rm {} \;
+

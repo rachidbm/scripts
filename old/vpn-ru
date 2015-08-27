@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# pptp is needed, you can install it by: 
+# sudo apt-get install pptp-linux network-manager-pptp
+
+
+# Set up VPN connection
+sudo pptpsetup --create radboud --server vpn-srv.science.ru.nl --username rbenmous --encrypt --start
+
+# Add routes to tunnel through RU VPN
+sudo /sbin/route add -net www.sciencedirect.com netmask 255.255.255.255 dev ppp0 
+sudo /sbin/route add -net www.sagepub.com netmask 255.255.255.255 dev ppp0 
+sudo /sbin/route add -net www.whatismyip.com netmask 255.255.255.255 dev ppp0 
+

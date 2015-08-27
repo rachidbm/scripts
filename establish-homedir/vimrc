@@ -1,0 +1,12 @@
+syntax on
+set nu
+set incsearch
+set hlsearch
+set autoindent
+"set bg=dark
+set tabstop=2
+set shiftwidth=2
+set paste
+
+au BufNewFile,BufRead *.scala set filetype=java
+

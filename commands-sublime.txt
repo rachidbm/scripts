@@ -1,0 +1,3 @@
+
+# Rename all instances of selected text 
+ ⌘D and Ctrl⌘G

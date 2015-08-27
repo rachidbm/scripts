@@ -1,0 +1,38 @@
+#!/bin/bash
+# shows howto print colors in a bash terminal
+
+escape() {
+	echo -e "\033[$1"
+}
+
+# Attributes
+c_reset=`escape 0m`;
+c_bold_on=`escape 1m`; c_bold_off=`escape 22m`
+c_blink_on=`escape 5m`; c_blink_off=`escape 25m`
+c_reverse_on=`escape 7m`; c_reverse_off=`escape 27m`
+# Foreground colors
+cf_default=`escape 39m`;
+cf_black=`escape 30m`; cf_red=`escape 31m`
+cf_green=`escape 32m`; cf_brown=`escape 33m`
+cf_blue=`escape 34m`; cf_magenta=`escape 35m`
+cf_cyan=`escape 36m`; cf_white=`escape 37m`
+# Background colors
+cb_default=`escape 49m`
+cb_black=`escape 40m`; cb_red=`escape 41m`
+cb_green=`escape 42m`; cb_brown=`escape 43m`
+cb_blue=`escape 44m`; cb_magenta=`escape 45m`
+cb_cyan=`escape 46m`; cb_white=`escape 47m`
+
+echoColor() {	# $1=color $2=text
+	echo $1$2$c_reset;
+} 
+
+echo "Gewone tekst"
+echoColor $c_bold_on "Dikke tekst" 
+echoColor $c_reverse_on "Reverse tekst" 
+echoColor $cf_green "Groene tekst" 
+echoColor $cf_blue "Blauwe tekst" 
+echoColor $cf_red "Rode tekst" 
+
+sed 's/dre/'$(echoColor $cf_red "KLAAS")'/g' create-user.sql
+

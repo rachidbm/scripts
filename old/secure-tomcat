@@ -1,0 +1,15 @@
+#!/bin/sh
+
+
+# TODO: check if apache sends server info in the HTTP Response
+
+
+PACKAGE=org/apache/catalina/util
+TOMCAT_HOME=~/opt/tomcat
+
+cd $TOMCAT_HOME/server/lib
+jar xf catalina.jar $PACKAGE/ServerInfo.properties
+sed 's/server.info.*/server.info=Apache\ Tomcat/g' $PACKAGE/ServerInfo.properties > ServerInfo.tmp 
+mv ServerInfo.tmp org/apache/catalina/util/ServerInfo.properties
+jar uf catalina.jar org/apache/catalina/util/ServerInfo.properties
+cd -

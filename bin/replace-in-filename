@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# version nr: 20100426
+
+[ "$1" == "" ] && echo -e "Give text to replace" &&  exit;
+UNDO=/tmp/undo-`date +"%Y%m%d-%H%M%S"`.txt;
+
+match=`echo $1 | sed 's/\(\[\|\]\)/\\\\\1/g' `;
+echo "Match: " $match;
+
+#find . -iname "$1" | while read file; do 
+find . | while read file; do 
+  directory=$(dirname "$file")
+  oldfilename=$(basename "$file")
+	#oldfilename=`echo $oldfilename | sed "s/\(\[\|\]\)/\\\1/g" `
+  #newfilename=$(echo "$oldfilename" | sed "s/$match/$2/g" )
+  newfilename=$(echo "$oldfilename" | sed "s/$match/$2/g" )
+
+  if [ "$oldfilename" != "$newfilename" ]; then
+  	mv -i "$directory/$oldfilename" "$directory/$newfilename";
+  	echo mv -i \"$directory/$newfilename\" \"$directory/$oldfilename\" >> $UNDO;
+  fi
+done
+
+echo -e "for undo the renaming check: \n$UNDO ";
+

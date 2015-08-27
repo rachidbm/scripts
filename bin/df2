@@ -1,0 +1,1 @@
+watch -n30 'df -h | grep "media\|home\|srv" '

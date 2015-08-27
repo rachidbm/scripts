@@ -1,0 +1,1 @@
+find ~/.mozilla/firefox/ -name "bookmarks.html"

@@ -1,0 +1,12 @@
+echoyellow "reset, clean, checkout ."
+git reset
+git clean -f -d
+git checkout .
+
+#git-clean -d -x
+#git-checkout -f
+
+echoyellow "Git status:"
+git status
+
+echoyellow "Make sure you are in ROOT of repo"

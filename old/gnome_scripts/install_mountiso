@@ -1,0 +1,3 @@
+chmod +x mountiso unmountiso
+cp mountiso ~/.gnome2/nautilus-scripts/
+cp unmountiso ~/.gnome2/nautilus-scripts/

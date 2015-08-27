@@ -1,0 +1,31 @@
+#!/bin/bash
+
+PAD=~/opt/java/jdk					# path to the preferable jdk release
+PAD_SCALA=~/opt/java/scala	# path to scala dir
+
+echo "JAVA_HOME: " $PAD
+sudo ln -fs $PAD/bin/java /usr/bin/java
+sudo ln -fs $PAD/bin/javac /usr/bin/javac
+sudo ln -fs $PAD/bin/javah /usr/bin/javah
+sudo ln -fs $PAD/bin/javap /usr/bin/javap
+sudo ln -fs $PAD/bin/javadoc /usr/bin/javadoc
+sudo ln -fs $PAD/bin/java-rmi.cgi /usr/bin/java-rmi.cgi
+sudo ln -fs $PAD/bin/java /usr/bin/java
+sudo ln -fs $PAD/jre/bin/java_vm /usr/bin/java_vm
+sudo ln -fs $PAD/jre/bin/javaws /usr/bin/javaws
+
+echo "SCALA_HOME: " $SCALA_HOME
+sudo ln -fs $PAD_SCALA/bin/scala /usr/bin/scala
+sudo ln -fs $PAD_SCALA/bin/scalac /usr/bin/scalac
+
+echo "java paths: in /usr/bin/ : "
+ls -logh /usr/bin | grep java
+
+# set firefox plugin (all 3 for ensurance)
+sudo ln -fs $PAD/jre/plugin/i386/ns7/libjavaplugin_oji.so /usr/lib/firefox/plugins/
+sudo ln -fs $PAD/jre/plugin/i386/ns7/libjavaplugin_oji.so /usr/lib/firefox-addons/plugins/
+sudo ln -fs $PAD/jre/plugin/i386/ns7/libjavaplugin_oji.so /usr/lib/mozilla/plugins/
+
+echo "java paths: in /usr/lib/firefox*/plugins : "
+ls -logh /usr/lib/firefox*/plugins | grep java | grep -v total | colorwords java 
+

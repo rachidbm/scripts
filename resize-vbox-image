@@ -1,0 +1,2 @@
+# Resizes vdi to 6 GB 
+vboxmanage modifyhd Precise.vdi --resize 6000

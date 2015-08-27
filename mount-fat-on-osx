@@ -1,0 +1,1 @@
+sudo diskutil mount readOnly -mountPoint /Volumes/test /dev/disk1s1

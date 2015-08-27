@@ -1,0 +1,7 @@
+
+sudo fs_usage -w -f filesys eclipse | grep git
+
+/usr/libexec/java_home -V
+
+alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
+

@@ -1,0 +1,5 @@
+
+ADDRESS=$1
+
+echo "Retrieving SSL Certificate for host: $ADDRESS"
+echo -n | openssl s_client -connect $ADDRESS:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > $ADDRESS.cert

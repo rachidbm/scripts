@@ -1,0 +1,11 @@
+#!/bin/sh
+
+sudo apt-get install network-manager-pptp
+
+# check syslog when having problems configuring pptp
+sudo tail -f /var/log/syslog
+
+# restart network manager
+
+#sudo /etc/dbus-1/event.d/25NetworkManager restart
+#sudo /etc/dbus-1/event.d/26NetworkManagerDispatcher restart

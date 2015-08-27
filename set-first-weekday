@@ -1,0 +1,9 @@
+#!/bin/bash
+#sudo vi /usr/share/i18n/locales/en_US
+FILE=/usr/share/i18n/locales/en_US
+
+#sudo backup $FILE /usr/share/i18n/locales/
+echo "sudo cat $FILE | sed 's/first_weekday[^0-9]*[0-9]/first_weekday 2/g' > $FILE"
+
+#change  first_weekday 1 to 2
+#sudo locale-gen

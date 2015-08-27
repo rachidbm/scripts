@@ -1,0 +1,4 @@
+
+grep -nI \#include\ "\w*.[c|h]"  ./*
+
+grep -nI circuit_mark_for_close\(\w*\   ./*

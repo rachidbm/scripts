@@ -1,0 +1,37 @@
+
+###################################################
+#  vim 
+###################################################
+
+# replace 3th occurence of '||' on each line
+%s/\(.\{-}\zs||\)\{3}/||\ ||/c
+
+CTRL-V voor vertical select. 'c' om alles te replacen
+# regex insert newline \r
+:%s/&/\r/g
+
+## php replace
+#	var $call_id;
+# by:
+#		$this->call_id = $oData->call_id;
+%s/\tvar\s\$\(\w*\)/^I^I\$this->\1\ =\ \$oData->\1/gc
+
+
+
+# format XML
+ %!xmllint --format -
+
+:e!		return to last saved version of current fileo
+
+CTRL+wv = split vertical
+
+to quickly resize windows with a vertical split, or:
+:map - <C-W>-
+:map + <C-W>+ 
+# if liever :map = <C-W>+
+
+to resize vertical windows quickly with ALT-SHIFT-[<>] 
+:map <M-<> <C-W><
+:map <M->> <C-W>> 
+
+

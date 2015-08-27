@@ -1,0 +1,5 @@
+#!/bin/bash
+
+[ "$1" == "" ] && echo -e "give the filename to convert..." && exit;
+
+/usr/bin/djpeg $1 | /usr/bin/ppmtopgm | /usr/bin/pgmtopbm | /usr/bin/pbmtoascii -2x4 

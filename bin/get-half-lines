@@ -1,0 +1,15 @@
+#!/bin/bash
+
+[ "$1" == "" ] && echo -e "give up filename" &&  exit;
+
+DEAFAULT_CMD="tail"
+
+HALF=$[$(wc -l $1 | awk '{print $1}' ) / 2]
+#echo $HALF
+
+if [ "$2" != "" ]; then
+	DEAFAULT_CMD="$2";
+fi
+
+$DEAFAULT_CMD -$HALF $1
+

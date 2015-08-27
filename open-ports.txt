@@ -1,0 +1,18 @@
+
+echo `wget -q http://www.whatismyip.com/automation/n09230945.asp -O-`
+
+## Check open ports of a remote machine
+nmap -v -sT -PN localhost
+
+## Check open ports to the world outside
+#nmap -P0 $(curl www.whatismyip.org)
+nmap -P0 $(wget -q http://www.whatismyip.com/automation/n09230945.asp -O-)
+
+## Check local listening ports
+lsof -i:PORT
+netstat -l
+sudo netstat -anltp | grep :PORT
+sudo lsof -i -P | grep -i listen
+
+## Check UDP ports
+sudo nmap -sU $(wget -q http://www.whatismyip.com/automation/n09230945.asp -O-)

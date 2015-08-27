@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Script to print random motd
+
+JOKES=oneliners.txt
+MSG_DIR=messages
+#MOTD=output.txt
+MOTD=/etc/motd
+MSG_CMD="ls $MSG_DIR/*.txt" 
+
+i=$(( $RANDOM % $($MSG_CMD | wc -l)+1   ))
+RFILE=`$MSG_CMD | sed -e ${i}p -e d`
+
+cat $RFILE > $MOTD					# random txt file
+NR=$(( $RANDOM % $(wc -l < $JOKES)+1 ))
+
+echo "" >> $MOTD
+sed -n ${NR}p $JOKES >> $MOTD	#random joke
+echo "" >> $MOTD
+
+echo $(date +%d-%m\ %T) updated # >> /var/log/motd-update.log
+#cat $MOTD

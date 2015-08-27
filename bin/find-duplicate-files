@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# version: 20100913
+
+if [ "$1" == "" ]; then
+	echo -e "Usage: find-duplicate-files [PATH], default path is current dir";
+	P=.;
+else
+	P=$1;
+fi
+
+DATETIME=$(date '+%Y%m%d-%H%M%S')
+
+TMPFILE=/tmp/md5sums-files-$DATETIME.txt
+SUMS_DOUBLE=/tmp/md5sums-$DATETIME.txt
+DOUBLE_FILES=/tmp/double-files-$DATETIME.txt
+
+echo "searching for duplicate files in '$P'";
+## For OSX
+
+find $P -mindepth 1 -type f -exec md5 {} \; | sort > $TMPFILE
+mawk '{a[$1]++;} END {for (i in a) {if (a[i] > 1) print i;} }' $TMPFILE > $SUMS_DOUBLE
+mawk 'BEGIN{while ((getline < "'$SUMS_DOUBLE'") > 0) dubbele[$1] = 1} dubbele[$1] {print}' $TMPFILE > $DOUBLE_FILES
+
+echo "Double files:  `wc -l $DOUBLE_FILES`";

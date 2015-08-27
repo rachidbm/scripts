@@ -1,0 +1,30 @@
+#!/bin/bash
+
+LOCATION=/home/rachid/workspaces/multiplayer/multiplayer
+#LOCATION=..
+
+function dirClasspath() {
+	# read classpath from given LIB directory
+	LIB=${LOCATION}/webapp/WEB-INF/lib
+	CLASSPATH=${LOCATION}/build/classes;	
+	for l in $(ls $LIB); do
+		CLASSPATH=$CLASSPATH:$LIB/$l;
+	done
+	echo $CLASSPATH;
+}
+
+# read classpath from eclipse .classpath file
+# only get the lines specified in $KIND
+function eclipseClasspath() {
+	ECLIPSE_CP=${LOCATION}/.classpath
+	KIND="lib\|output"
+	LST=$(grep "kind=\"\($KIND\)\"" $ECLIPSE_CP | sed -e 's/\([^<]*\)<classpathentry\([^>]*\)path="\([^"]*\)"\([^>]*\)>/\3/' )
+
+	for l in $LST; do
+		CLASSPATH=$CLASSPATH:$LOCATION/$l;
+	done
+	echo $CLASSPATH;
+}
+
+#echo $(dirClasspath);
+java -classpath $(eclipseClasspath) nl.multiplayer.stubs.GameManager "$@"

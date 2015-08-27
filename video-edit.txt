@@ -1,0 +1,14 @@
+
+# flash to avi
+ffmpeg -i file2.flv -sameq output.avi
+
+
+# merge files
+cat file1.avi file2.avi > merged.avi
+
+# re-encode
+mencoder -forceidx -oac copy -ovc copy merged.avi -o merged_final.avi
+
+
+
+

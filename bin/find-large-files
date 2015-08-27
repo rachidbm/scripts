@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# version: 20101225
+
+# Default is 100MB
+
+SIZE=100;
+
+if [ "$1" == "" ] 
+then 
+	echo -e "Give size in MB's, now using the default of $SIZE"; #  &&  exit;
+else
+	SIZE=$1;
+fi
+
+echo "Files larger than $SIZE MB:";
+find . -type f -size +`echo $SIZE`M

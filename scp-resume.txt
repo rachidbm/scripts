@@ -1,0 +1,2 @@
+rsync --partial --progress --rsh=ssh file remotehost:~/remote_file
+

@@ -1,0 +1,13 @@
+startup_message off
+
+# Display a caption string below, appearing like tabs and
+# displaying the window number and application name (by default).
+caption always
+caption string "%{kw}%-w%{wb}%n %t%{-}%+w"
+
+# Default screens
+screen -t 'Git'   #cd /Users/Rachid/Projects/webshop/webshop
+screen -t 'webshop' #cd /Users/Rachid/Projects/webshop/webshop
+screen -t 'SSH'
+
+

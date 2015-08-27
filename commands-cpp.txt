@@ -1,0 +1,6 @@
+
+ar    # Archive files
+nm    # list symbols from object files
+gcc -shared  # Create Shared library
+
+otool -hv  # inspect Object files

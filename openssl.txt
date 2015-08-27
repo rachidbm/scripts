@@ -1,0 +1,74 @@
+View clientcert:
+openssl x509 -inform der -text -in MSSP_Service_Certificate.cer
+
+Retrieve private key only from PFX:
+openssl pkcs12 -in clientkey.p12 -passin pass:password -nocerts 
+
+Retrieve Client certificate only from PFX:
+openssl pkcs12 -in clientkey.p12 -passin pass:password -nokeys -clcerts
+
+Retrieve CA certificates only from PFX:
+openssl pkcs12 -in clientkey.p12 -passin pass:password -nokeys -cacerts
+
+
+Create SSL connection:
+openssl s_client -connect google.com:443
+openssl s_client -connect mobilepki-poc.unisys.nl:4779
+
+Verify PKCS7 signature
+openssl rsautl -verify -pubin -inkey pubkey.pem < actual.p7
+
+Read pkcs7 signature
+openssl smime -pk7out -inform der -in signature.cer
+
+Read info of PEM file
+openssl x509 -text -in certificate.pem
+
+
+
+openssl pkcs12 -in test.p12 -passin pass:ed031a82-15a9-4396-9c82-9f33df30c758 -nokeys -clcerts 
+openssl pkcs12 -in test.p12 -passin pass:ed031a82-15a9-4396-9c82-9f33df30c758 -nokeys -cacerts
+
+openssl pkcs12 -passin pass:ed031a82-15a9-4396-9c82-9f33df30c758 -nokeys -cacerts -in 
+openssl pkcs12 -passin pass:ed031a82-15a9-4396-9c82-9f33df30c758 -nokeys -clcerts -in 
+
+Java keystore
+======================
+
+keytool -v -list -keystore keystore.jks -storepass password
+
+openssl pkcs12 -export -out keystore.p12 -inkey test.key.pem -in test.cert.pem
+
+openssl pkcs12 -export -out keystore.p12 -inkey ru-key.pem -in ru.pem -certfile chain.pem
+
+keytool -importkeystore -srcstoretype pkcs12 -srckeystore keystore.p12 -destkeystore keystore.jks
+
+
+openssl pkcs12 -export -out MA.p12 -inkey ./Keys/BDR_MAReg_INT_GEN_1_ed031a82-15a9-4396-9c82-9f33df30c758.private.pem -in ./BDR_MAReg_INT_GEN_1_436f31be-a01c-45a5-ac5d-68a346c20d5a_1_ed031a82-15a9-4396-9c82-9f33df30c758.pem -certfile MA-chain-ed031a82-15a9-4396-9c82-9f33df30c758.pem
+
+
+cat  ../../SubCA/RURegSubCA/BDR_RURegSubCA_INT_GEN_01.pem > chain.pem
+echo '' >> chain.pem
+cat ../../SubCA/RUReg/BDR_RUReg_INT_GEN_1_436f31be-a01c-45a5-ac5d-68a346c20d5a.pem >> chain.pem
+
+
+
+
+Creating PFX
+============
+openssl pkcs12 -export -in client.crt -inkey client.key -out privpubkey.pfx -passin pass:password
+openssl pkcs12 -export -in client.crt -inkey client.key -certfile CAs.crt -out generated.pfx -passin pass:password
+
+openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in certificate.crt -certfile CACert.crt
+
+openssl pkcs12 -export -in client.crt -certfile CAs.crt -out trustedCerts.pfx -passin pass:password
+
+
+
+============
+openssl pkcs12 -in certificate.p12 -out clientcert.pem -nodes -clcerts
+openssl x509 -in trusted_ca.cer -inform DER -out trusted_ca.pem
+openssl x509 -in root_ca.cer -inform DER -out root_ca.pem
+cat clientcert.pem trusted_ca.pem root_ca.pem >> clientcertchain.pem
+openssl pkcs12 -export -in clientcertchain.pem -out clientcertchain.pfx
+

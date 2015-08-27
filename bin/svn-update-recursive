@@ -1,0 +1,32 @@
+#!/bin/bash
+
+## Recursively performs 'svn update' for all directories in current directory 
+
+update ()
+{
+ #echo "Call to update ($1)"
+ if [ -d $1/.svn ]
+ then
+  echo "Updating $1..."
+  svn up $1
+ else
+  # echo `ls`
+     for i in `ls $1`
+     do
+      if [ -d $1/$i ]
+      then
+       # echo "Descending to $i..."
+          update $1/$i
+      fi
+     done
+ fi
+}
+
+if [ "$1" == "" ]; then
+ echo "Updating all SVN projects in `pwd`..."
+ time update .
+else
+ echo "Updating all SVN projects in $1..."
+   time  update $1
+fi
+

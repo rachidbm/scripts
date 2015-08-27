@@ -1,0 +1,28 @@
+
+# enable color support of ls and also add handy aliases
+if [ "$TERM" != "dumb" ]; then
+    eval "`dircolors -b`"
+    alias ls='ls --color=auto -h'
+    alias dir='ls --color=auto --format=vertical'
+    alias vdir='ls --color=auto --format=long'
+fi
+
+# some more ls aliases
+alias l='ls -CFh'
+alias ll='l -l'
+alias lll='l -log'
+alias la='l -A'
+alias lla='ll -A'
+alias ld='l -d '
+
+
+alias grep='grep --color=auto' 
+alias mv='mv -i'
+alias cp='cp -i'
+alias d='du -sh'
+alias x='xdg-open'
+alias df='df -h'
+
+alias lessapache='less +F /var/log/apache2/error.log'
+alias lessaccess='less +F /var/log/apache2/access.log'
+alias delapache-errorlog='cat /dev/null | sudo tee /var/log/apache2/error.log'

@@ -1,0 +1,1 @@
+find /mnt/zeus/docs | tolower.sed | sh -x

@@ -1,0 +1,4 @@
+free -m
+less /proc/meminfo
+Of gewoon: 
+top

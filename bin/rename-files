@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# version: 20100318
+
+# Renames multple files in current dir to given name with a number
+
+[ "$1" == "" ] && echo -e "Please provide new filename \nUse parameter \"notest\" to really rename the files" &&  exit;
+
+COUNTER=1;
+UNDO=/tmp/undo-`date +"%Y%m%d-%H%M%S"`.txt;
+
+echo "datetime: " `date +"%d-%m-%Y %H:%M:%S"` >> $UNDO;
+echo "directory: " `pwd` >> $UNDO;
+
+find . -maxdepth 1 -type f | sort |  while read -r f; do
+	PRE="";
+
+#	if [ $COUNTER -lt 100 ]; then
+#		PRE=$PRE"0";
+#	fi;
+	if [ $COUNTER -lt 10 ]; then
+		PRE=$PRE"0";
+	fi;
+
+	## FIXME: when files have no extension
+	NEWNAME=$1"-"$PRE$COUNTER"."${f##*.};
+	if [ "$2" != "notest" ]; then 
+		echo TEST: mv \"$f\" $NEWNAME;
+	else
+		mv "$f" $NEWNAME;
+		echo mv $NEWNAME \"$f\" >> $UNDO;
+	fi;
+
+	let COUNTER=COUNTER+1 
+done
+
+echo -e "for undo the renaming check: \n$UNDO ";
+
+if [ "$2" != "notest" ]; then 
+	echo -e "\nUse parameter \"notest\" to really rename the files";
+else
+	echo -e "\nDone renaming.";
+fi
+

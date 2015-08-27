@@ -1,0 +1,27 @@
+#!/bin/bash
+# version nr: 20090609
+# The files/dirs to backup are defined in $BFILE
+
+
+BPATH=/var/backups/daily					# PATH to store the backup files
+BFILE=/data/scripts/files2backup  # Files to backup
+
+FILES2BACKUP=$(sed '$!N;s/\n/ /' $BFILE)		# Set the list of files/dirs on 1 line
+BACKUPFILE=$BPATH/backup-$(date +%Y%m%d); 	# Create filename to store backup
+
+log() {
+  echo $(date +%d-%m\ %T)  -  $1
+}
+
+if [ -f $BACKUPFILE.tar.gz ]  # When BACKUPFILE already exists
+then # Add current time to the filename
+  BACKUPFILE=$BACKUPFILE"_"$(date +%H%M);   
+fi
+log "backup files: $FILES2BACKUP"
+
+tar -zcf $BACKUPFILE.tar.gz $FILES2BACKUP	# tar and zip the backup files
+chmod 400 $BACKUPFILE.tar.gz
+log "Backup stored in $BACKUPFILE.tar.gz"
+
+log "Removing backups older than 2 weeks...";
+find $BPATH -mtime +15 -name "backup*" -exec rm {} \;

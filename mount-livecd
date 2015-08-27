@@ -1,0 +1,5 @@
+mount --bind /dev /mnt/dev
+mount --bind /proc /mnt/proc
+mount --bind /sys /mnt/sys
+
+mount /dev/sda11 /mnt/home

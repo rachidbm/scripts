@@ -1,0 +1,4 @@
+# m h  dom mon dow   command
+ 1 * * * *  chmod +x ~/scripts/bin/*; chmod -R +x ~/scripts/*sh
+19 1 * * *  ~/scripts/sync-barrett.sh 2>&1 >> ~/Desktop/sync.log; 
+

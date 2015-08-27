@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# convert all spaces to underscores in current directory
+
+#ls | while read -r FILE
+# for f in *; do mv -- "$f" "${f//__/-}"; done
+find . | while read -r f;
+do
+	#f2=`echo "$f" | tr ' ' '\\ ' `
+  #mv "$f2"  `echo "$f" | tr ' ' '_' | tr '___' '.' | sed "s/.-./-/g" | sed "s/---/-/g" `
+	newname=`echo "$f" | tr ' ' '.' | tr -d '[{}(),\!]' | tr -d "\'" | tr '[A-Z]' '[a-z]' | sed 's/_-_/-/g' | sed 's/.-./-/g'  `; 
+  mv "$f" $newname; 
+
+	#echo "f2: $f2";
+	#echo "$CMD";
+done

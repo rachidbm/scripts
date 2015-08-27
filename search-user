@@ -1,0 +1,16 @@
+#!/bin/bash
+
+function look() {
+	CMD="grep $USER $1";
+	echo -e "\n$CMD";
+	$CMD;
+}
+
+if [ "$1" != "" ]
+then 
+	USER=$1
+	look "/etc/passwd";
+	look "/etc/group";
+	look "/etc/shadow";
+fi
+

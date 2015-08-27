@@ -1,0 +1,26 @@
+
+
+find . -maxdepth 1 -exec grep -m1 "4.107" {}/META-INF/MANIFEST.MF \;
+
+grep -m1 "\"4\.107\.0\"" MANIFEST.MF
+
+
+
+find . -maxdepth 1 -exec grep -m1  "\"4\.107\." {}/META-INF/MANIFEST.MF \; | grep -v "Export-Package\|Fragment-Host"
+
+
+find . -maxdepth 1 -exec grep -l -m1  "\"4\.107\." {}/META-INF/MANIFEST.MF \; | grep "\"4\.107\." {}/META-INF/MANIFEST.MF | grep -v "Export-Package\|Fragment-Host"
+
+
+
+
+
+
+
+
+
+find . -maxdepth 1 -exec grep -l -m1  "\"4\.107\." {}/META-INF/MANIFEST.MF \; | xargs grep "\"4\.107\"" 
+
+
+find . -maxdepth 1 -exec grep -l -m1  "\"4\.107\." {}/META-INF/MANIFEST.MF \; | xargs -0 grep "\"4\.107\.0\""
+

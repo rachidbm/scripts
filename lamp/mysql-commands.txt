@@ -1,0 +1,5 @@
+
+
+mysqladmin -u root password NEWPASSWORD
+
+

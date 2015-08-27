@@ -1,0 +1,573 @@
+306
+Be yourself.
+Especially, do not feign respect for technical incompetence.
+Be cheerful. Strive to be happy.
+Oh, and we just set fire to your desktop.
+BYTE editors are people who separate the wheat from the chaff, and then
+carefully print the chaff.
+To err is human, but to really foul things up requires a computer.
+To err is human... to really foul up requires the root password.
+Alan Turing thought about criteria to settle the question of whether machines can think, a question of which we now know that it is about as relevant as the question of whether submarines can swim.  -- Dijkstra
+Any sufficiently advanced technology is indistinguishable from a rigged demo.  - Andy Finkel, computer guy
+Any sufficiently advanced bug is indistinguishable from a feature.  -- Rich Kulawiec
+As far as we know, our computer has never had an undetected error.  -- Weisert
+Computers are not intelligent.  They only think they are.
+HOST SYSTEM NOT RESPONDING, PROBABLY DOWN. DO YOU WANT TO WAIT? (Y/N)
+HOST SYSTEM RESPONDING, PROBABLY UP...
+How much net work could a network work, if a network could net work?
+I am a computer. I am dumber than any human and smarter than any administrator.
+"Nuclear war can ruin your whole compile." -- Karl Lehenbauer
+Linux -- the OS for the Renaissance Man
+One picture is worth 128K words.
+The UNIX philosophy basically involves giving you enough rope to
+hang yourself.  And then a couple of feet more, just to be sure.
+Unix gives you enough rope to shoot yourself in the foot.
+Those parts of the system that you can hit with a hammer (not advised) are called hardware; those program instructions that you can only curse at are called software.  -- Levitating Trains and Kamikaze Genes: Technological Literacy for the 1990's.
+The difference between Microsoft and 'Jurassic Park': In one, a mad businessman makes a lot of money with beasts that should be extinct.  The other is a film.
+The gates in my computer are AND, OR and NOT; they are not Bill.
+"Nobody will ever need more than 640k RAM!" -- Bill Gates, 1981
+"Windows 95 needs at least 8 MB RAM." -- Bill Gates, 1996
+"Nobody will ever need Windows 95." -- logical conclusion
+Windows 98: Not Plug & Play, but Bug & Pay!
+
+Q:  How many IBM CPU's does it take to execute a job?
+A:  Four; three to hold it down, and one to rip its head off.
+
+Those who can't write, write manuals.
+Don't trouble trouble until trouble troubles you...
+
+import xmlrpclib
+srv = xmlrpclib.Server('http://www.microsoft.com/')
+for employee in srv.MainDepartment.personnel(): srv.fireEmployee(employee)
+                -- found in Python XML-RPC example
+
+Q:      What's tiny and yellow and very, very, dangerous?
+A:      A canary with the super-user password.
+
+System going down at 5 this afternoon to install scheduler bug.
+Never trust a computer you can't repair yourself.
+> How long is the largest chunk of code Larry Wall has written in Python?  It was 23 lines longer than the largest chunk of code Guido has actually written in Perl.  The difference is that Larry's code worked, and Guido's still doesn't. (found on comp.lang.python)
+Microsoft does have a Year 2000 problem. We're it.
+You have moved the mouse. NT must be restarted for the changes to take effect.
+Microsoft is not the answer.  Microsoft is the question.  "No" or "Linux" is the answer.
+Unix is the answer, but only if you phrase the question very carefully.  -- Belinda Asbell
+Given enough eyeballs all bugs are shallow.  -- Eric S. Raymond, "The Cathedral and the Bazaar"
+A computer without any MS Windows is like a fish without a bicycle.  -- With apologies to Gloria Steinem
+What goes up, must come down. Ask any system administrator.
+UNIX is user friendly. It's just selective about who its friends are.
+>Linux is not user-friendly. It _is_ user-friendly.  It is not ignorant-friendly and idiot-friendly.
+If all else fails, read the documentation.
+Computo, ergo sum.  -- Curt Suplee
+...Unix, MS-DOS, and Windows NT (also known as the Good, the Bad, and the Ugly).  -- Matt Welsh
+World domination. Fast.  -- Linus Torvalds
+MSDOS didn't get as bad as it is overnight -- it took over ten years of careful development.  -- dmeggins@aix1.uottawa.ca
+The memory management on the PowerPC can be used to frighten small children.  -- Linus Torvalds
+Never trust an operating system you don't have sources for.
+Go not unto the Usenet for advice, for you will be told both yea and nay (and quite a few things that just have nothing at all to do with the question).
+Those who don't understand Unix are doomed to reinvent it, poorly.
+Some people have told me they don't think a fat penguin really embodies the grace of Linux, which just tells me they have never seen a angry penguin charging at them in excess of 100mph. They'd be a lot more careful about what they say if they had.  -- Linus Torvalds, announcing Linux v2.0
+"Linux was made by foreign terrorists to take money from true US companies like Microsoft." -Some AOL'er.
+"To this end we dedicate ourselves..." -Don (From the sig of "Don" <don@cs.byu.edu>)
+"Only wimps use tape backup: _real_ men just upload their important stuff on ftp, and let the rest of the world mirror it ;)"
+
+(Linus Torvalds, about his failing hard drive on linux.cs.helsinki.fi) In short, at least give the penguin a fair viewing. If you still don't like it, that's ok: that's why I'm boss. I simply know better than you do.  -- Linus "what, me arrogant?" Torvalds, on c.o.l.advocacy
+Hoping the problem  magically goes away  by ignoring it is the "microsoft approach to programming" and should never be allowed.  -- Linus Torvalds
+Linux don't need no steenkin' viruses. The users can destroy the system all by themselves....  -- Peter Dalgaard in comp.os.linux.misc
+Linux. Where do you want to go tomorrow?
+"Linux: the operating system with a CLUE... Command Line User Environment".
+"While preceding your entrance with a grenade is a good tactic in Quake, it can lead to problems if attempted at work." -- C Hacking
+Never trust a smiling Gates.
+An NT server can be run by an idiot, and usually is.
+Any sufficiently advanced Operating System is indistinguishable from Linux.  -- Jim Dennis
+"I may not understand what I'm installing, but that's not my job. I just need to click Next, Next, Finish here so I can walk to the next system and repeat the process" -- Anonymous NT Admin
+Linux: The Ultimate NT Service Pack
+Gates' Law: Every 18 months, the speed of software halves.
+MCSE == Minesweeper Consultant / Solitaire Expert
+MCSE == Must Consult Someone Experienced
+MCSE == Marginal Computer Software Enthusiast
+F U cn rd dis U mst uz Unix.
+"When the grammar checker identifies an error, it suggests a correction and can even makes some changes for you." -- Microsoft Word for Windows 2.0 User's Guide.
+Your eyes are weary from staring at the CRT.  You feel sleepy.  Notice how restful it is to watch the cursor blink.  Close your eyes.  The opinions stated above are yours.  You cannot imagine why you ever felt otherwise.
+Microsoft -- because God hates us.
+Where do you think you're going today?
+Chupa-Chups: "The World Is Sucks"
+I am Lalo of deB-org. You will be freed. Resistance is futile.  -- from the sig of Lalo Martins
+Do not meddle in the affairs of sysadmins,
+they are quick to anger and have no need for subtlety.
+PCMCIA - People Can't Memorize Computer Industry Acronyms
+I'm a shareware signature!  Send $2 if you use me, $10 for a manual.
+The *REAL* Y2K is the year 2048.
+Favorite MAC error message: "Not enough memory to eject disk!"
+Unix is an operating system, OS/2 is half an operating system, Windows
+is a shell, and DOS is a boot partition virus.
+                -- Peter H. Coffin
+The reason computer chips are so small is that computers don't eat much.
+Favorite MS-DOS error message: "Drive C: not ready, close door."
+If you have to run heating in winter, you don't own enough computers.
+My mail reader can beat up your mail reader.
+Get a life?  Well, once I nearly found one, but the link was broken.
+Press any key to continue, or any other key to cancel.
+"...the only place for 63,000 bugs is a rain forest"
+If you sat a monkey down in front of a keyboard, the first thing typed would be
+a unix command.
+                -- Bill Lye
+Microsoft has performed an illegal operation and will be shut down.
+                -- Judge Jackson
+This company has performed an illegal operation and will be shut down. If
+the problem persists, contact your vendor or appeal to a higher court.
+Hi. I'm the "I love you" .signature virus. You have been infected.
+Please panic immediately.
+31337 is a prime number, go figure...
+Of course I use Microsoft. Setting up a stable unix network is no challenge ;p
+EMACS is a good OS.  The only thing it lacks is a decent text-editor.
+I code in vi because I don't want to learn another OS. :)
+                -- Robert Love
+For vi emulation of emacs, just type ":sh emacs" (without the quotes).
+Of course everyone knows that EMACS is the best text editor in the world. Anyone
+who tells you differently is either wrong, lying, or criminally insane. (Or an
+VIM user, in which case they are wrong, lying and criminally insane).
+Key emulation:
+[ ] Intuitive
+[*] Emacs        (Seen in an MCEdit dialog)
+He who sacrifices functionality for ease of use
+Loses both and deserves neither
+1 4m 5o 3l337! just got r00t on this <a href="127.0.0.1">k3wl site</a> j00
+sux0r5!
+A bus station is where a bus stops, a train station is where a train stops. On
+my desk I have a work station...
+If the ancients were right and to think is to exist, does Microsoft exist?
+Think different? I'd be happy if most people would just think...
+Well, there's a quantum computer that can factor 15, so those of you using
+4-bit RSA should worry.
+        -- Bruce Schneier
+This message has been ROT-13 encrypted twice for higher security.
+PHP: Pornographic Hypertext Processor
+... Another nationwide organization's computer system crashed twice in less
+than a year. The cause of each crash was a computer virus....
+                -- Paul Mungo, Bryan Glough  _Approaching_Zero_
+(in 1986 computer crashes were something out of the ordinary.  Win95 anyone?)
+1 + 1 = 3
+                -- from a Microsoft advertisement
+As of 2.91, these bugs have all been fixed.  We look forward
+to new ones, well, not exactly...
+                -- libstdc++-v3 FAQ
+TCP_UP - The 16-bit TCP Urgent Pointer, encoded as the hex
+      representation of the value of the field.  The hex string MUST be
+      capitalized since it is urgent.
+                -- RFC 3093
+TCP_SeqNum - The 32-bit Sequence Number, encoded as an ASCII string
+      representing the hex value of the Sequence number.  This field
+      MUST be sent as lower case because it is not urgent.
+                -- RFC 3093
+Since this protocol deals with Firewalls there are no real security
+considerations.
+                -- RFC 3093
+If your company is not involved in something called "ISO 9000" you probably
+have no idea what it is.  If your company _is_ involved in ISO 9000 then you
+definitely have no idea what it is.
+                                (Scott Adams - The Dilbert principle)
+Most security experts REALLY believe in firewalls. The expect that, when they
+die, arrive at the great firewall in the sky where Saint Peter is running a
+default policy of REJECT.
+                --- Sander Plomp
+"Our products just aren't engineered for security."
+                -- Brian Valentine, senior vice-president of Windows development
+... what exactly are Microsoft products engineered for? The garbage!
+NT 5.0 is the last nail in the Unix coffin. Interestingly, Unix isn't in the
+coffin... It's wondering what the heck is sealing itself into a wooden box 6
+feet underground...
+                -- Jason McMullan
+This host is a black hole at HTTP wavelengths. GETs go in, and nothing
+comes out, not even Hawking radiation.
+                -- Graaagh the Mighty on rec.games.roguelike.angband
+If Peter Piper pickles a peck of Python packages, can he pack the pickled
+Python peckers in a proper packing place?
+                -- Found on comp.lang.python
+Lost packet, 42 bytes, last seen on a saturated OC3, reward $$$.
+                -- Eric^2 on Slashdot
+The BeOS takes the best features from the major operating systems. It's got
+the power and flexibility of Unix, the interface and ease of use of the MacOS,
+and Minesweeper from Windows.
+                -- Tyler Riti
+WARN_(accel)("msg null; should hang here to be win compatible\n");
+        -- WINE source code
+"I really didn't foresee the Internet. But then, neither did the computer
+industry. Not that that tells us very much of course - the computer industry
+didn't even foresee that the century was going to end." -- Douglas Adams
+Why do geeks think Halloween and Christmas occur on the same day?
+Because 31oct = 25dec!
+It is practically impossible to teach good programming style to
+students that have had prior exposure to BASIC: as potential
+programmers they are mentally mutilated beyond hope of
+regeneration.        -- Dijkstra
+Un*x admins know what they are doing by definition.
+        -- Bernd Petrovitsch
+After having done some test using hi-tech instruments (moving my mouse
+during a kernel build) [...]
+        -- Davide Libenzi on lkml
+No sane person should use frame buffers if they have the choice.
+        -- Linus Torvalds on lkml
+[...] the basic "your gun, your foot, your choice" memory model.
+        -- jtv on lkml
+"Wipe Info uses hexadecimal values to wipe files. This provides more security
+than wiping with decimal values."
+        -- Norton SystemWorks 2002 Manual
+> find /lib/modules/2.4.17-expt/kernel/ -type f|while read i; do insmod $i; done
+You're sick.  I like you.
+        -- Andrew Morton on lkml
+I've been in the sun for a week.  I took the bold step of leaving my
+laptop at home.  I found only 4K messages pending when I returned.
+        -- Keith Packard
+Added mysterious, undocumented --scanflags and --fuzzy options.
+        -- nmap 3.0 announcement
+Writing like a l33t script kiddie hax0r is the absolute kiss of death and
+guarantees you will receive nothing but stony silence (or, at best, a heaping
+helping of scorn and sarcasm) in return.
+        -- ESR (http://www.tuxedo.org/~esr/faqs/smart-questions.html)
+We've found by experience that people who are careless and sloppy writers are
+usually also careless and sloppy thinkers (often enough to bet on, anyway).
+        -- ESR (http://www.tuxedo.org/~esr/faqs/smart-questions.html)
+Never, ever expect hackers to be able to read closed proprietary document
+formats like Microsoft Word. Most hackers react to these about as well as you
+would to having a pile of steaming pig manure dumped on your doorstep.
+        -- ESR (http://www.tuxedo.org/~esr/faqs/smart-questions.html)
+lg_PC.gigacharset (lg = little green men language, PC = proxima centauri)
+        -- Markus Kuhn provides an example of a locale
+Cool. Does it also recode ISO10646-1 pcf files into the funny
+permutations and subsets used a long time ago in a galaxy far far away
+on the planets Isolatinus XV and Koiruski VIII ...
+        -- Markus Kuhn inquires about libXft
+But perhaps ISO's central secretariat follows just the common industry
+practice pioneered by Microsoft: "We will get it right in the third
+release."
+        -- Markus Kuhn on ISO 10646 PDF CD-ROM edition
+I am right now in the process of reading the Xft source code (the suspense near
+the end of Chapter 7 is unbearable) [...]
+        -- Juliusz Chroboczek
+We did it for smallpox, we'll also win over on ISO 8859-1 ... ;-)
+        -- Markus Kuhn after eradicating one more ISO 8859-1 file from his disk
+> I'm not sure what makes a given poem 'modern'...
+
+Well, one characteristic sometimes found is... to put it politely...
+creative typography.  Very creative typography.
+        -- Henry Spencer on the chores of typesetting modern poetry
+"Don't trust a statistic you haven't faked yourself."
+        -- Seen in another posting by Markus Kuhn
+Please do not even think about automatically normalizing file names
+anywhere. There is absolutely no need for introducing such nonsense, and
+deviating from the POSIX requirement that filenames be opaque byte
+strings is a Bad Idea[TM] (also known as NTFS).
+        -- Markus Kuhn
+The rest of the world will have to be educated by Microsoft's paperclip
+or the DancingGnu (a still to be written Emacs AI tutor for beginning
+users), I'm afraid.
+        -- Markus Kuhn suggests an Emacs alternative to Vigor and Clippy
+Si hoc legere scis nimium eruditionis habes.
+It's not illegal to disagree with my opinions (*).
+[...]
+(*) Although it obviously _should_ be. Mwhaahahahahaaa... You unbelievers
+will all be shot when the revolution comes!
+                -- Linus Torvalds
+CBQ is merely the oldest kid on the block - yet it is by far the least useful
+qdisc and also the most complex one. I advise *against* using it. This may come
+as something of a shock to many who fell for the 'sendmail effect', which
+learns us that any complex technology which doesn't come with documentation
+must be the best available.
+                -- Linux Advanced Routing HOWTO
+There are 10 kinds of people in the world: Those who understand binary
+mathematics and those who don't.
+If you are good, you will be assigned all the work.  If you are real
+good, you will get out of it.
+QOTD:
+        "A child of 5 could understand this!  Fetch me a child of 5."
+Westheimer's Discovery:
+        A couple of months in the laboratory can
+        frequently save a couple of hours in the library.
+Which is worse: ignorance or apathy?  Who knows?  Who cares?
+Some people around here wouldn't recognize
+subtlety if it hit them on the head.
+Everything you read in newspapers is absolutely true, except for that
+rare story of which you happen to have first-hand knowledge.
+                -- Erwin Knoll
+The advertisement is the most truthful part of a newspaper.
+                -- Thomas Jefferson
+I doubt, therefore I might be.
+A witty saying proves nothing.
+                -- Voltaire
+Anybody who doesn't cut his speed at the sight of a police car is
+probably parked.
+Please don't put a strain on our friendship
+by asking me to do something for you.
+The IQ of the group is the lowest IQ of a member of
+the group divided by the number of people in the group.
+Isn't air travel wonderful?  Breakfast in London, dinner in New York,
+luggage in Brazil.
+"If we were meant to fly, we wouldn't keep losing our luggage."
+Hanlon's Razor:
+        Never attribute to malice that which is adequately explained
+        by stupidity.
+Q:      Why do mountain climbers rope themselves together?
+A:      To prevent the sensible ones from going home.
+Committee, n.:
+        A group of men who individually can do nothing but as a group
+        decide that nothing can be done.
+                -- Fred Allen
+The day after tomorrow is the third day of the rest of your life.
+If something has not yet gone wrong then it would ultimately have been
+beneficial for it to go wrong.
+If you are smart enough to know that you're not smart enough to be an
+Engineer, then you're in Business.
+"If it ain't broke, don't fix it."
+- Bert Lantz
+Experience varies directly with equipment ruined.
+A "critic" is a man who creates nothing and thereby feels qualified to judge
+the work of creative men. There is logic in this; he is unbiased -- he hates
+all creative people equally.
+Remember, drive defensively! And of course, the best defense is a good offense!
+Smoking is one of the leading causes of statistics.
+                -- Fletcher Knebel
+In order to get a loan you must first prove you don't need it.
+Some performers on television appear to be horrible people, but when
+you finally get to know them in person, they turn out to be even worse.
+                -- Avery
+Anyone can do any amount of work provided it isn't the work he is supposed
+to be doing at the moment.
+                -- Robert Benchley
+Despite all appearances, your boss is a thinking, feeling, human being.
+As far as the laws of mathematics refer to reality, they are not
+certain, and as far as they are certain, they do not refer to reality.
+                -- Albert Einstein
+A real friend isn't someone you use once and then throw away.
+A real friend is someone you can use over and over again.
+Inform all the troops that communications have completely broken down.
+I have yet to see any problem, however complicated, which, when
+you looked at it in the right way, did not become still more complicated.
+                -- Poul Anderson
+Seen on a button at an SF Convention:
+Veteran of the Bermuda Triangle Expeditionary Force.  1990-1951.
+This sentence contradicts itself -- no actually it doesn't.
+                -- Douglas Hofstadter
+This sentence does in fact not have the property it claims not to have.
+Remember the... the... uhh.....
+Prediction is very difficult, especially of the future.
+                -- Niels Bohr
+Never be afraid to tell the world who you are.
+                -- Anonymous
+Look!  Before our very eyes, the future is becoming the past.
+Include me out.
+If it weren't for the last minute, nothing would ever get done.
+I used to think I was indecisive, but now I'm not so sure.
+I used to be an agnostic, but now I'm not so sure.
+Colorless green ideas sleep furiously.
+Every nonzero finite dimensional inner product space has an orthonormal basis.
+It makes sense, when you don't think about it.
+If the facts don't fit the theory, change the facts.
+                -- Albert Einstein
+If you can't understand it, it is intuitively obvious.
+Undergraduates owe their happiness chiefly to the fact that they are no
+longer at school...The nonsense which was knocked out of them at school is
+all gently put back at Oxford or Cambridge
+                -- Sir Max Beerbohm (1872-1956)
+We have enough youth, how about a fountain of SMART?
+Anything can be made to work if you fiddle with it long enough.
+"Cheap", "Fast", "Right" -- pick two.
+... there is always a well-known solution to every human problem -- neat,
+plausible, and wrong.
+                -- H. L. Mencken (1880-1956), "Prejudices"
+For every complex problem, there is a solution that is simple, neat, and wrong
+Writing about music is like dancing about architecture.
+                -- Frank Zappa
+My opinions may have changed, but not the fact that I'm right!
+Power corrupts, but we need electricity.
+All those who believe in psychokinesis raise my hand.
+Ambition is a poor excuse for not having enough sense to be lazy.
+Never assume the reader has read the subject line.
+If you are angry with someone, you should walk a mile in their shoes... then
+you'll be a mile away from them, and you'll have their shoes.
+Before you criticize someone, walk a mile in his foot.
+That way, if he gets angry, he'll be a mile away - and barefoot.
+When in danger, or in doubt, run in circles, scream and shout.
+                -- Robert A. Heinlein
+Did you know that 7/5 people don't know how to use fractions?
+Any sufficiently advanced magic is indistinguishable from technology.
+Bumper sticker: No radio - Already stolen.
+Bumper sticker: If you can read this, I can hit my brakes and sue you.
+Bumper sticker: Alcohol and calculus don't mix.  Never drink and derive.
+Change is inevitable, except from a vending machine.
+For Sale: Parachute.  Only used once, never opened, small stain.
+When I'm not in my right mind, my left mind gets a little crowded.
+Woe unto them that rise up early in the morning -- Isaiah 5:11
+The death rate on Earth is: .... (computing) .... One per person.
+"I'll be Bach."  -- Johann Sebastian Schwarzenegger
+Always proofread carefully to see if you any words out.
+As easy as 3.14159265358979323846264338327950288419716
+Funny off-topic messages are always on-topic.
+I want patience, and I WANT IT NOW!
+Read what I mean, not what I write.
+Shift happens.
+                -- Doppler
+If "con" is the opposite of "pro", then what is the opposite of progress?
+If vegetarians eat vegetables, what do humanitarians eat?
+To stay awake all night adds a day to your life.
+                -- Stilgar (Frank Herbert _Children_of_Dune_)
+OK, so you're a Ph.D.  Just don't touch anything.
+  To express oneself
+  In seventeen syllables
+  Is very diffic
+                -- John Cooper Clark.
+Place mark here ->[ ]<- if you want a dirty monitor.
+Apologies for taking up the bandwidth with the apology.  Anything else I
+can apologize for ...... er no can't think of anything, sorry about that.
+                Andy Hunt (Member of British Olympic Apology Squad)
+Everyone has a photographic memory. Some don't have film.
+Veni, Vidi, VISA:  I came, I saw, I did a little shopping.
+We don't care.  We don't have to.  We're the Phone Company.
+If you want to trick a pointy-haired boss into letting you write software in
+Lisp, you could try telling him it's XML.
+                -- http://www.paulgraham.com/icad.html
+A Law of Computer Programming:
+        Make it possible for programmers to write in English
+        and you will find that programmers cannot write in English.
+"... one of the main causes of the fall of the Roman Empire was that,
+lacking zero, they had no way to indicate successful termination of
+their C programs."
+                -- Robert Firth
+\|/ ______ \|/  Hey, you've got Blue Screen of Death,
+"@'/  ,.  \`@"  and all your data was tweaked by Microsoft Disk Check!
+/_|  \__/  |_\
+   \___U__/     Please make backup copies to avoid problems in the future...
+BASIC:
+        A programming language.  Related to certain social diseases
+        in that those who have it will not admit it in polite company.
+User n.:
+        A programmer who will believe anything you tell him.
+Mosher's Law of Software Engineering:
+        Don't worry if it doesn't work right.
+        If everything did, you'd be out of a job.
+Beware of bugs in the above code; I have only proved it correct, not tried it.
+                -- Donald Knuth
+Real programmers don't write in BASIC.  Actually, no programmers write in
+BASIC after reaching puberty.
+Science is to computer science as hydrodynamics is to plumbing.
+Premature optimization is the root of all evil.
+                -- D.E. Knuth
+An algorithm must be seen to be believed.
+                -- D.E. Knuth
+Voodoo Programming:  Things programmers do that they know shouldn't work but
+they try anyway, and which sometimes actually work, such as recompiling
+everything.
+-- Karl Lehenbauer
+Python: base64.decodestring('V2hhdCB5b3UgbG9va2luZyBmb3I/==')
+Only great masters of style can succeed in being obtuse.
+                -- Oscar Wilde
+Most UNIX programmers are great masters of style.
+                -- The Unnamed Usenetter
+Eagleson's Law:
+        Any code of your own that you haven't looked at for six or more
+        months, might as well have been written by someone else.  (Eagleson
+        is an optimist, the real number is more like three weeks.)
+Thus spake the master programmer:
+        "After three days without programming, life becomes meaningless."
+                -- Geoffrey James, "The Tao of Programming"
+C, n:
+        A programming language that is sort of like Pascal except more like
+        assembly except that it isn't very much like either one, or anything
+        else.  It is either the best language available to the art today, or
+        it isn't.
+                -- Ray Simard
+The clothes have no emperor.
+                -- C.A.R. Hoare, commenting on ADA.
+"Life begins when you can spend your spare time programming instead of
+watching television."
+-- Cal Keegan
+The only way to learn a new programming language is by writing programs in it.
+- Brian Kernighan
+"If the code and the comments disagree, then both are probably wrong."
+-- Norm Schryer
+No proper program contains an indication which as an operator-applied
+occurrence identifies an operator-defining occurrence which as an
+indication-applied occurrence identifies an indication-defining occurrence
+different from the one identified by the given indication as an
+indication-applied occurrence.
+                -- ALGOL 68 Report
+/* Halley */
+
+        (Halley's comment.)
+Whom the gods would destroy, they first teach BASIC.
+C is quirky, flawed, and an enormous success.
+                -- Dennis M. Ritchie
+Never attribute to malloc that which can be adequately explained by
+stupidity.
+                -- From the .sig of joerg@raleigh.ibm.com (Joerg Pommnitz)
+It is a mess, pure and simple.  Sucks to be away from Unix, huh?
+                -- man perlfaq3
+C is a language that combines all the elegance and power of assembly language
+with all the readability and maintainability of assembly language.
+If it wasn't for C, we'd be using BASI, PASAL and OBOL
+This is an object-oriented system.
+If we change anything, the users object.
+If C gives you enough rope to hang yourself, C++ gives you enough rope
+to bind and gag your neighborhood, rig the sails on a small ship, and
+still have enough rope left over to hang yourself from the yardarm.
+C gives you enough rope to hang yourself. C++ also gives you the tree
+object to tie it to.
+"What's the name of the new OO COBOL -- an equivalent of C++?"
+"ADD 1 TO COBOL GIVING COBOL"
+The last good thing written in C was Franz Schubert's Symphony #9.
+                -- Erwin Dietrich
+We don't really understand it, so we'll give it to the programmers.
+99 little bugs in the code, 99 bugs in the code,
+fix one bug, compile it again...
+101 little bugs in the code....
+C is for Cookies.  Perl is even better for Cookies.
+Hacking graphics in X is like finding sqrt(pi) with roman numerals.
+                -- man xdaliclock
+#define QUESTION ((bb) || !(bb)) /* Shakespeare */
+2B OR NOT 2B == FF
+(define the-question (or (* 2 b) (not (* 2 b))))
+question = 0xFF;        // optimized Hamlet
+C++ is a loaded machine gun helpfully pointed at your feet with the safety off.
+                -- ChaosDiscord on Slashdot
+Life was simple before World War II. After that, we had systems.
+                -- Grace Murray Hopper, 1987
+Professionalism has no place in art, and hacking is art.  Software Engineering
+might be science; but that's not what I do.  I'm a hacker, not an engineer.
+                -- jwz
+Give a man a computer program and you give him a headache,
+but teach him to program computers and you give him the power
+to create headaches for others for the rest of his life...
+        R. B. Forest
+Many people enjoy Perl, many enjoy Python, some enjoy /bin/tcsh.  The latter
+population should however, needless to say, be put into working camps.
+                -- viktor on Slashdot
+Win32-API is wonderful: Full of things to wonder about...
+ultimate_answer_t deep_thought(void) { sleep(years2secs(7500000)); return 42; }
+        -- ConceptJunkie on Slashdot
+main(k){float i,j,r,x,y=-16;while(puts(""),y++<15)for(x
+j=r*r-i*i-2+x/25,i=2*r*i+y/10,j*j+i*i<11&&k++<111;r=j);}
+/* Mandelbrot in ASCII. */
+(Why, oh! why is X not written in Lisp?)
+                -- Juliusz Chroboczek
+You can't spell evil without vi.
+Stupidity management for the superuser is a user space issue in Unix
+systems.
+                -- Alan Cox
+"\6\7\xb\1\x9\xa\2\0\4"];} // Who said my code was obscure?
+3rd Law of Computing:
+        Anything that can go wr
+Segmentation fault -- Core dumped
+BIBLE: Basic Instruction Before Leave Earth
+The best way to convince another is
+to state your case moderately and accurately.
+                        -- Benjamin Franklin
+"God does not exist"
+           -- Karl Marx
+"Karl Marx does not exist"
+           -- God
+"I know you believe you understood what you think I said, but I am not
+sure you realize that what you heard is not what I meant!"
+                             -- G.Romney
+The 5 year plan:
+In five years we'll make up another plan.
+Or just re-use this one.
+Bus error - driver executed.

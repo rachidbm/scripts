@@ -1,0 +1,18 @@
+# HOWTO jail an user in homedir
+see also: http://www.debian-administration.org/articles/590
+
+In /etc/ssh/sshd_config add: 
+
+Subsystem sftp internal-sftp
+
+Match group sftponly
+         ChrootDirectory /home/%u
+         X11Forwarding no
+         AllowTcpForwarding no
+         ForceCommand internal-sftp
+
+ adduser gast sftponly
+ usermod -d / gast
+ chown root.root /home/gast
+
+

@@ -1,0 +1,6 @@
+#!/bin/bash
+# version: 20091202
+
+CMD="grep --color=auto -niI $1 ./* "
+#echo $CMD
+$CMD

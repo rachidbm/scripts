@@ -1,0 +1,2 @@
+#du --max-depth=1 | sort -n | format-size
+du -d 1 $1 | sort -n | format-size

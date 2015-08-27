@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# convert all flv files
+for f in *.flv; do ffmpeg -i $f -acodec libmp3lame -ac 2 -ab 128k -vn -y "$f.mp3"; done

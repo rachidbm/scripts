@@ -1,0 +1,14 @@
+# Configuration for the website: URL
+
+<VirtualHost *:80>
+  ServerName URL.lan
+  ServerAlias www.URL.lan
+  DocumentRoot /home/rachid/workspace/php/URL/www
+
+	<Directory /home/rachid/workspace/php/URL/www/ >
+		Options FollowSymLinks
+    AllowOverride All
+	</Directory>
+
+</VirtualHost>
+

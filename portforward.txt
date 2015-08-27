@@ -1,0 +1,6 @@
+#!/bin/sh
+
+iptables-restore < /etc/firewall.conf
+
+iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 843 -j REDIRECT --to-port 8843
+iptables -F
