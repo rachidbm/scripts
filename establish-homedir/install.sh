@@ -27,5 +27,6 @@ echo -e "\n## BEGIN establish-homedir on $NOW" >> $HOMEDIR/.bashrc
 cat /tmp/bashrc >> $HOMEDIR/.bashrc
 echo -e "## END establish-homedir on $NOW\n" >> $HOMEDIR/.bashrc
 
+echo "Modified: $HOMEDIR/.bashrc";
 echo "Done.";
 
