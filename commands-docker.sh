@@ -14,6 +14,9 @@ docker stop `docker ps -q -f "status=running"`
 ## Stop container latest started: 
 docker stop `docker ps -q  -f "status=running" -n 1`
 
+## Save image
+docker save -o <save image.tar to path> <image name>
+docker load -i <path to image.tar>
 
 
 ## Expose ports
