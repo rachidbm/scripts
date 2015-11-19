@@ -1,4 +1,8 @@
 
+# Switch off indexing of Spotlight (prevent 100% CPU usage on mds_stores)
+sudo mdutil -a -i off
+
+
 sudo fs_usage -w -f filesys eclipse | grep git
 
 /usr/libexec/java_home -V

@@ -14,6 +14,10 @@ docker stop `docker ps -q -f "status=running"`
 ## Stop container latest started: 
 docker stop `docker ps -q  -f "status=running" -n 1`
 
+## Remove docker containers using their ids
+docker rm -v -f $(docker ps -q -a)
+
+
 ## Save image
 docker save -o <save image.tar to path> <image name>
 docker load -i <path to image.tar>

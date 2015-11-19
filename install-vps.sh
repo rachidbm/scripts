@@ -8,6 +8,7 @@ adduser $USERNAME sudo
 ## Disable SSH root login
 # vi /etc/ssh/sshd_config
 # Change: PermitRootLogin no
+# Chage default port 22 to something else
 service ssh restart
 
 

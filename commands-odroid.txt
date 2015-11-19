@@ -1,0 +1,12 @@
+
+sudo dd bs=4M if=/dev/zero | pv | sudo dd of=/dev/sdX
+
+time sudo dd if=ubuntu-14.04.2lts-lubuntu-odroid-u-20150224.img of=/dev/disk2 bs=4m conv=fsync
+time sudo dd bs=4m if=ubuntu-14.04.2lts-lubuntu-odroid-u-20150224.img | pv |  of=/dev/disk2  
+
+sync
+sync
+
+
+diskutil eject /dev/disk2
+

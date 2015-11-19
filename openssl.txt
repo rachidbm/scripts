@@ -41,6 +41,7 @@ openssl pkcs12 -export -out keystore.p12 -inkey test.key.pem -in test.cert.pem
 
 openssl pkcs12 -export -out keystore.p12 -inkey ru-key.pem -in ru.pem -certfile chain.pem
 
+
 keytool -importkeystore -srcstoretype pkcs12 -srckeystore keystore.p12 -destkeystore keystore.jks
 
 
@@ -51,6 +52,15 @@ cat  ../../SubCA/RURegSubCA/BDR_RURegSubCA_INT_GEN_01.pem > chain.pem
 echo '' >> chain.pem
 cat ../../SubCA/RUReg/BDR_RUReg_INT_GEN_1_436f31be-a01c-45a5-ac5d-68a346c20d5a.pem >> chain.pem
 
+Truste store:
+
+keytool -import -file BDR_RootCA_INT_GEN_01.pem -alias BOGW -keystore trust.jks
+
+
+rm BDR_BO_INT_GEN_5_fb114396-ebd6-4b33-a3fa-4d151a6ea53f.trust.jks
+
+keytool -import -file BDR_RURegSubCA_INT_GEN_01.pem -alias RURegSubCA -keystore BDR_BO_INT_GEN_5_fb114396-ebd6-4b33-a3fa-4d151a6ea53f.trust.jks
+fb114396-ebd6-4b33-a3fa-4d151a6ea53f
 
 
 

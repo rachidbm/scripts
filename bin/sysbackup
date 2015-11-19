@@ -8,7 +8,8 @@
 
 source `dirname $(readlink -f $0)`/functions.sh			# include funtions
  
-homedir=/home/rachid
+#homedir=/home/rachid
+homedir=~
 backup_path=$homedir/backup/`hostname`;				# set backup_path to store the backup files
 backup_file=sysbackup-`hostname`;
 keep_backup_days=60;
