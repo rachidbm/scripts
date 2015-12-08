@@ -1,0 +1,14 @@
+
+## Current time
+echo %time%
+
+## Current dir
+echo current folder: %cd%
+
+
+set JAVA_HOME=%cd%\jdk
+
+
+
+## Power shell
+Get-Content -Path "D:\\logs\\wrapper-default.log" -Last 100 -Wait

@@ -65,6 +65,11 @@ git filter-branch -f --index-filter 'git update-index --remove logwatcher.log' H
 # Oldest commit
 git log `git rev-list HEAD | tail -n 1`
 
+## format git log
+git log --pretty=format:"%H - %an - %ae - %s"
+git log --pretty=format:"%H - %an"
+git log  --pretty=oneline --not --author=p5dev
+
 # Search through commit messages
 git log --grep
 
