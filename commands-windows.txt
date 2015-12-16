@@ -2,6 +2,11 @@
 ## Current time
 echo %time%
 
+
+## uptime
+net statistics server
+
+
 ## Current dir
 echo current folder: %cd%
 
