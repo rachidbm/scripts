@@ -1,0 +1,35 @@
+Heroku
+
+Create a NodeJS app
+heroku login
+heroku create lightbikes --buildpack heroku/nodejs
+git push heroku master
+heroku ps:scale web=1
+heroku open
+
+## When failed to detect set buildpack, try:
+heroku  buildpacks:clear
+
+## Enable verbose logging:
+heroku config:set LOG_LEVEL=verbose
+
+
+heroku logs --tail
+
+
+heroku apps:destroy --confirm  quiet-spire-6694
+
+
+
+heroku buildpacks:set heroku/nodejs
+heroku buildpacks:remove heroku/nodejs
+
+
+heroku config:set LOG_LEVEL=info
+heroku config:set NPM_CONFIG_LOGLEVEL=verbose
+heroku config:unset NPM_CONFIG_LOGLEVEL
+heroku config:set NPM_CONFIG_LOGLEVEL=info
+
+
+# run local
+heroku local web
