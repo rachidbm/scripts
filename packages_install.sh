@@ -6,7 +6,7 @@ cmd='sudo apt-get -y install '
 sudo apt-get update
 
 ## Essential (commandline tools)
-$cmd aptitude vim openssh-server screen byobu unrar nethogs mc bzip2 zip gzip unzip p7zip-full iptraf sysstat nmap sysv-rc-conf sl pwgen traceroute pastebinit iotop htop whowatch byobu vbindiff
+$cmd aptitude vim openssh-server screen byobu unrar nethogs mc bzip2 zip gzip unzip p7zip-full iptraf sysstat nmap sysv-rc-conf sl pwgen traceroute pastebinit iotop htop whowatch vbindiff
 
 ## Desktop (additional)
 $cmd vlc ubuntu-restricted-extras aspell-nl vim-gnome filezilla gparted nautilus-open-terminal imagemagick vim-gnome language-pack-nl-base hardinfo cmatrix powertop curlftpfs sshfs smbfs 

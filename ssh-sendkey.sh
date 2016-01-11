@@ -10,6 +10,6 @@ else
 	host=$1
 	echo Sending my public key to \"$host\"
 
-	cat ~/.ssh/id_rsa.pub | ssh $host "chmod 600 $KEYFILE; cat - >> $KEYFILE; chmod 400 $KEYFILE;"
+	cat ~/.ssh/id_rsa.pub | ssh $host "mkdir -p ~/.ssh; chmod 600 $KEYFILE; cat - >> $KEYFILE;  chmod 400 $KEYFILE;"
 fi
 

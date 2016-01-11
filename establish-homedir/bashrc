@@ -7,4 +7,3 @@ fi
 export EDITOR="/usr/bin/vim"
 export PAGER=less       # reader for MAN pages
 
-

@@ -29,6 +29,9 @@ tar -xfz something.tar.gz
 tar -xjf something.tar.bz2
 # compress
 tar -czf archive.tar.gz dir-or-file
+# list files in the archive
+tar -tvf file.tar
+tar -ztvf file.tar.gz
 
 # tgz on Solaris (or use gtar when possible)
 tar -cvf - text.sql | gzip > text_sql.tgz
