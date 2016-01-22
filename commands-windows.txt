@@ -13,6 +13,8 @@ echo current folder: %cd%
 
 set JAVA_HOME=%cd%\jdk
 
+## delete (obsolete) service
+sc delete SERVICENAME
 
 
 ## Power shell

@@ -1,3 +1,5 @@
+def now = { -> new Date().format('yyyyMMdd-HH.mm.ss.SSS')}
+println "now : $now"
 
 
 file(".").listFiles()

@@ -89,5 +89,12 @@ git diff --name-only --diff-filter=U
 ## Stash
 git stash list
 
+# Show line endings
+git diff -R  
 
+
+## Git config on Windows
+
+C:\ProgramData\Git\config
+C:\Users\USERNAME\.gitconfig
 
