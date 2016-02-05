@@ -8,6 +8,14 @@ file(".").listFiles()
 	.each{ println it }
 
 
-configurations.findAll().each { config ->
+configurations.all.each { config ->
 	config.allArtifacts.getFiles().each { file -> println "$file.name     -     $config"  }
+}
+
+// Print all dependencies of the current project
+project.configurations.all.findAll { !it.allDependencies.empty }.each { c ->
+    println " ${c.name} ".center( 80, '-' )
+    c.allDependencies.each { dep ->
+        println "$dep.group:$dep.name:$dep.version"
+    }
 }
