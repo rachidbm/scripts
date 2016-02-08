@@ -19,3 +19,10 @@ project.configurations.all.findAll { !it.allDependencies.empty }.each { c ->
         println "$dep.group:$dep.name:$dep.version"
     }
 }
+
+
+task prr << {
+	println "\nRepositories:"
+	repositories.each{ println " ${it.name}  -  ${it.url}" }
+}
+
