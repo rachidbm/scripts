@@ -1,0 +1,14 @@
+
+## apt-get -y install openjdk-8-jre && time apt-get upgrade
+
+sudo tar -zxvf jdk-8u65-linux-arm32-vfp-hflt.tar.gz  -C /opt/
+
+
+sudo update-alternatives --install /usr/bin/javac javac /opt/jdk/bin/javac 1
+sudo update-alternatives --install /usr/bin/java java /opt/jdk/bin/java 1
+sudo update-alternatives --config javac
+sudo update-alternatives --config java
+
+After all, verify with the commands with -verion option.
+java -version
+javac -version

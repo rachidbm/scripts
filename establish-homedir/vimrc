@@ -1,4 +1,5 @@
 syntax on
+colorscheme pablo
 set nu
 set incsearch
 set hlsearch
@@ -8,5 +9,4 @@ set tabstop=2
 set shiftwidth=2
 set paste
 
-au BufNewFile,BufRead *.scala set filetype=java
-
+"au BufNewFile,BufRead *.scala set filetype=java

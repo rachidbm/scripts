@@ -10,4 +10,8 @@ sudo fs_usage -w -f filesys eclipse | grep git
 alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
 
 
-sudo dd bs=1m if=image.img of=/dev/rdisk<disk# from diskutil>
+#Extract 7zip file
+7z e domoticz-raspberrypi-sdcard-3530.7z
+
+diskutil unmountDisk /dev/disk3
+sudo dd bs=1m if=domoticz-raspberrypi-sdcard-3530.img  | pv | of=/dev/disk3

@@ -1,0 +1,83 @@
+Install 
+http://www.instructables.com/id/OpenHAB-on-Raspberry-Pi
+
+
+For Z-Wave:
+http://www.makeuseof.com/tag/openhab-beginners-guide-part-2-zwave-mqtt-rules-charting/
+sudo usermod -a -G dialout root
+
+pair the light bulb: https://community.zipato.com/knowledge-base/article/zipato-rgbw-bulb-how-to-add
+
+
+http://192.168.X.XXX:8080/openhab.app?sitemap=demo
+
+open hab zipato issue: 
+ - https://github.com/openhab/openhab/issues/2150
+ - https://groups.google.com/forum/#!category-topic/openhab/Ufffhqf6fh0
+ - https://community.openhab.org/t/zwave-status-under-oh2/1661
+
+samsungtv:tv1.host=192.168.10.8
+
+ Color  RGBLight          "RGB Light"       <slider>   (GF_Living, Lights)  {zwave="2:command=SWITCH_MULTILEVEL"}
+
+
+ Dimmer Light "Zipato LED lamp " (GF_Living, Lights)  { zwave="2:command=SWITCH_MULTILEVEL,respond_to_basic=true" }
+ Dimmer Light "Zipato LED lamp 2" (GF_Living, Lights)  { zwave="2:respond_to_basic=true" }  
+ 
+
+Group gRGBW "RGBW Light" <colorwheel>
+
+Dimmer RGBWControllerAll "RGBW Light Control [%d %%]" <switch> (gRGBW) {zwave="2:1"}
+Color RGBW "RGBW Light Color Picker" <slider> (gRGBW)
+Dimmer RGBWControllerR "RGBW Light Red [%d %%]" <switch> {zwave="2:2"}
+Dimmer RGBWControllerG "RGBW Light Green [%d %%]" <switch> {zwave="2:3"}
+Dimmer RGBWControllerB "RGBW Light Blue [%d %%]" <switch> {zwave="2:4"}
+Dimmer RGBWControllerW "RGBW Light White [%d %%]" <switch> {zwave="2:5"}
+
+
+
+
+
+
+
+Group   gwzRGBW         "Kamer"   <sofa>  (All)
+
+Color   wzRGBW      "RGB lamp"         <slider>    (gwzRGBW)
+Dimmer  wzRGBW_All  "Helderheid [%d %%]"    <switch>    (gwzRGBW)   {zwave="2"}
+Dimmer  wzRGBW_R    "Rood [%d %%]"       <switch>    (gwzRGBW)   {zwave="2:2"}
+Dimmer  wzRGBW_G    "Groen [%d %%]"         <switch>    (gwzRGBW)   {zwave="2:3"}
+Dimmer  wzRGBW_B    "Blauw [%d %%]"      <switch>    (gwzRGBW)   {zwave="2:4"}
+Dimmer  wzRGBW_W    "Wit [%d %%]"         <switch>    (gwzRGBW)   {zwave="2:5"}
+
+
+
+
+
+
+
+## installing domoticz
+
+https://www.domoticz.com/wiki/Installing_and_running_Domoticz_on_a_Raspberry_PI#Make_Domoticz_startup_at_boot_time_.28Also_needed_for_Web_Update.29
+
+
+sudo locale-gen en_US en_US.UTF-8 cy_GB.UTF-8
+
+sudo locale-gen "en_US.UTF-8"
+
+apt-get update 
+apt-get upgrade && apt-get dist-upgrade
+apt-get install raspberrypi-ui-mods
+
+
+MOtion van de lamp
+begin bij #
+292407
+292600
+ede19c
+ede7c2
+
+
+http://192.168.10.8:8080/json.htm?type=devices&
+
+
+

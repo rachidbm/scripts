@@ -1,0 +1,3 @@
+
+## npm install the package and save to to packages.json
+npm install --save-dev swagger-ui
