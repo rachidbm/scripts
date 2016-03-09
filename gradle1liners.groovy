@@ -12,17 +12,34 @@ configurations.all.each { config ->
 	config.allArtifacts.getFiles().each { file -> println "$file.name     -     $config"  }
 }
 
+// All configurations 
+task prr << {
+	configurations.findAll().each { config ->
+		println " - $config"
+	}
+}
+
 // Print all dependencies of the current project
-project.configurations.all.findAll { !it.allDependencies.empty }.each { c ->
-    println " ${c.name} ".center( 80, '-' )
-    c.allDependencies.each { dep ->
+task printDependencies << {
+  project.configurations.all.findAll { !it.allDependencies.empty }.each { config ->
+    println " ${config.name} ".center( 80, '-' )
+    config.allDependencies.each { dep ->
         println "$dep.group:$dep.name:$dep.version"
     }
+  }
 }
 
 
 task prr << {
 	println "\nRepositories:"
 	repositories.each{ println " ${it.name}  -  ${it.url}" }
+}
+
+
+task prr << {
+	println "Archives Artifacts: "
+	configurations.archives.allArtifacts.each {
+		println it
+	}
 }
 
