@@ -1,0 +1,1 @@
+find . -name *rar -exec unrar e -o- {} \;
