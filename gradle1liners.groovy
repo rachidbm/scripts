@@ -1,4 +1,5 @@
 def now = { -> new Date().format('yyyyMMdd-HH.mm.ss.SSS')}
+def nowFilename = { -> ${new Date().format('yyyyMMdd-HHmmssSSS')}
 println "now : $now"
 
 
@@ -9,7 +10,8 @@ file(".").listFiles()
 
 
 configurations.all.each { config ->
-	config.allArtifacts.getFiles().each { file -> println "$file.name     -     $config"  }
+	println " ${config.name} ".center( 80, '-' )
+	config.allArtifacts.getFiles().each { file -> println "$file.name"  }
 }
 
 // All configurations 
