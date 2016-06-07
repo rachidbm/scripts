@@ -75,6 +75,8 @@ git log --grep
 
 ## Merging
 
+git merge -s ours branchname
+
 git ls-files -u  # to view all of the unmerged files
 
 ## Git counting files
