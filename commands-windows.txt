@@ -1,4 +1,8 @@
 
+
+## install software via chocolatey.org
+choco install -y qdir
+
 ## Current time
 echo %time%
 
