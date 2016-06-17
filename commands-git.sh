@@ -94,6 +94,34 @@ git stash list
 # Show line endings
 git diff -R  
 
+## Convert line endings whithout a new commit ie rewriting history
+git filter-branch -f --tree-filter 'find . -path './.git' -prune -o -type f -exec dos2unix \{} \;' HEAD
+
+
+## Delete List of Git tags
+for tag in `git tag | grep "origin/" `; do
+	echo " tag name: $tag"
+	git tag -d $tag
+	git push origin :refs/tags/$tag
+done
+
+## Convert SVN branches
+for branch in `git branch -r | grep "origin/B_[0-9]" | sed 's/origin\///'`; do
+  git branch $branch refs/remotes/origin/$branch
+  ## add .gitignore to branches
+  git checkout $branch
+  cp ~/git-files/.gitignore .
+	git add .gitignore && git commit -m 'Added .gitignore'
+done
+git checkout master
+
+## Convert SVN tags
+for tag in `git branch -r | grep "tags/V[0-9]" | sed 's/origin\/tags\///'`; do
+	#echo "new tag name: $tag"
+  git tag -a -m 'Converting SVN tags' $tag refs/remotes/origin/tags/$tag   #refs/tags/$tag
+done
+
+
 
 ## Git config on Windows
 
