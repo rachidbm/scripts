@@ -1,12 +1,14 @@
 # Initial config
-git config --global user.name "Rachid BM"
-git config --global user.email "rachidbm@ubuntu.com"
 git config --global color.ui auto
 git config --global color.diff auto
 git config --global color.status auto
 git config --global color.branch auto
 # to avoid push warnings
 git config --global push.default matching
+
+# ignore file permissions
+git config core.fileMode false
+
 
 # Start a new (fresh) project
 cd myproject
@@ -50,6 +52,9 @@ git branch -r
 git branch <name_of_your_new_branch>
 # Switch to branch
 git checkout <name_of_your_new_branch>
+## Checkout remote branch
+git checkout -b B_16 origin/B_16
+
 # Push branch to remote
 git push origin <name_of_your_new_branch>
 
@@ -61,6 +66,9 @@ git push origin selfservice-WVDED-166:selfservice-WVDED-166
 ## Rewrite branches
 # remove logwatcher.log from all revisions
 git filter-branch -f --index-filter 'git update-index --remove logwatcher.log' HEAD
+
+## Convert line endings whithout a new commit ie rewriting history
+git filter-branch -f --tree-filter 'find . -path './.git' -prune -o -type f -exec dos2unix -s -q \{} \;' -- --all
 
 # Oldest commit
 git log `git rev-list HEAD | tail -n 1`
@@ -94,8 +102,6 @@ git stash list
 # Show line endings
 git diff -R  
 
-## Convert line endings whithout a new commit ie rewriting history
-git filter-branch -f --tree-filter 'find . -path './.git' -prune -o -type f -exec dos2unix \{} \;' HEAD
 
 
 ## Delete List of Git tags
