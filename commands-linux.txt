@@ -1,9 +1,12 @@
 ## find files with Windows line endings
-grep -IUrl --color '^M' .
+grep -IUrl $(printf '\r') .
+
 
 ## Open a random file:
 find . -type f | sort -R | tail -1 | while read file; do echo "random file: $file"; done
 
+## find exec pipe example
+find . -maxdepth 1 -type d -exec sh -c "ls -1 {} | wc -l"  \; | sort -nu
 
 ###################################################
 #  BASH snippets
@@ -12,6 +15,9 @@ find . -type f | sort -R | tail -1 | while read file; do echo "random file: $fil
 for DIR in `find . -maxdepth 1 -mindepth 1 -type d`; do
 	echo $DIR
 done;
+
+## See mime type of file:
+file -b --mime-type $filename
 
 
 ## BASH prompt: 
