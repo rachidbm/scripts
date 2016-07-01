@@ -8,6 +8,9 @@ find . -type f | sort -R | tail -1 | while read file; do echo "random file: $fil
 ## find exec pipe example
 find . -maxdepth 1 -type d -exec sh -c "ls -1 {} | wc -l"  \; | sort -nu
 
+## find double exec example
+find . -type f ! -path \*CVS\* -exec rm {} \; -exec cvs remove {} \;\
+
 ###################################################
 #  BASH snippets
 ###################################################
