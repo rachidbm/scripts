@@ -3,6 +3,10 @@ def nowFilename = { -> ${new Date().format('yyyyMMdd-HHmmssSSS')}
 println "now : $now"
 
 
+// Command to create Gradle wrapper:
+gradle wrapper --gradle-version 2.9
+
+
 file(".").listFiles()
 	.findAll {it.name.endsWith('.bndrun')}
 	.collect{ it.name.substring(0, it.name.lastIndexOf(".")) }	// Strip extension

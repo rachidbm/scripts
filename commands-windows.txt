@@ -28,7 +28,7 @@ set JAVA_HOME=%cd%\jdk
 sc delete SERVICENAME
 
 ## Add dependency to Windows Service
-sc config AGENT depend=SERVER
+sc config AGENT depend= SERVER
 sc config [service name] depend= <Dependencies(separated by / (forward slash))>
 
 ## Power shell

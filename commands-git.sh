@@ -9,6 +9,8 @@ git config --global push.default matching
 # ignore file permissions
 git config core.fileMode false
 
+git config rebase.autoStash true
+
 
 # Start a new (fresh) project
 cd myproject
@@ -53,12 +55,15 @@ git branch <name_of_your_new_branch>
 # Switch to branch
 git checkout <name_of_your_new_branch>
 ## Checkout remote branch
-git checkout -b B_16 origin/B_16
+git checkout --track -b B_16 origin/B_16
+
 
 # Push branch to remote
 git push origin <name_of_your_new_branch>
 
-# Stash local changes
+# Drop all stashes
+git stash clear
+
 
 # push new branch (not tracked remotely)
 git push origin selfservice-WVDED-166:selfservice-WVDED-166
@@ -86,6 +91,10 @@ git log --grep
 git merge -s ours branchname
 
 git ls-files -u  # to view all of the unmerged files
+
+# Count commits
+git log --oneline | wc -l
+
 
 ## Git counting files
 ## Staged for commit (ie pending in Source Tree):
