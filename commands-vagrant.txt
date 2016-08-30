@@ -11,6 +11,13 @@ vagrant reload --provision
 vagrant provision --provision-with shell
 vagrant provision --provision-with file
 
+
+
+## Make it possible to reach the webserver from the host computer
+config.vm.network "public_network"
+
+
+
 ssh config: 
 Host trusty
         HostName 127.0.0.1

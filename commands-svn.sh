@@ -2,6 +2,8 @@
 ##Client side commands
 # Check out a project 
 svn co svn+ssh://servert/data/svn/PROJECT_NAME/trunk local-project-name
+svn co --username KLAAS http://subversion.server.com/svn/projects
+
 
 # Add project (for the first time)
 svn import -m "importing test over ssh+svn" ./projectname/ svn+ssh://servert/data/svn/PROJECT_NAME/trunk
