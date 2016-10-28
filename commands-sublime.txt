@@ -1,3 +1,15 @@
 
 # Rename all instances of selected text 
  ⌘D and Ctrl⌘G
+
+## Filter out certain string  ie remove all lines which does not contain the string
+
+Replace all with nothing:
+^.*CONTAINS.*\n
+
+Non string
+^[^NOT_CONTAINS].*\n
+
+## Empty lines
+
+^\s*\n

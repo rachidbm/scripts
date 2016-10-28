@@ -23,6 +23,9 @@ alias d='du -sh'
 alias x='xdg-open'
 alias df='df -h'
 
+alias find-windows-line-endings="grep -IUrl $(printf '\r') ."
+alias gits='git status'
+
 alias lessapache='less +F /var/log/apache2/error.log'
 alias lessaccess='less +F /var/log/apache2/access.log'
 alias delapache-errorlog='cat /dev/null | sudo tee /var/log/apache2/error.log'

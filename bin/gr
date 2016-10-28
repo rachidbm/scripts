@@ -1,5 +1,4 @@
 #!/bin/bash
-# version: 20110815
-
+# version: 20160704
+set -x
 grep --color=auto -niIr $1 * 
-#CMD="grep --color=auto -niIr \"$1\" ./* "

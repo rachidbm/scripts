@@ -1,6 +1,9 @@
 #!/bin/bash
-# version: 20091202
+# version: 20160704
+set -x
+grep --color=auto -niI $1 ./* 
 
-CMD="grep --color=auto -niI $1 ./* "
-#echo $CMD
-$CMD
+##	myGrep() {
+##		grep --color=auto -niI $1 ./* 
+##	}
+##	alias g=myGrep

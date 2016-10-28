@@ -1,5 +1,10 @@
 def now = { -> new Date().format('yyyyMMdd-HH.mm.ss.SSS')}
+def nowFilename = { -> ${new Date().format('yyyyMMdd-HHmmssSSS')}
 println "now : $now"
+
+
+// Command to create Gradle wrapper:
+gradle wrapper --gradle-version 2.9
 
 
 file(".").listFiles()
@@ -9,12 +14,13 @@ file(".").listFiles()
 
 
 configurations.all.each { config ->
-	config.allArtifacts.getFiles().each { file -> println "$file.name     -     $config"  }
+	println " ${config.name} ".center( 80, '-' )
+	config.allArtifacts.getFiles().each { file -> println "$file.name"  }
 }
 
 // All configurations 
 task prr << {
-	configurations.findAll().each { config ->
+	configurations.all.each { config ->
 		println " - $config"
 	}
 }
@@ -29,17 +35,37 @@ task printDependencies << {
   }
 }
 
-
-task prr << {
+task printRepos << {
 	println "\nRepositories:"
 	repositories.each{ println " ${it.name}  -  ${it.url}" }
 }
 
 
-task prr << {
+task printArtifacts << {
 	println "Archives Artifacts: "
 	configurations.archives.allArtifacts.each {
 		println it
 	}
 }
 
+// Print dependencies of build script
+task buildScriptDependencies(type: org.gradle.api.tasks.diagnostics.DependencyReportTask) {
+	configurations = project.buildscript.configurations
+}
+
+
+/**
+ * Print all selected buildscript dependencies of the current project
+ */
+task printAllSelectedBuildScriptDependencies << {
+	buildscript.configurations.classpath { config ->
+		def result = config.getIncoming().getResolutionResult()
+		println "Nr of dependencies: ${result.allDependencies.size()}"
+		def selectedDependencies = result.allDependencies.collect {it.selected}.unique()
+		println "${selectedDependencies.size()} unique selected dependencies"
+		selectedDependencies.each { dep -> 
+			println dep
+//			println "$dep.selected"
+		}
+	}
+}

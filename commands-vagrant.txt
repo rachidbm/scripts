@@ -1,0 +1,28 @@
+
+vagrant up
+vagrant ssh
+
+vagrant plugin install vagrant-vbguest
+
+## After changing shared folder
+vagrant reload --provision
+
+## After changing SHELL
+vagrant provision --provision-with shell
+vagrant provision --provision-with file
+
+
+
+## Make it possible to reach the webserver from the host computer
+config.vm.network "public_network"
+
+
+
+ssh config: 
+Host trusty
+        HostName 127.0.0.1
+        Port 2222
+        User vagrant
+        IdentityFile ~/d/vagrant-cvs/.vagrant/machines/default/virtualbox/private_key
+
+Login with: ssh trusty (in cygwin)

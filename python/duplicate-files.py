@@ -47,7 +47,7 @@ for root, dirs, files in os.walk(path):
 		f = os.path.join(root, file)
 		cs = md5(f)
 		if(cs in d):
-			dupfiles.write(f + " is dubbel met: "+ d[cs] + "\n")
+			dupfiles.write(f + " is duplicate of: "+ d[cs] + "\n")
 			rmfiles.write("rm \""+f+"\";\n")
 		else:
 			d[cs] = f

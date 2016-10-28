@@ -1,6 +1,17 @@
 
+
+## install software via chocolatey.org
+choco install -y qdir
+
 ## Current time
 echo %time%
+
+## datetime as variable
+
+@echo off
+For /f "tokens=2-4 delims=/ " %%a in ('date /t') do (set mydate=%%c-%%a-%%b)
+For /f "tokens=1-2 delims=/:" %%a in ('time /t') do (set now=%mydate%_%%a%%b)
+echo %now%
 
 
 ## uptime
@@ -16,6 +27,21 @@ set JAVA_HOME=%cd%\jdk
 ## delete (obsolete) service
 sc delete SERVICENAME
 
+## Add dependency to Windows Service
+sc config AGENT depend= SERVER
+sc config [service name] depend= <Dependencies(separated by / (forward slash))>
 
 ## Power shell
 Get-Content -Path "D:\\logs\\wrapper-default.log" -Last 100 -Wait
+
+## Map folder to drive letter
+subst d: c:\d
+
+
+The difference between net use & subst below
+
+subst
+When a share becomes unavailable subst will try over and over again to re-connect severely impacting performance of your PC as it tries to re-connect. This is less common when mapping local files as it will only occur if you say re-name the folders in the path. The resolution if this does occur is subst x: /d
+
+net use
+net use was introduced in win2k/xp to provide an alternative to this. When net use is used to connect to a location and that location becomes unreachable windows will report drive as disconnected and not try to re-connect until user tries to re-connect to resources on the mapped drive. This resolves the performance issues noted in subst
