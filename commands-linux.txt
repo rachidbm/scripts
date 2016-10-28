@@ -159,6 +159,12 @@ netstat -nat | awk '{print $6}' | sort | uniq -c | sort -n
 # generate a list of orphaned packages and give you the option to remove them
 apt-get autoremove
 
+# remove old linux kernels
+dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d'
+
+dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d' | xargs sudo apt-get -y purge
+
+
 # add key to APT
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 12345678
 
