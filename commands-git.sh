@@ -9,7 +9,8 @@ git config --global push.default matching
 # ignore file permissions
 git config core.fileMode false
 
-git config rebase.autoStash true
+git config --global branch.autosetuprebase always
+git config --global rebase.autoStash true
 
 
 # Start a new (fresh) project
