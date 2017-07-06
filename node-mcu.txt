@@ -1,0 +1,28 @@
+
+
+wifi.sta.config("EchtTinus2","Rachidisdebeste")
+
+vocht sensor
+https://odd-one-out.serek.eu/esp8266-nodemcu-dht22-mqtt-deep-sleep/
+
+
+
+file.remove("init.lua")
+
+
+
+driver:
+nodemcu ch34og
+
+https://github.com/nodemcu/nodemcu-devkit/wiki/Getting-Started-on-OSX
+
+http://embeddedcomputing.weebly.com/nodemcu-board.html
+
+esptool.py --port <serial-port-of-ESP8266> write_flash -fm <mode> -fs <size> 0x00000 <nodemcu-firmware>.bin
+
+./esptool/esptool.py --port /dev/tty.wchusbserial1410 write_flash -fm dio -fs 32m 0x00000 ./Firmware/nodemcu-master-7-modules-2016-11-01-22-13-07-integer.bin
+
+Codevoorbeelden op: 
+https://github.com/devyte/nodemcu-platform
+
+

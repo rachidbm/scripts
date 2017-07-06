@@ -5,6 +5,7 @@ git config --global color.status auto
 git config --global color.branch auto
 # to avoid push warnings
 git config --global push.default matching
+git config --global rebase.autoStash true
 
 # ignore file permissions
 git config core.fileMode false

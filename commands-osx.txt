@@ -15,3 +15,10 @@ alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resourc
 
 diskutil unmountDisk /dev/disk3
 sudo dd bs=1m if=domoticz-raspberrypi-sdcard-3530.img  | pv | of=/dev/disk3
+
+## Mac ports uninstall all versions
+sudo port uninstall installed and nodejs npm
+
+
+## Find ports of USB devices
+ls /dev/tty.*

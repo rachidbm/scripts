@@ -1,0 +1,1 @@
+echo 'eval $(docker-machine env)'

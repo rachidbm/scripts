@@ -8,7 +8,7 @@ echo "stopping tomcat ..."
 /sbin/service tomcat stop
 # ^^^ maybe your tomcat service name is tomcat5 instead of tomcat 
 
-echo "waiting grace time..."
+echo "Waiting grace time, 20s..."
 sleep 20
 
 echo "checking if tomcat still alive"

@@ -1,1 +1,1 @@
-echo '$(boot2docker shellinit)'
+echo 'eval $(boot2docker shellinit)'
