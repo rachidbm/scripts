@@ -13,3 +13,47 @@ Each line not starting with:
 ## Empty lines
 
 ^\s*\n
+
+
+==============================================================================
+## Increase nr of recent opened items:
+
+open "~/Library/Application Support/Sublime Text 2/Packages/Default/Main.sublime-menu"
+
+Add: 
+                    { "command": "reopen_last_file", "caption": "Reopen Closed File" },
+                    { "caption": "-" },
+                    { "command": "open_recent_file", "args": {"index": 0 } },
+                    { "command": "open_recent_file", "args": {"index": 1 } },
+                    { "command": "open_recent_file", "args": {"index": 2 } },
+                    { "command": "open_recent_file", "args": {"index": 3 } },
+                    { "command": "open_recent_file", "args": {"index": 4 } },
+                    { "command": "open_recent_file", "args": {"index": 5 } },
+                    { "command": "open_recent_file", "args": {"index": 6 } },
+                    { "command": "open_recent_file", "args": {"index": 7 } },
+                    { "command": "open_recent_file", "args": {"index": 8 } },
+                    { "command": "open_recent_file", "args": {"index": 9 } },
+                    { "command": "open_recent_file", "args": {"index": 10 } },
+                    { "command": "open_recent_file", "args": {"index": 11 } },
+                    { "command": "open_recent_file", "args": {"index": 12 } },
+                    { "command": "open_recent_file", "args": {"index": 13 } },
+                    { "caption": "-" },
+                    { "command": "open_recent_folder", "args": {"index": 0 } },
+                    { "command": "open_recent_folder", "args": {"index": 1 } },
+                    { "command": "open_recent_folder", "args": {"index": 2 } },
+                    { "command": "open_recent_folder", "args": {"index": 3 } },
+                    { "command": "open_recent_folder", "args": {"index": 4 } },
+                    { "command": "open_recent_folder", "args": {"index": 5 } },
+                    { "command": "open_recent_folder", "args": {"index": 6 } },
+                    { "command": "open_recent_folder", "args": {"index": 7 } },
+                    { "command": "open_recent_folder", "args": {"index": 8 } },
+                    { "command": "open_recent_folder", "args": {"index": 9 } },
+                    { "command": "open_recent_folder", "args": {"index": 10 } },
+                    { "command": "open_recent_folder", "args": {"index": 11 } },
+                    { "command": "open_recent_folder", "args": {"index": 12 } },
+                    { "command": "open_recent_folder", "args": {"index": 13 } },
+                    { "caption": "-" },
+                    { "command": "clear_recent_files", "caption": "Clear Items" }
+
+==============================================================================
+
