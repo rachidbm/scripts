@@ -35,6 +35,8 @@ db.coll.find({"address.street":{"$exists":1}}).count()
 // delete newer than date
 db.posts.remove({date: {"$gt": new ISODate("2017-08-25T07:47:53.501Z")}})
 
+// where key exists
+db.getCollection('posts').find({"comments.num_likes": {$exists: true}})
 
 // Count the records per eventname + date  with group by, for 1 certain date. 
 var allDocs = dailyRecords.aggregate([

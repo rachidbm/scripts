@@ -272,6 +272,9 @@ cat /proc/acpi/battery/BAT0/info
 ## BASH prompt: 
 export PS1='\033[42m[\A ACCEPT \u@\h:\w]\$\033[0m'  		# with color
 export PS1='\033[41m[\t PRODUCTIE \u@\h:\w]\$\033[0m'    # with color
+export PS1='[\u@\033[41m\h\$\033[0m \W]\$ '
+
+
 
 ## Start screen on when login, put this in .profile
 if [ ! -z "$SSH_CONNECTION" ]; then

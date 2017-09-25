@@ -7,6 +7,9 @@ if [ "$TERM" != "dumb" ]; then
     alias vdir='ls --color=auto --format=long'
 fi
 
+#export PS1='[\u@\033[41m\h\$\033[0m \W]\$ '
+
+
 # some more ls aliases
 alias l='ls -CFh'
 alias ll='l -l'
