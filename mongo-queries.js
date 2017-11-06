@@ -2,6 +2,8 @@
 mongorestore .
 mongodump
 
+mongoimport --drop -d students -c grades grades.json
+
 
 https://docs.mongodb.com/manual/reference/sql-aggregation-comparison/
 

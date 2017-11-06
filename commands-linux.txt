@@ -40,9 +40,6 @@ gconftool-2 --type string --set /apps/metacity/general/button_layout "menu:minim
 # Remote Desktop (GUI)
 install x11vnc on server and run it in screen
 
-# Check video driver
-glxinfo | grep vendor
-
 
 ## Some tar commands
 # extract
@@ -57,6 +54,7 @@ tar -ztvf file.tar.gz
 
 ## tar with progress bar
 pv backup.tar | tar -xf - -C ~ # $DESTINATION 
+
 
 # tgz on Solaris (or use gtar when possible)
 tar -cvf - text.sql | gzip > text_sql.tgz
@@ -171,6 +169,8 @@ lsof -i:5900
  | sort |  uniq -c | sort -n;
 netstat -nat | awk '{print $6}' | sort | uniq -c | sort -n
 
+# print last word of a line (separated by space)
+ | awk '{print $NF}'
 
 
 ###################################################
