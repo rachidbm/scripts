@@ -1,3 +1,13 @@
+# Change Java Home on MacOS
+
+alias java8='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home && java -version'
+alias java9='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home && java -version'
+
+
+
+## Brew
+brew install mongodb@3.4
+
 
 # remove corrupted blue tooth files
 sudo rm /Library/Preferences/com.apple.Bluetooth.plist && \
@@ -27,3 +37,16 @@ sudo port uninstall installed and nodejs npm
 
 ## Find ports of USB devices
 ls /dev/tty.*
+
+## Mount writeable NTFS drives
+brew install ntfs-3g
+
+diskutil unmountDisk /dev/disk3
+sudo ntfs-3g /dev/disk3s2 /Volumes/barret -olocal -oallow_other
+
+## Mount ext2 volume
+# read only:
+fuse-ext2 /dev/disk2s2 /Volumes/ext2
+# with write support:
+fuse-ext2 -o force /dev/disk2s2 /Volumes/ext2
+

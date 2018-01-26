@@ -63,6 +63,9 @@ git checkout --track -b B_16 origin/B_16
 # Push branch to remote
 git push origin <name_of_your_new_branch>
 
+## effectively only allows you to force-push if no-one else has pushed changes up to the remote in the interim
+git push --force-with-lease 
+
 # Drop all stashes
 git stash clear
 

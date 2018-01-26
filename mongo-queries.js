@@ -40,6 +40,10 @@ db.posts.remove({date: {"$gt": new ISODate("2017-08-25T07:47:53.501Z")}})
 // where key exists
 db.getCollection('posts').find({"comments.num_likes": {$exists: true}})
 
+// Remove field from Document
+db.posts.update({ "_id" : ObjectId("1234" )}, {$unset:{'fieldname': "" }});
+
+
 // Count the records per eventname + date  with group by, for 1 certain date. 
 var allDocs = dailyRecords.aggregate([
 	{

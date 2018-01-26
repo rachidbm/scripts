@@ -10,6 +10,11 @@ docker-compose build
 docker-compose up -d 
 docker-compose kill
 
+
+## Clean up
+docker system prune
+
+
 ## Find image ID by its name
 docker ps -a -q -f name=my_mysql_server
 
@@ -42,7 +47,6 @@ docker save -o <save image.tar to path> <image name>
 docker load -i <path to image.tar>
 
 
-
 # Remove images
 docker rmi e0dce81f1996
 
@@ -54,9 +58,10 @@ docker rmi e0dce81f1996
 
 ## Expose ports
 for i in {9000..9001}; do
-VBoxManage modifyvm "boot2docker-vm" --natpf1 "tcp-port$i,tcp,,$i,,$i";
-VBoxManage modifyvm "boot2docker-vm" --natpf1 "udp-port$i,udp,,$i,,$i";
+	VBoxManage modifyvm "boot2docker-vm" --natpf1 "tcp-port$i,tcp,,$i,,$i";
+	VBoxManage modifyvm "boot2docker-vm" --natpf1 "udp-port$i,udp,,$i,,$i";
 done
+
 
 
 

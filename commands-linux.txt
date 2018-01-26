@@ -1,3 +1,13 @@
+
+CURL 
+-i tp print response header info
+curl -i -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{"date": "2017-09-13T12:34:00.000Z"}' 'https://azurewebsites.net/api'
+
+
+###################################################
+Find
+
+
 ## find files with Windows line endings
 grep -IUrl $(printf '\r') .
 
@@ -55,6 +65,11 @@ tar -ztvf file.tar.gz
 ## tar with progress bar
 pv backup.tar | tar -xf - -C ~ # $DESTINATION 
 
+# extract jar files
+unzip artifact.jar -d destination/
+
+# only extract sub folder
+tar -xvf foo.tar home/foo/bar  # Note: no leading slash
 
 # tgz on Solaris (or use gtar when possible)
 tar -cvf - text.sql | gzip > text_sql.tgz
@@ -66,6 +81,9 @@ lz file.tgz
 ## rsync
 # update a backup
 rsync --progress -avv /source /destination
+
+# skip files newer at receiver side:
+rsync --progress -uv ./* /destination
 
 # replace spaces in filenames of current dir
 for f in *; do mv -- "$f" "${f// /_}"; done
@@ -155,6 +173,10 @@ sed 's/.$//' filename  # er vanuit gaande dat alle regels eindigen met CR/LF
 
 # delete certain lines 
 sed -i '/downloads/d'
+
+# On OSX do:
+sed -i '' -e "s/STRING_TO_REPLACE/STRING_TO_REPLACE_IT/g" *.xml
+
 
 # search and replace in several files
 find . -type f -exec sed -i 's/TODO/TO\ DO/g' {} \;
