@@ -1,0 +1,1 @@
+x11vnc -display :0 -noxrecord -noxfixes -noxdamage -forever -passwd 123456

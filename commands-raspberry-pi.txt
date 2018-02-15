@@ -1,0 +1,78 @@
+
+diskutil unmountDisk /dev/disk2
+
+time sudo dd bs=1m of=/dev/rdisk2 if=OSMC_TGT_rbp1_20180109.img 
+time sudo dd bs=1m of=/dev/rdisk3 if=
+
+
+## copy files
+brew cask install osxfuse && brew install ext4fuse ntfs-3g
+
+sudo ntfs-3g /dev/disk3s2 /Volumes/barret -olocal -oallow_other
+rsync --progress -uv ./* /Volumes/
+
+
+################################################################################
+## Chili pi kiosk
+
+# change keyboard layout:
+dpkg-reconfigure keyboard-configuration
+# service keyboard-setup restart
+sudo dpkg-reconfigure tzdata  # timezone
+
+
+Change HDMI output (for TV)
+tvservice -d edid
+edidparser edid
+
+Then:
+vi /boot/config.txt
+
+
+HDMI:EDID DMT mode (28) 1280x800p @ 60 Hz with pixel clock 83 MHz has a score of 86440
+HDMI:EDID CEA mode (31) 1920x1080p @ 50 Hz with pixel clock 148 MHz has a score of 232360
+HDMI:EDID CEA mode (32) 1920x1080p @ 24 Hz with pixel clock 74 MHz has a score of 124532
+HDMI:EDID CEA mode (33) 1920x1080p @ 25 Hz with pixel clock 74 MHz has a score of 128680
+HDMI:EDID CEA mode (34) 1920x1080p @ 30 Hz with pixel clock 74 MHz has a score of 149416
+HDMI:EDID DMT mode (35) 1280x1024p @ 60 Hz with pixel clock 108 MHz has a score of 103643
+HDMI:EDID DMT mode (36) 1280x1024p @ 75 Hz with pixel clock 135 MHz has a score of 98304
+HDMI:EDID DMT mode (47) 1440x900p @ 60 Hz with pixel clock 106 MHz has a score of 102760
+
+
+## Install VNC
+sudo apt-get install x11vnc screen
+
+start with: (needed on OSX ??)
+x11vnc -display :0 -noxrecord -noxfixes -noxdamage -forever -passwd 123456
+
+## Configure VNC
+echo x11vnc -display :0 -noxrecord -noxfixes -noxdamage -forever -passwd 123456 | sudo tee /etc/X11/Xsession.d/72x11vnc && sudo chmod 755 /etc/X11/Xsession.d/72x11vnc
+
+################################################################################
+## RetroPie
+
+# SSH
+Pre-boot. From a system with an SD-card reader, access the /boot/ directory and create an empty file called ssh
+
+
+
+################################################################################
+
+## Kodi/OpenElec default SSH password
+openelec
+
+
+# CEC - enable samsung remote control
+https://blog.stevenocchipinti.com/2015/04/04/configuring-a-hdmi-cec-remote-in-kodi/
+Or cut off power from TV
+
+
+# set timezone in Kodi
+
+nano /storage/.config/autostart.sh
+
+Add: 
+#!/bin/sh
+(sleep 30; \
+/usr/sbin/ntpdate pool.ntp.org; \
+)&

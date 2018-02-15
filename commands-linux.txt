@@ -70,6 +70,9 @@ unzip artifact.jar -d destination/
 
 # only extract sub folder
 tar -xvf foo.tar home/foo/bar  # Note: no leading slash
+tar -zxvf test.tgz '**/folder/files.*'
+
+gunzip < thousands.tar.gz | tar -x -v --files-from hundreds.list -f -
 
 # tgz on Solaris (or use gtar when possible)
 tar -cvf - text.sql | gzip > text_sql.tgz
