@@ -14,6 +14,8 @@ echo -e "Installing in dir: $HOMEDIR \\nMake sure this is your HOMEDIR...";
 URL=https://raw.githubusercontent.com/rachidbm/scripts/master/establish-homedir
 echo "Downloading files from: $URL"
 wget -q $URL/vimrc -O $HOMEDIR/.vimrc;
+wget -q $URL/toprc -O $HOMEDIR/.toprc;
+wget -q $URL/screenrc -O $HOMEDIR/.screenrc;
 wget -q $URL/bash_aliases -O $HOMEDIR/.bash_aliases;
 
 #cp toprc $HOMEDIR/.toprc;
@@ -23,10 +25,11 @@ wget -q $URL/bash_aliases -O $HOMEDIR/.bash_aliases;
 
 wget -q $URL/bashrc -O /tmp/bashrc
 NOW=$(date +%Y-%m-%d)
-echo "\n## BEGIN establish-homedir on $NOW" >> $HOMEDIR/.bashrc
+echo -e "\n## BEGIN establish-homedir on $NOW" >> $HOMEDIR/.bashrc
 cat /tmp/bashrc >> $HOMEDIR/.bashrc
-echo "## END establish-homedir on $NOW\n" >> $HOMEDIR/.bashrc
+echo -e "## END establish-homedir on $NOW\n" >> $HOMEDIR/.bashrc
 
+ln -vs $HOMEDIR/.bashrc $HOMEDIR/.profile
 echo "Modified: $HOMEDIR/.bashrc";
-echo "Done.";
-
+echo -e "Done.\n";
+echo "apt-get install -y screen vim";

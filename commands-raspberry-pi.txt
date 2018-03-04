@@ -1,8 +1,17 @@
 
-diskutil unmountDisk /dev/disk2
+diskutil unmountDisk /dev/disk5
 
+# Write image
 time sudo dd bs=1m of=/dev/rdisk2 if=OSMC_TGT_rbp1_20180109.img 
-time sudo dd bs=1m of=/dev/rdisk3 if=
+time sudo dd bs=1m of=/dev/rdisk5 if=
+time gunzip -c image.img.gz | dd bs=1m of=/dev/rdisk5
+
+# Backup an image
+time sudo dd bs=1m if=/dev/disk5 of=retropie-4.3-rpi2_rpi3_backup-`date +%Y%m%d`.img
+# Compress is directly
+time sudo dd bs=1m if=/dev/rdisk5 | gzip -c > retropie-4.3-rpi2_rpi3_backup-`date +%Y%m%d`.img.gz
+
+
 
 
 ## copy files
@@ -54,6 +63,18 @@ echo x11vnc -display :0 -noxrecord -noxfixes -noxdamage -forever -passwd 123456 
 # SSH
 Pre-boot. From a system with an SD-card reader, access the /boot/ directory and create an empty file called ssh
 
+# Find roms:
+https://www.emuparadise.me/roms-isos-games.php
+
+# Upload NES roms
+scp *.zip retropi:~/RetroPie/roms/nes/
+scp -r roms retropi:~/RetroPie/
+
+
+################################################################################
+
+## OSMC default SSH password
+osmc / osmc
 
 
 ################################################################################

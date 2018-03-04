@@ -43,6 +43,19 @@ db.getCollection('posts').find({"comments.num_likes": {$exists: true}})
 // Remove field from Document
 db.posts.update({ "_id" : ObjectId("1234" )}, {$unset:{'fieldname': "" }});
 
+// length of array
+
+db.coll.aggregate([{
+	$project: {
+		"name" : 1, 
+		"nr of items": {
+			$size: { 
+				"$ifNull": ["$arrayField", []] 
+			}
+		}
+	}
+}]);
+
 
 // Count the records per eventname + date  with group by, for 1 certain date. 
 var allDocs = dailyRecords.aggregate([
