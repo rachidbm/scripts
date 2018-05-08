@@ -1,6 +1,3 @@
-## init 
-eval $(boot2docker shellinit)
-
 ## Tree view of images
 docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock nate/dockviz images -t
 
@@ -9,11 +6,6 @@ docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock nate/dockviz im
 docker-compose build
 docker-compose up -d 
 docker-compose kill
-
-
-## Clean up
-docker system prune
-
 
 ## Find image ID by its name
 docker ps -a -q -f name=my_mysql_server
@@ -39,6 +31,19 @@ docker stop `docker ps -q  -f "status=running" -n 1`
 
 ## Remove docker containers using their ids
 docker rm -v -f $(docker ps -q -a)
+
+
+## Clean up
+## remove all stopped containers.
+docker container prune
+
+## This will remove:
+##        - all stopped containers
+##        - all networks not used by at least one container
+##        - all dangling images
+##        - all build cache
+docker system prune
+
 
 
 

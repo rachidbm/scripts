@@ -4,7 +4,7 @@ println "now : $now"
 
 
 // Command to create Gradle wrapper:
-gradle wrapper --gradle-version 4.4.1
+gradle wrapper --gradle-version 4.7
 
 upToDateWhen { true }
 

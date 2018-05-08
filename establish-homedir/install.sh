@@ -1,5 +1,5 @@
 #!/bin/sh
-# version: 200150827
+# version: 200180304
 
 ## Configure some preferences in a bash HOMEDIR. (aliases, vimrc, and some handy scripts)
 ## Download it directly with: wget -O - https://raw.githubusercontent.com/rachidbm/scripts/master/establish-homedir/install.sh
@@ -10,7 +10,6 @@ HOMEDIR=$1;
 echo -e "Installing in dir: $HOMEDIR \\nMake sure this is your HOMEDIR...";
 
 #cp bash_aliases $HOMEDIR/.bash_aliases;
-#cp vimrc $HOMEDIR/.vimrc;
 URL=https://raw.githubusercontent.com/rachidbm/scripts/master/establish-homedir
 echo "Downloading files from: $URL"
 wget -q $URL/vimrc -O $HOMEDIR/.vimrc;
@@ -25,11 +24,13 @@ wget -q $URL/bash_aliases -O $HOMEDIR/.bash_aliases;
 
 wget -q $URL/bashrc -O /tmp/bashrc
 NOW=$(date +%Y-%m-%d)
-echo -e "\n## BEGIN establish-homedir on $NOW" >> $HOMEDIR/.bashrc
+echo "" >> $HOMEDIR/.bashrc
+echo "## BEGIN establish-homedir on $NOW" >> $HOMEDIR/.bashrc
 cat /tmp/bashrc >> $HOMEDIR/.bashrc
-echo -e "## END establish-homedir on $NOW\n" >> $HOMEDIR/.bashrc
-
-ln -vs $HOMEDIR/.bashrc $HOMEDIR/.profile
+echo "## END establish-homedir on $NOW\n" >> $HOMEDIR/.bashrc
+echo "" >> $HOMEDIR/.bashrc
 echo "Modified: $HOMEDIR/.bashrc";
+ln -vs $HOMEDIR/.bashrc $HOMEDIR/.profile
+
 echo -e "Done.\n";
 echo "apt-get install -y screen vim";

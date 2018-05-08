@@ -7,6 +7,9 @@ curl -i -X POST --header 'Content-Type: application/json' --header 'Accept: appl
 ###################################################
 Find
 
+LESS
+enter & to filter lines (a la grep)
+
 
 ## find files with Windows line endings
 grep -IUrl $(printf '\r') .
