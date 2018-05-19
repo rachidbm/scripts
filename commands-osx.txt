@@ -3,6 +3,7 @@
 alias java8='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home && java -version'
 alias java9='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home && java -version'
 
+/usr/libexec/java_home -V
 
 
 ## Brew
@@ -20,9 +21,19 @@ sudo mdutil -a -i off
 
 sudo fs_usage -w -f filesys eclipse | grep git
 
-/usr/libexec/java_home -V
+
+## OSC commands:
 
 alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
+
+# Change default text editor, for High Sierra
+defaults write com.apple.LaunchServices/com.apple.launchservices.secure LSHandlers -array-add \
+'{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
+
+# read binary plist file:
+plutil -convert xml1 -o - com.apple.Terminal.plist
+
+Or install BinaryPlist plugin for sublime
 
 
 #Extract 7zip file
