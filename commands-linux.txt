@@ -1,4 +1,7 @@
 
+TODO: tar over SSH
+
+
 CURL 
 -i tp print response header info
 curl -i -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{"date": "2017-09-13T12:34:00.000Z"}' 'https://azurewebsites.net/api'
@@ -52,6 +55,13 @@ gconftool-2 --type string --set /apps/metacity/general/button_layout "menu:minim
 
 # Remote Desktop (GUI)
 install x11vnc on server and run it in screen
+
+
+## TOP commands / shortcuts
+W - write current config to ~/.toprc
+z - enable colors
+o - filter on command name. Press o and type COMMAND=java for example
+d - change refresh delay
 
 
 ## Some tar commands

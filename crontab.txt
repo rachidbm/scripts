@@ -1,2 +1,5 @@
-# m h  dom mon dow   command
+## m h  dom mon dow   command
+## every hour
 1 * * * *  chmod +x ~/scripts/bin/*; chmod -R +x ~/scripts/*sh
+## From 10 PM until 1 AM every 5 mins
+*/5 0,22-23 * * * /Users/rachid/scripts/disk-space-per-minute.sh >> /tmp/disk-space-per-minute.log

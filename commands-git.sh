@@ -66,6 +66,8 @@ git push origin <name_of_your_new_branch>
 ## effectively only allows you to force-push if no-one else has pushed changes up to the remote in the interim
 git push --force-with-lease 
 
+## Stash
+git stash list
 # Drop all stashes
 git stash clear
 
@@ -109,9 +111,6 @@ git diff --cached --stat   # human readable, including summary (changed, deletio
 git diff-files --quiet
 ## Show all conflicts unmerged)
 git diff --name-only --diff-filter=U
-
-## Stash
-git stash list
 
 # Show line endings
 git diff -R  
