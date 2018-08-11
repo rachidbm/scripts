@@ -101,6 +101,11 @@ rsync --progress -avv /source /destination
 # skip files newer at receiver side:
 rsync --progress -uv ./* /destination
 
+# rsync over SSH, make sure that rsync is installed on target machine
+rsync -P -ahv configuration TARGET:/backup_folder
+
+
+
 # replace spaces in filenames of current dir
 for f in *; do mv -- "$f" "${f// /_}"; done
 export PS1='\033[41m\u@\h\033[0m:\w]\$ '    # only username

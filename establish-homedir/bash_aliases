@@ -12,7 +12,7 @@ fi
 
 # some more ls aliases
 alias l='ls -CFh'
-alias ll='l -l'
+alias ll='l -lrt'
 alias lll='l -log'
 alias la='l -A'
 alias lla='ll -A'

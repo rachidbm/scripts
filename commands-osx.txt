@@ -22,9 +22,14 @@ sudo mdutil -a -i off
 sudo fs_usage -w -f filesys eclipse | grep git
 
 
-## OSC commands:
+## OSX commands:
 
 alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
+alias sublime='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -n'
+
+# Disable beep sound in Terminal
+Terminal -> Preferences -> Profiles -> Advanced -> audible/visual bell
+
 
 # Change default text editor, for High Sierra
 defaults write com.apple.LaunchServices/com.apple.launchservices.secure LSHandlers -array-add \
