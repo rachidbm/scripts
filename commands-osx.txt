@@ -1,7 +1,9 @@
 # Change Java Home on MacOS
 
-alias java8='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home && java -version'
-alias java9='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home && java -version'
+alias set-java8='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home && export PATH=$JAVA_HOME/bin:$PATH && java -version'
+alias set-java9='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home && export PATH=$JAVA_HOME/bin:$PATH && java -version'
+alias set-java10='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home && export PATH=$JAVA_HOME/bin:$PATH && java -version'
+alias set-java11='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home && export PATH=$JAVA_HOME/bin:$PATH && java -version'
 
 /usr/libexec/java_home -V
 
@@ -57,8 +59,8 @@ ls /dev/tty.*
 ## Mount writeable NTFS drives
 brew install ntfs-3g
 
-diskutil unmountDisk /dev/disk3
-sudo ntfs-3g /dev/disk3s2 /Volumes/barret -olocal -oallow_other
+diskutil unmountDisk /dev/disk2
+sudo ntfs-3g /dev/disk2s2 /Volumes/barret -olocal -oallow_other
 
 ## Mount ext2 volume
 # read only:

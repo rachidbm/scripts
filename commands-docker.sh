@@ -36,6 +36,7 @@ docker rm -v -f $(docker ps -q -a)
 ## Clean up
 ## remove all stopped containers.
 docker container prune
+docker image prune -a
 
 ## This will remove:
 ##        - all stopped containers

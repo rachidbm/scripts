@@ -115,6 +115,10 @@ git diff --name-only --diff-filter=U
 # Show line endings
 git diff -R  
 
+# diff tag against working dir
+git diff tag1 
+# diff between tags
+git diff tag1 tag2
 
 
 ## Delete List of Git tags
