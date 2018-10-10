@@ -4,7 +4,7 @@ println "now : $now"
 
 
 // Command to create Gradle wrapper:
-gradle wrapper --gradle-version 4.9
+gradle wrapper --gradle-version 4.10.2
 
 // Enable gradle deamon (older versions)
 touch .gradle/gradle.properties && echo "org.gradle.daemon=true" >> .gradle/gradle.properties

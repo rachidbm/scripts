@@ -5,7 +5,7 @@
 
 [ "$1" == "" ] && echo -e "Usage: backup [PATH] \n[PATH] is the filename or directory to backup" &&  exit;
 
-[ ! -e $1 ] && echo -e "$1 don't not exist" && exit;
+[ ! -e $1 ] && echo -e "$1 doesn't exist" && exit;
 
 # ${1%/} removes the last char if it's a slash
 # To remove the last char (whatever it is) use ${1%?} 
