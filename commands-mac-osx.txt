@@ -1,3 +1,9 @@
+
+## Hotkeys and shortcuts
+
+Show hidden files in Finder: CMD + SHIFT + .
+
+
 # Change Java Home on MacOS
 
 alias set-java8='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home && export PATH=$JAVA_HOME/bin:$PATH && java -version'
@@ -5,12 +11,15 @@ alias set-java9='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-9.0.1.jd
 alias set-java10='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home && export PATH=$JAVA_HOME/bin:$PATH && java -version'
 alias set-java11='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home && export PATH=$JAVA_HOME/bin:$PATH && java -version'
 
+
 /usr/libexec/java_home -V
 
 
 ## Brew
 brew install mongodb@3.4
 brew install ext4fuse ntfs-3g
+brew search adoptopenjdk
+brew cask info adoptopenjdk
 
 # remove corrupted blue tooth files
 sudo rm /Library/Preferences/com.apple.Bluetooth.plist && \
