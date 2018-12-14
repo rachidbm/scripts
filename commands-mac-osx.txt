@@ -51,6 +51,9 @@ plutil -convert xml1 -o - com.apple.Terminal.plist
 
 Or install BinaryPlist plugin for sublime
 
+## Flush DNS cache
+sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache
+
 
 #Extract 7zip file
 7z e domoticz-raspberrypi-sdcard-3530.7z

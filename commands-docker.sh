@@ -1,3 +1,25 @@
+
+## Docker run examples
+docker run -t zap --name zap-web \
+	-p 8080:8080 -p 8090:8090 \
+	-v `pwd`/shared:/home/zap/shared \
+	-i owasp/zap2docker-stable "zap-webswing.sh"
+
+# Run container and open shell
+docker run -it ubuntu bash
+
+
+## Docker exec examples, ie commands on/into running containers
+# Open shell in running container
+docker exec -i -t ubuntu /bin/bash
+
+docker exec -i -t zap bash
+# Import DB in running container
+docker exec -i db.website.com mysql -uroot -proot  < ../db/export.sql
+
+
+
+
 ## Tree view of images
 docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock nate/dockviz images -t
 
@@ -34,9 +56,6 @@ docker rm -v -f $(docker ps -q -a)
 
 
 ## Clean up
-## remove all stopped containers.
-docker container prune
-docker image prune -a
 
 ## This will remove:
 ##        - all stopped containers
@@ -45,29 +64,18 @@ docker image prune -a
 ##        - all build cache
 docker system prune
 
+## remove all stopped containers.
+docker container prune
+docker image prune -a
+
+# Remove images
+docker rmi e0dce81f1996
 
 
 
 ## Save image
 docker save -o <save image.tar to path> <image name>
 docker load -i <path to image.tar>
-
-
-# Remove images
-docker rmi e0dce81f1996
-
-
-## Clean up
-#docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q)'
-#alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
-
-
-## Expose ports
-for i in {9000..9001}; do
-	VBoxManage modifyvm "boot2docker-vm" --natpf1 "tcp-port$i,tcp,,$i,,$i";
-	VBoxManage modifyvm "boot2docker-vm" --natpf1 "udp-port$i,udp,,$i,,$i";
-done
-
 
 
 
