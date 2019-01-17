@@ -2,6 +2,8 @@
 TODO: tar over SSH
 
 
+
+
 CURL 
 -i tp print response header info
 curl -i -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{"date": "2017-09-13T12:34:00.000Z"}' 'https://azurewebsites.net/api'
@@ -38,7 +40,6 @@ done;
 ## See mime type of file:
 file -b --mime-type $filename
 
-
 ## BASH prompt: 
 ## TODO: refine for personal usage
 PS1="\`if [ \$? != 0 ]; then echo \[\e[33m\]---=== \[\e[31m\]Oh noes, bad command \[\e[33m\]===---; fi\`\n\[\e[1;30m\]XX \[\e[0;32m\]Hack a Day \[\e[1;30m\]XX\n\[\e[0;37m\][\[\e[1;31m\]\@\[\e[0;37m\]] \[\e[0;32m\]\u@\h \[\e[0;37m\][\[\e[1;34m\]\w\[\e[0;37m\]] \[\e[0;32m\]\$ \[\e[0m\] "
@@ -63,6 +64,12 @@ z - enable colors
 o - filter on command name. Press o and type COMMAND=java for example
 c - show full path of the command
 d - change refresh delay
+
+
+## iostat and iotop
+iotop -o -P
+# Display 3 reports of extended statistics at 5 second intervals for disk
+iostat -d -x 5 3
 
 
 ## Some tar commands
@@ -109,7 +116,7 @@ rsync -P -ahv configuration TARGET:/backup_folder
 
 # replace spaces in filenames of current dir
 for f in *; do mv -- "$f" "${f// /_}"; done
-export PS1='\033[41m\u@\h\033[0m:\w]\$ '    # only username
+
 
 # merge / concat PDF files
 gs -q -sPAPERSIZE=a4 -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=all.pdf scherm1.pdf scherm2.pdf 
@@ -120,7 +127,6 @@ convert folder.png -resize 75x75 new.png
 convert -density 300 file.pdf file.jpg
 find . -name '*.ico' -exec convert "{}" "{}.png" \;
 
-export PS1='\u@\h:\w$'
 
 ###################################################
 #  core linux stuff 
@@ -179,6 +185,9 @@ find . -type f -perm /+x
 
 # redirect stderr to stdout. pipe
 2>&1
+
+## redirect to file incl. duration time
+{ time sleep 1 && echo hoi; } >> test-$(date +%Y%m%d).log 2>&1
 
 # redirect stdin from /dev/null
 0< /dev/null 
@@ -318,6 +327,14 @@ export PS1='\033[42m[\A ACCEPT \u@\h:\w]\$\033[0m'  		# with color
 export PS1='\033[41m[\t PRODUCTIE \u@\h:\w]\$\033[0m'    # with color
 export PS1='[\u@\033[41m\h\$\033[0m \W]\$ '
 
+export PS1='\033[41m\u@\h\033[0m:\w]\$ '    # only username
+export PS1='\u@\h:\w$ '
+export PS1='[\033[41m\u@\h\033[0m \W]\$ '
+
+## ROOT shell warning message
+echo "Defaults    lecture = always" >> /etc sudoers
+echo -e "\n## Root shell is marked red" >> ~/.bashrc
+echo "export PS1='[\033[41m\u@\h\033[0m \W]# '" >> ~/.bashrc
 
 
 ## Start screen on when login, put this in .profile
