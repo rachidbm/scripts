@@ -1,12 +1,16 @@
 
 TODO: tar over SSH
 
-
+## symlink all files in a folder:
+ln -s ../conf/* ./ 
 
 
 CURL 
 -i tp print response header info
 curl -i -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{"date": "2017-09-13T12:34:00.000Z"}' 'https://azurewebsites.net/api'
+
+## Get my public IP address
+curl http://ifconfig.me/ip
 
 
 ###################################################
@@ -327,12 +331,18 @@ export PS1='\033[42m[\A ACCEPT \u@\h:\w]\$\033[0m'  		# with color
 export PS1='\033[41m[\t PRODUCTIE \u@\h:\w]\$\033[0m'    # with color
 export PS1='[\u@\033[41m\h\$\033[0m \W]\$ '
 
+## Always surround special characters with \[ and \] so that they won't be counted as char
+## See: https://unix.stackexchange.com/a/389095
+export PS1='[\[\033[41m\]\u@\h\[\033[0m\] \W]# '
+
 export PS1='\033[41m\u@\h\033[0m:\w]\$ '    # only username
 export PS1='\u@\h:\w$ '
 export PS1='[\033[41m\u@\h\033[0m \W]\$ '
 
 ## ROOT shell warning message
+
 echo "Defaults    lecture = always" >> /etc sudoers
+
 echo -e "\n## Root shell is marked red" >> ~/.bashrc
 echo "export PS1='[\033[41m\u@\h\033[0m \W]# '" >> ~/.bashrc
 

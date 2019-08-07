@@ -1,0 +1,14 @@
+
+
+# Add lecture to sudoers file
+
+ansible -i envs/prd/hosts all -a "echo 'Defaults    lecture = always' >> /etc/sudoers" --become --extra-vars $ANSIBLE_VARS
+
+ansible -i envs/tst/hosts publicweb -a "echo hoi  || echo doei"
+ --become --extra-vars $ANSIBLE_VARS
+
+
+ansible -i envs/tst/hosts all -a "grep -q 'lecture' sudoers && echo \"Skip, because already present in `hostname`\" || echo 'Defaults    lecture = always' >> sudoers" --become --extra-vars $ANSIBLE_VARS
+
+
+

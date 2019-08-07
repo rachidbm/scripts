@@ -9,7 +9,7 @@ match=`echo $1 | sed 's/\(\[\|\]\)/\\\\\1/g' `;
 echo "Match: " $match;
 
 #find . -iname "$1" | while read file; do 
-find . | while read file; do 
+find . -maxdepth 1 -type d | while read file; do 
   directory=$(dirname "$file")
   oldfilename=$(basename "$file")
 	#oldfilename=`echo $oldfilename | sed "s/\(\[\|\]\)/\\\1/g" `

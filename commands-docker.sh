@@ -9,6 +9,16 @@ docker run -t zap --name zap-web \
 docker run -it ubuntu bash
 
 
+## Docker build examples
+docker build -t name .
+docker run -v `pwd`:/opt/workingdir -t name
+
+## Or to prevent slow IO on MacOS
+docker run -v `pwd`:/opt/workingdir:delegated -t name
+
+
+
+
 ## Docker exec examples, ie commands on/into running containers
 # Open shell in running container
 docker exec -i -t ubuntu /bin/bash

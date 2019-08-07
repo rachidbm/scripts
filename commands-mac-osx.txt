@@ -29,8 +29,25 @@ sudo rm ~/Library/Preferences/ByHost/com.apple.Bluetooth*.plist
 # Switch off indexing of Spotlight (prevent 100% CPU usage on mds_stores)
 sudo mdutil -a -i off
 
-
 sudo fs_usage -w -f filesys eclipse | grep git
+
+
+
+## Noticiations from command line / Terminal
+
+osascript -e 'display notification "Lorem ipsum dolor sit amet" with title "Title"'
+osascript -e 'display notification \"Lorem ipsum dolor\" with title \"Title\"'
+
+# Notification with title: 
+osascript -e 'display notification "message" with title "title" subtitle "subtitle"'
+
+# Notification with sound: 
+osascript -e 'display notification "hello world!" with title "Greeting" subtitle "More text" sound name "Submarine"'
+
+# alert that needs confirm
+osascript -e 'display alert "Hello World!" message "' "$(date)" ' "'
+
+osascript -e 'display alert "Hello World!" message "Current time: '"$(date +%Y-%m-%d\ %H:%M:%S)"'"'
 
 
 ## OSX commands:
@@ -54,9 +71,22 @@ Or install BinaryPlist plugin for sublime
 ## Flush DNS cache
 sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache
 
+# Get DNS settings
+networksetup -getdnsservers Wi-Fi
+
+# reset (clear) DNS settings
+networksetup -setdnsservers Wi-Fi
 
 #Extract 7zip file
 7z e domoticz-raspberrypi-sdcard-3530.7z
+
+## Create Ubuntu LiveUSB from MacOS 
+
+# Convert ISO to IMG file
+time hdiutil convert -format UDRW ubuntu-18.04.2-desktop-amd64.iso -o ubuntu-18.04.2-desktop-amd64.img
+diskutil unmountDisk /dev/disk2
+time sudo dd if=ubuntu-18.04.2-desktop-amd64.img of=/dev/rdisk2 bs=1m
+
 
 diskutil unmountDisk /dev/disk3
 sudo dd bs=1m if=domoticz-raspberrypi-sdcard-3530.img  | pv | of=/dev/disk3
