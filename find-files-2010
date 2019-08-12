@@ -4,4 +4,4 @@
 find . -not -newermt '01/01/2011' -newermt '12/31/2009'
 
 ## log files older than a month
-find . -newermt "$(date --date "-1 months" "+%Y/%m/%d")" -name "*.log"
+find . -not -newermt "$(date --date "-1 months" "+%Y/%m/%d")" -name "*.log"

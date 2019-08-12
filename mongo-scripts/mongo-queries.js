@@ -33,6 +33,8 @@ db.coll.aggregate( { $sample: { size: 1 } } ).limit(5);
 // has a certain field
 db.coll.find({"address.street":{"$exists":1}}).count()
 
+// all documents not equal to
+db.getCollection('address').find({_id: {"$ne" : ObjectId("5bec1c1f34fc09ba1ba5330d")}});
 
 // delete newer than date
 db.posts.remove({date: {"$gt": new ISODate("2017-08-25T07:47:53.501Z")}})

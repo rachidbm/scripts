@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# version: 20110518
+# version: 20190812
 # NOTE: if the file/dir name starts with '.', this script removes the starting dot
 
 [ "$1" == "" ] && echo -e "Usage: backup [PATH] \n[PATH] is the filename or directory to backup" &&  exit;
@@ -16,23 +16,26 @@ BACKUP=$(echo $BACKUP | sed -e 's/^\.//')
 
 if [ "$2" != "" ]; then  # save the backup file to the given directory ($2)		
   FILENAME=$(echo $BACKUP | sed -e 's/.*\///');
-	BACKUP=${2%/}/$FILENAME;
+  BACKUP=${2%/}/$FILENAME;
 fi
 
-if [ -f $BACKUP.zip ]  # When BACKUP already exists
+# BACKUP_FILE=$BACKUP.tgz;
+BACKUP_FILE=$BACKUP.zip;
+if [ -f $BACKUP_FILE ]  # When BACKUP already exists
 then # Add current time to the filename
-  BACKUP=$BACKUP"_"$(date +%H%M%S);
+  BACKUP_FILE=$BACKUP"_"$(date +%H%M%S)".tgz";
 fi
 
-BACKUP=$BACKUP.zip;
+# CMD="tar -zcf $BACKUP_FILE $1";
 CMD="zip -rq $BACKUP $1";
 #echo $CMD;
 $CMD;
+chmod 400 $BACKUP_FILE
 
 if [ "$?" != "0" ]; then
 	echo -e "Couldn't perform the backup, see the error above.";
 else
-	echo -e "Backup of $1 stored in $BACKUP";
-	du -h $BACKUP;
+	echo -e "Backup of $1 stored in $BACKUP_FILE";
+	du -h $BACKUP_FILE;
 fi
 
