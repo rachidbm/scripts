@@ -33,7 +33,7 @@ sudo fs_usage -w -f filesys eclipse | grep git
 
 
 
-## Noticiations from command line / Terminal
+## Notifiations from command line / Terminal
 
 osascript -e 'display notification "Lorem ipsum dolor sit amet" with title "Title"'
 osascript -e 'display notification \"Lorem ipsum dolor\" with title \"Title\"'
@@ -97,6 +97,10 @@ sudo port uninstall installed and nodejs npm
 
 ## Find ports of USB devices
 ls /dev/tty.*
+
+## List USB devices (lsusb equivalent)
+system_profiler SPUSBDataType
+
 
 ## Mount writeable NTFS drives
 brew install ntfs-3g

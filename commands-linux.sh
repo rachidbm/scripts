@@ -12,6 +12,10 @@ curl -i -X POST --header 'Content-Type: application/json' --header 'Accept: appl
 ## Get my public IP address
 curl http://ifconfig.me/ip
 
+## Print the request and response headers only
+curl -sv http://sharing.luminis.eu/feed/?post_type=content > /dev/null
+
+
 
 ###################################################
 Find
