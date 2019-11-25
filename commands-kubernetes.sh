@@ -15,6 +15,15 @@ kubectl get pods
 kubectl describe pods
 
 
+https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+
+
+
+# delete secret
+kubectl get secrets
+kubectl delete secret <NAME>
+
+
 
 ################################
 ##		 Tutorial from:  https://kubernetes.io/docs/tutorials/kubernetes-basics/

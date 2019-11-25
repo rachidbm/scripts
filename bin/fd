@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# find directory - Search for folder name
+
+
+p="$2"
+if [ "$2" == "" ];
+then
+	p='.'
+fi
+
+if [ "$1" == "" ];
+then 
+  echo "Enter the query to search for";
+else
+  find $p -type d -iname "*$1*" 2>/dev/null | grep -i --color=always $1;
+fi

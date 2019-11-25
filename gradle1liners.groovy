@@ -3,10 +3,12 @@ def nowFilename = { -> ${new Date().format('yyyyMMdd-HHmmssSSS')}
 println "now : $now"
 
 
-// Command to create Gradle wrapper:
-gradle wrapper --gradle-version 5.4
 
-(GRADLE_VERSION=4.6 && mkdir -p $GRADLE_VERSION && cd $GRADLE_VERSION && ../5.4/gradlew wrapper --gradle-version $GRADLE_VERSION)
+
+// Command to create Gradle wrapper:
+gradle wrapper --gradle-version 5.5
+
+(GRADLE_VERSION=5.6.2 && mkdir -p $GRADLE_VERSION && cd $GRADLE_VERSION && ../5.4/gradlew wrapper --gradle-version $GRADLE_VERSION)
 
 // Gradle daemon commands
 ./gradlew --status

@@ -1,8 +1,13 @@
 
 diskutil unmountDisk /dev/disk5
 
+# Find disk nr with:
+diskutil list
+
 # Write image
-time sudo dd bs=1m of=/dev/rdisk2 if=OSMC_TGT_rbp1_20180109.img 
+time sudo dd bs=1m of=/dev/disk3 if=retropie-4.5.1-rpi2_rpi3.img.gz
+
+time sudo dd bs=1m of=/dev/disk2 if=OSMC_TGT_rbp1_20180109.img 
 time sudo dd bs=1m of=/dev/rdisk5 if=
 time gunzip -c image.img.gz | dd bs=1m of=/dev/rdisk5
 
@@ -97,3 +102,4 @@ Add:
 (sleep 30; \
 /usr/sbin/ntpdate pool.ntp.org; \
 )&
+

@@ -21,6 +21,17 @@ brew install ext4fuse ntfs-3g
 brew search adoptopenjdk
 brew cask info adoptopenjdk
 
+## list all packages and its versions
+brew list --versions
+
+## Show packages which can be updated
+brew outdated
+
+## Update a brew package
+brew upgrade git
+
+
+
 # remove corrupted blue tooth files
 sudo rm /Library/Preferences/com.apple.Bluetooth.plist && \
 sudo rm ~/Library/Preferences/ByHost/com.apple.Bluetooth*.plist 
@@ -79,6 +90,7 @@ networksetup -setdnsservers Wi-Fi
 
 #Extract 7zip file
 7z e domoticz-raspberrypi-sdcard-3530.7z
+#7za x myfiles.7z
 
 ## Create Ubuntu LiveUSB from MacOS 
 
@@ -100,6 +112,12 @@ ls /dev/tty.*
 
 ## List USB devices (lsusb equivalent)
 system_profiler SPUSBDataType
+
+Another tool for listing USB devices:
+ioreg -p IOUSB
+## Or only the device names with:
+ioreg -p IOUSB -w0 | sed 's/[^o]*o //; s/@.*$//' | grep -v '^Root.*'
+
 
 
 ## Mount writeable NTFS drives

@@ -17,8 +17,12 @@ sudo lsof -i -P | grep -i listen
 ## Check UDP ports
 sudo nmap -sU $(wget -q http://www.whatismyip.com/automation/n09230945.asp -O-)
 
+## MacOS All open ports:
+sudo lsof -PiTCP -sTCP:LISTEN
+netstat -ap tcp | grep -i "listen"
 
-## MacOS:
+
+## MacOS specific port:
 export PORT=8000
 lsof -n -i:$PORT | grep LISTEN
 lsof -n -i:8080 | grep LISTEN

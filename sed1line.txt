@@ -86,6 +86,11 @@ TEXT CONVERSION AND SUBSTITUTION:
  # aligns all text flush left
  sed 's/^[ \t]*//'                    # see note on '\t' at end of file
 
+
+ # delete lines containing string: 
+ sed -i '' '/THIS_STRING/d' history.log 
+
+ 
  # delete trailing whitespace (spaces, tabs) from end of each line
  sed 's/[ \t]*$//'                    # see note on '\t' at end of file
 

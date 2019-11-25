@@ -11,4 +11,5 @@ ansible -i envs/tst/hosts publicweb -a "echo hoi  || echo doei"
 ansible -i envs/tst/hosts all -a "grep -q 'lecture' sudoers && echo \"Skip, because already present in `hostname`\" || echo 'Defaults    lecture = always' >> sudoers" --become --extra-vars $ANSIBLE_VARS
 
 
+alias set-ansiblepassword='read -s -p "Password for external user: " PASSWORD; export ANSIBLE_VARS="ansible_become_pass=$PASSWORD"; echo "";'
 

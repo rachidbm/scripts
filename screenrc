@@ -6,7 +6,7 @@ caption always
 caption string "%{kw}%-w%{wb}%n %t%{-}%+w"
 
 # Default screens
-screen -t 'Projects'
-screen -t 'SSH'
+## screen -t 'Projects'
+## screen -t 'SSH'
 
 

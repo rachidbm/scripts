@@ -19,5 +19,5 @@ else
 	#echo "p: |$p|"
   #find $path -iname "*$query*" | sed 's/'$query'/'${TXT_RED}$query${TXT_RESET}'/g';
   #echo find $p -name "*$query*" | grep -i --color=always $query;
-  find $p -iname "*$query*" | grep -i --color=always $query;
+  find $p -iname "*$query*" 2>/dev/null | grep -i --color=always $query;
 fi
