@@ -4,6 +4,20 @@
 Show hidden files in Finder: CMD + SHIFT + .
 
 
+
+## Disable back gesture when swiping vertical in Chrome
+defaults write com.google.Chrome AppleEnableMouseSwipeNavigateWithScrolls -bool FALSE 	# Mouse/Magic Mouse
+defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE		# Trackpad
+
+#defaults write com.google.Chrome AppleEnableMouseSwipeNavigateWithScrolls -bool TRUE
+
+
+# Change default text editor, for High Sierra
+defaults write com.apple.LaunchServices/com.apple.launchservices.secure LSHandlers -array-add \
+'{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
+
+
+
 # Change Java Home on MacOS
 
 alias set-java8='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home && export PATH=$JAVA_HOME/bin:$PATH && java -version'
@@ -69,10 +83,6 @@ alias sublime='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -
 # Disable beep sound in Terminal
 Terminal -> Preferences -> Profiles -> Advanced -> audible/visual bell
 
-
-# Change default text editor, for High Sierra
-defaults write com.apple.LaunchServices/com.apple.launchservices.secure LSHandlers -array-add \
-'{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
 
 # read binary plist file:
 plutil -convert xml1 -o - com.apple.Terminal.plist

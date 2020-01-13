@@ -52,6 +52,9 @@ file -b --mime-type $filename
 ## TODO: refine for personal usage
 PS1="\`if [ \$? != 0 ]; then echo \[\e[33m\]---=== \[\e[31m\]Oh noes, bad command \[\e[33m\]===---; fi\`\n\[\e[1;30m\]XX \[\e[0;32m\]Hack a Day \[\e[1;30m\]XX\n\[\e[0;37m\][\[\e[1;31m\]\@\[\e[0;37m\]] \[\e[0;32m\]\u@\h \[\e[0;37m\][\[\e[1;34m\]\w\[\e[0;37m\]] \[\e[0;32m\]\$ \[\e[0m\] "
 
+
+ID=${1-1}    # defaults to 1 when no argument was given
+
 ## Create timer / stopwatch
 time cat
 # and CTRL+C to abort and print time

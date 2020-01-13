@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#TXT_RED=$(tput setaf 1)
+#TXT_RESET=$(tput sgr0)
+
+
+p="$2"
+if [ "$2" == "" ];
+then
+	p='.'
+fi
+
+if [ "$1" == "" ];
+then 
+  echo "Enter the query to search for";
+else
+  query="$1";
+	#echo "2: |$2|"
+	#echo "p: |$p|"
+  #find $path -iname "*$query*" | sed 's/'$query'/'${TXT_RED}$query${TXT_RESET}'/g';
+  #echo find $p -name "*$query*" | grep -i --color=always $query;
+  find $p 2>/dev/null | grep -v $query;
+fi

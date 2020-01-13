@@ -18,3 +18,5 @@ brew cask install mounty
 ## KeepPassXC
 # brew cask install keepassxc 
 
+
+# brew cask install calibre
