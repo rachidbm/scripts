@@ -28,18 +28,60 @@ Contents of iam-lambda-policy.json:
 }
 
 ## Attach the policies
+# aws iam attach-role-policy --role-name ReadOnlyRole --policy-arn arn:aws:iam::aws:policy/ReadOnlyAccess 
+aws iam attach-role-policy  --role-name WildRydesLambda --policy-arn arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
 
-aws iam attach-role-policy --policy-arn arn:aws:iam::aws:policy/ReadOnlyAccess --role-name ReadOnlyRole
+## Add inline policy for lambda write data to DynamoDB
+aws iam put-role-policy --role-name WildRydesLambda --policy-name DynamoDBWriteAccess \
+	--policy-document file://iam-DynamoDBWriteAccess.json
 
+Contents of iam-DynamoDBWriteAccess.json:
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "dynamodb:PutItem",
+            "Resource": "arn:aws:dynamodb:eu-west-1:437883356218:table/Rides"
+        }
+    ]
+}
+
+
+####################################
+##  Code Pipeline
+####################################
+
+aws codepipeline list-pipelines
+
+aws codepipeline get-pipeline --name
+aws codepipeline update-pipeline --name game-functions-pipeline --cli-input-json
 
 
 ####################################
 ##  Lambda
 ####################################
 
+aws lambda list-functions
+aws lambda list-functions | grep FunctionName
+
+aws lambda get-function --function-name  snsToWebsocketFunction
+aws lambda get-function-configuration --function-name  snsToWebsocketFunction
+aws lambda  list-event-source-mappings --function-name  gameStateHandler
+
+
+
+aws lambda create-function --function-name RequestUnicorn \
+ --runtime nodejs12.x  --handler requestUnicorn.handler \
+ --zip-file fileb://requestUnicorn.zip \
+ --role arn:aws:iam::437883356218:role/WildRydesLambda
+
 # aws lambda create-function --function-name my-function \
-# --zip-file fileb://function.zip --handler index.handler --runtime nodejs12.x \
+# --zip-file fileb://requestUnicorn.zip --handler index.handler --runtime nodejs12.x \
 # --role arn:aws:iam::123456789012:role/lambda-cli-role
+
+
 
 
 ####################################
@@ -81,7 +123,19 @@ aws dynamodb put-item --table-name games --item file://game-finished.json
 
 
 ####################################
-##  CLoudWatch example queries
+##  CloudWatch commands
+####################################
+
+
+aws cloudwatch  describe-alarms --region eu-west-1
+aws cloudwatch  describe-alarms --region us-east-1
+aws cloudwatch set-alarm-state
+  --alarm-name "Exceed5$" \
+  --state-value "OK" \
+  --state-reason "Threshold Crossed 5$ "
+
+####################################
+##  CloudWatch example queries
 ####################################
 
 
@@ -102,24 +156,74 @@ fields @nrOfErrors
 | filter (@message like 'Error')
 |  stats count(@message) as @nrOfErrors by bin(60m)
 
-/home/osmc/barrett/apps/Adobe Photoshop CS4/Adobe CS4/redist
 
 
+####################################
+##  API Gateway
+####################################
+
+
+## Create REST API
+aws apigateway create-rest-api --name 'WildRydes'
+
+## List REST API's
+aws apigateway get-rest-apis
+
+
+## Get resources of a REST API
+aws apigateway get-resources --rest-api-id f7jes63zok
+
+## Authorizers
+aws apigateway get-authorizers --rest-api-id f7jes63zok
+
+aws apigateway create-authorizer --rest-api-id f7jes63zok --name WildRydes \
+ --type COGNITO_USER_POOLS \
+ --provider-arns 'arn:aws:cognito-idp:eu-west-1:437883356218:userpool/eu-west-1_GUMHA785N'  \
+ --identity-source 'method.request.header.Authorization'
+
+## Resources
+aws apigateway get-resources --rest-api-id f7jes63zok
+
+aws apigateway create-resource --rest-api-id f7jes63zok --parent-id vkpcy48qfe \
+  --path-part ride
+
+
+aws apigateway get-methods --rest-api-id f7jes63zok
 
 
 
 ####################################
-##  Misc.
+##  Cognito
 ####################################
 
+## Create a Cognito User Pools Authorizer
+aws cognito-idp list-user-pools --output json --max-results 20
+aws cognito-idp describe-user-pool --user-pool-id eu-west-1_GUMHA785N
 
 
-## commands to setup AWS services.
-## Can be used until we've defined the infra in CloudFormation
+
+####################################
+##  SNS
+####################################
 
 
 aws sns create-topic --name "maintenanceNeededAction" --attributes  DisplayName="Triggered when maintenance is needed for manufacturers"
 aws sns create-topic --name "maintenanceClearedAction" --attributes  DisplayName="Triggered when no maintenance is needed anymore for manufacturers"
+
+## List subscription of an SNS topic
+
+
+aws sns publish \
+   --topic-arn arn:aws:sns:eu-west-1:171715002786:deviceConnectionEvents \
+   --subject TEST \
+   --message '{"timestamp":"2020-01-26 20:01:50.265","logLevel":"INFO","traceId":"c18ccc09-e5e4-dd6b-947c-aaa8d6b129a8","accountId":"171715002786","status":"Success","eventType":"Publish-Out","protocol":"MQTT","topicName":"$aws/events/presence/disconnected/esp32_974508","clientId":"iotconsole-1580066906738-0","principalId":"AROASP6YDAGRKI5S6YYU5:rachid.benmoussa@luminis.eu","sourceIp":"86.83.45.176","sourcePort":53060}'
+
+
+aws sns list-subscriptions-by-topic
+
+####################################
+##  Misc.
+####################################
 
 
 ## AWS IoT needs AWS CLI version 2 installed

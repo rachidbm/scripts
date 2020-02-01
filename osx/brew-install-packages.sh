@@ -5,6 +5,10 @@ brew cask install osxfuse
 brew install ntfs-3g
 brew cask install mounty
 
+# brew tap aws/tap
+# brew install aws-sam-cli
+
+# brew cask install copyclip
 
 ## For ESP development: 
 # brew tap adrianmihalko/ch340g-ch34g-ch34x-mac-os-x-driver https://github.com/adrianmihalko/ch340g-ch34g-ch34x-mac-os-x-driver
