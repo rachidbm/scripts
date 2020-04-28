@@ -11,24 +11,25 @@ fi
 
 
 # some more ls aliases
-alias l='ls -CFh'
+alias l='ls -hG'
 alias ll='l -lrt'
-alias lll='l -log'
 alias la='l -A'
 alias lla='ll -A'
-alias ld='l -d '
+alias df='df -h'
+alias top='top -F -R -o cpu'
+alias updatedb='sudo /usr/libexec/locate.updatedb'
+alias d='du -sch'
+alias vi=vim
+alias gs='git status'
+alias gf='git fetch --all'
 
 
 alias grep='grep --color=auto' 
-alias mv='mv -i'
-alias cp='cp -i'
+#alias mv='mv -i'
+#alias cp='cp -i'
 alias d='du -sh'
-alias x='xdg-open'
-alias df='df -h'
-
 alias find-windows-line-endings="grep -IUrl $(printf '\r') ."
-alias gits='git status'
 
-alias lessapache='less +F /var/log/apache2/error.log'
-alias lessaccess='less +F /var/log/apache2/access.log'
-alias delapache-errorlog='cat /dev/null | sudo tee /var/log/apache2/error.log'
+alias set-java8openjdk='export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk8u172-b11 && export PATH=$JAVA_HOME/bin:$PATH && java -version'
+alias set-java8='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home && export PATH=$JAVA_HOME/bin:$PATH && java -version'
+alias set-java11='export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home && export PATH=$JAVA_HOME/bin:$PATH && java -version'

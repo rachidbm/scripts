@@ -31,7 +31,6 @@ alias set-java11='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.jdk/
 
 ## Brew
 brew install mongodb@3.4
-brew install ext4fuse ntfs-3g
 brew search adoptopenjdk
 brew cask info adoptopenjdk
 
