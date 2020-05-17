@@ -6,7 +6,7 @@ println "now : $now"
 
 
 // Command to create Gradle wrapper:
-gradle wrapper --gradle-version 5.5
+gradle wrapper --gradle-version 6.4
 
 (GRADLE_VERSION=5.6.2 && mkdir -p $GRADLE_VERSION && cd $GRADLE_VERSION && ../5.4/gradlew wrapper --gradle-version $GRADLE_VERSION)
 

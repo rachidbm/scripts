@@ -1,16 +1,16 @@
 brew install \
- vim npm wget nmap pv p7zip xz watch jq hh rsync svn libusb
+ vim npm wget nmap pv p7zip xz watch jq hh rsync svn libusb ntfs-3g mounty
 
-brew cask install copyclip sublime-text brave-browser
+brew cask install \
+ osxfuse mounty paintbrush copyclip sublime-text brave-browser
+
+#brew cask install osxfuse
+brew cask install fork
+
 
 # brew cask install insomnia
-
 ## Install atom
 brew cask install atom && apm install compare-files
-
-# brew cask install osxfuse
-# brew install ntfs-3g
-# brew cask install mounty
 
 # brew tap aws/tap
 # brew install aws-sam-cli
@@ -28,3 +28,7 @@ brew cask install atom && apm install compare-files
 
 
 # brew cask install calibre
+
+## Games
+# brew cask install porting-kit
+

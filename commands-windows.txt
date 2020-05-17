@@ -3,6 +3,11 @@
 ## install software via chocolatey.org
 choco install -y qdir
 
+
+## Shutdown after 1 hour
+shutdown -s -t 3600
+
+
 ## Current time
 echo %time%
 

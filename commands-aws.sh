@@ -2,10 +2,39 @@
 
 Common AWS CLI commands
 
+## Delete CodeCommit username from KeyChain
+security -q delete-internet-password -a "git-codecommit.eu-west-1.amazonaws.com"
+
 
 ####################################
 ##  IAM
 ####################################
+
+
+aws iam create-policy --policy-name CloudWatchRetention --policy-document file://iam-CloudWatchRetention-policy.json
+
+
+aws iam create-role --role-name CloudWatchRetention --assume-role-policy-document file://iam-CloudWatchRetention-policy.json
+
+Contents of iam-CloudWatchRetention-policy.json:
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogStream",
+                "logs:PutRetentionPolicy",
+                "logs:CreateLogGroup",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+
+
 
 ## Create IAM Role for a lambda, with permission to write CW logs and put items in Dynamo
 aws iam create-role --role-name WildRydesLambda --assume-role-policy-document file://iam-lambda-policy.json
@@ -71,10 +100,10 @@ aws lambda get-function-configuration --function-name  snsToWebsocketFunction
 aws lambda  list-event-source-mappings --function-name  gameStateHandler
 
 
-
+touch /tmp/index.js && zip /tmp/tmp.zip /tmp/index.js
 aws lambda create-function --function-name RequestUnicorn \
  --runtime nodejs12.x  --handler requestUnicorn.handler \
- --zip-file fileb://requestUnicorn.zip \
+ --zip-file fileb://tmp/tmp.zip \
  --role arn:aws:iam::437883356218:role/WildRydesLambda
 
 # aws lambda create-function --function-name my-function \
@@ -126,6 +155,13 @@ aws dynamodb put-item --table-name games --item file://game-finished.json
 ##  CloudWatch commands
 ####################################
 
+## Sert retention perdio for all log streams:
+node update_cloudwatch_log_group_retention.js -r eu-west-1 -R 30 -s
+
+# node update_cloudwatch_log_group_retention.js -r eu-west-1 -l /aws/ -R 30 -s
+## See:  https://github.com/tensult/aws-automation
+
+
 
 aws cloudwatch  describe-alarms --region eu-west-1
 aws cloudwatch  describe-alarms --region us-east-1
@@ -133,6 +169,15 @@ aws cloudwatch set-alarm-state
   --alarm-name "Exceed5$" \
   --state-value "OK" \
   --state-reason "Threshold Crossed 5$ "
+
+
+## Create billing alarm
+
+aws cloudwatch describe-alarms
+  --region us-east-1
+  --query "MetricAlarms[?AlarmName == '<billing_alarm_name>']"
+
+
 
 ####################################
 ##  CloudWatch example queries
@@ -206,6 +251,10 @@ aws cognito-idp describe-user-pool --user-pool-id eu-west-1_GUMHA785N
 ##  SNS
 ####################################
 
+aws sns list-topics
+aws sns get-topic-attributes --topic-arn arn:aws:sns:eu-west-1:171715002786:game-state
+
+aws sns list-subscriptions-by-topic --topic-arn arn:aws:sns:eu-west-1:171715002786:game-state
 
 aws sns create-topic --name "maintenanceNeededAction" --attributes  DisplayName="Triggered when maintenance is needed for manufacturers"
 aws sns create-topic --name "maintenanceClearedAction" --attributes  DisplayName="Triggered when no maintenance is needed anymore for manufacturers"
@@ -216,14 +265,38 @@ aws sns create-topic --name "maintenanceClearedAction" --attributes  DisplayName
 aws sns publish \
    --topic-arn arn:aws:sns:eu-west-1:171715002786:deviceConnectionEvents \
    --subject TEST \
-   --message '{"timestamp":"2020-01-26 20:01:50.265","logLevel":"INFO","traceId":"c18ccc09-e5e4-dd6b-947c-aaa8d6b129a8","accountId":"171715002786","status":"Success","eventType":"Publish-Out","protocol":"MQTT","topicName":"$aws/events/presence/disconnected/esp32_974508","clientId":"iotconsole-1580066906738-0","principalId":"AROASP6YDAGRKI5S6YYU5:rachid.benmoussa@luminis.eu","sourceIp":"86.83.45.176","sourcePort":53060}'
+   --message '{"timestamp":"2020-01-26 20:01:50.265","logLevel":"INFO","traceId":"c18ccc09-e5e4-dd6b-947c-aaa8d6b129a8","accountId":"account_nr","status":"Success","eventType":"Publish-Out","protocol":"MQTT","topicName":"$aws/events/presence/disconnected/esp32_974508","clientId":"iotconsole-1580066906738-0","principalId":"AROASP6YDAGRKI5S6YYU5:rachid.benmoussa@luminis.eu","sourceIp":"86.83.45.176","sourcePort":53060}'
 
 
-aws sns list-subscriptions-by-topic
+aws sns publish \
+   --topic-arn arn:aws:sns:eu-west-1:171715002786:game-state-predev \
+   --subject TEST \
+   --message 'MEUH'
+
+
+
+
+
+####################################
+##  CodeCommit
+####################################
+
+aws codecommit list-repositories
+
+aws cloudfront --profile YOUR_PROFILE_NAME create-invalidation --distribution-id YOUR_DISTRIBUTION_ID --paths '/*'
+aws cloudfront create-invalidation --distribution-id E1P8Q61KZIRBJ5 --paths '/*'
+
+
+
+
+
 
 ####################################
 ##  Misc.
 ####################################
+
+
+
 
 
 ## AWS IoT needs AWS CLI version 2 installed

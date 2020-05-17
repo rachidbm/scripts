@@ -13,6 +13,9 @@ docker run -it ubuntu bash
 docker build -t name .
 docker run -v `pwd`:/opt/workingdir -t name
 
+## Docker RUN examples
+docker run -it openjdk:8-jdk /bin/bash
+
 ## Or to prevent slow IO on MacOS
 docker run -v `pwd`:/opt/workingdir:delegated -t name
 
@@ -66,6 +69,8 @@ docker rm -v -f $(docker ps -q -a)
 
 
 ## Clean up
+## Show docker disk usage:
+docker system df
 
 ## This will remove:
 ##        - all stopped containers

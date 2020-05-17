@@ -34,7 +34,7 @@ brew install mongodb@3.4
 brew search adoptopenjdk
 brew cask info adoptopenjdk
 
-## list all packages and its versions
+## list all packages and its versions installed via brew 
 brew list --versions
 
 ## Show packages which can be updated
@@ -117,7 +117,7 @@ sudo port uninstall installed and nodejs npm
 
 
 ## Find ports of USB devices
-ls /dev/tty.*
+ll /dev/tty.*
 
 ## List USB devices (lsusb equivalent)
 system_profiler SPUSBDataType

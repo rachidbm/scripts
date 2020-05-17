@@ -1,0 +1,6 @@
+IntelliJ regex
+
+log\((.*)\)$
+
+logger.debug \{ $1 \}
+
