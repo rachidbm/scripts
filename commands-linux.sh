@@ -54,6 +54,8 @@ PS1="\`if [ \$? != 0 ]; then echo \[\e[33m\]---=== \[\e[31m\]Oh noes, bad comman
 
 
 ID=${1-1}    # defaults to 1 when no argument was given
+ID=${1-LOCAL}    # defaults to LOCAL when no argument was given
+
 
 ## Create timer / stopwatch
 time cat

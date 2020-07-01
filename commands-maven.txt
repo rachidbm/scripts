@@ -1,0 +1,10 @@
+
+
+rf, --resume-from
+        Resume reactor from specified project
+-pl, --projects
+        Build specified reactor projects instead of all projects
+
+parallel build:
+./mvnw package  -T 4
+
