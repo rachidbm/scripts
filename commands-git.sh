@@ -58,7 +58,10 @@ git branch <name_of_your_new_branch>
 git checkout <name_of_your_new_branch>
 ## Checkout remote branch
 git checkout --track -b B_16 origin/B_16
-
+## Delete branch
+git branch -d test
+## Delete remote branch
+git push origin --delete test
 
 # Push branch to remote
 git push origin <name_of_your_new_branch>

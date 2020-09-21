@@ -6,6 +6,15 @@ Common AWS CLI commands
 security -q delete-internet-password -a "git-codecommit.eu-west-1.amazonaws.com"
 
 
+
+
+####################################
+##  CDK
+####################################
+
+cdk deploy --require-approval=never
+
+
 ####################################
 ##  IAM
 ####################################
