@@ -13,6 +13,8 @@ git config core.fileMode false
 git config --global branch.autosetuprebase always
 git config --global rebase.autoStash true
 
+git commit --allow-empty -m "Trigger build pipeline"
+
 
 # Start a new (fresh) project
 cd myproject
