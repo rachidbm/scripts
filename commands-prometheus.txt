@@ -1,0 +1,36 @@
+
+
+
+sum(increase(counter_measurements_timeoffset_hours__2_to__24_future_total{service="$env-napi-app"}[$window]))
+
+
+
+sum(rate(m2_core_communicator_napi_sentMeasurementAmount_total{service="$env-napi-app"}[$window]))
+
+
+sum(increase({__name__=~"counter_measurements_timeoffset_hours_.*_total",service="acc-napi-app"}[5m]))
+
+
+sum(increase(label_replace({__name__=~"counter_measurements_timeoffset_hours_.*_total",service="acc-napi-app"}, "old_name", "$1", "__name__", "(.+)")[5m]))
+
+
+
+sum(increase(label_replace({__name__=~"counter_measurements_timeoffset_hours_.*_total",service="acc-napi-app"}, "old_name", "$1", "__name__", "(.*):.*")[5m]))
+
+
+
+
+sum(increase(counter_measurements_timeoffset_hours_month_to_year_future_total{service="$env-napi-app"}[$window]))
+sum(increase(counter_measurements_timeoffset_hours_2_to_24_past_total{service="$env-napi-app"}[$window]))
+sum(increase(counter_measurements_timeoffset_hours_more_years_future_total{service="$env-napi-app"}[$window]))
+sum(increase(counter_measurements_timeoffset_hours__2_to__24_future_total{service="$env-napi-app"}[$window]))
+sum(increase(counter_measurements_timeoffset_hours_week_to_month_future_total{service="$env-napi-app"}[$window]))
+sum(increase(counter_measurements_timeoffset_hours_25_to_week_past_total{service="$env-napi-app"}[$window]))
+sum(increase(counter_measurements_timeoffset_hours_25_to_week_future_total{service="$env-napi-app"}[$window]))
+sum(increase(counter_measurements_timeoffset_hours_week_to_month_past_total{service="$env-napi-app"}[$window]))
+sum(increase(counter_measurements_timeoffset_hours_more_years_past_total{service="$env-napi-app"}[$window]))
+sum(increase(counter_measurements_timeoffset_hours_month_to_year_past_total{service="$env-napi-app"}[$window]))
+sum(increase(counter_measurements_timeoffset_hours_less_than_hour_total{service="$env-napi-app"}[$window]))
+
+
+

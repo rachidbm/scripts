@@ -27,6 +27,13 @@ enter & to filter lines (a la grep)
 ## find files with Windows line endings
 grep -IUrl $(printf '\r') .
 
+## Find Number of files containing a given string
+grep -rl "com.netflix.hystrix" * | wc -l
+
+## Count per file, but suppres files with 0 matches
+grep -IrcH HystrixCommand * | grep -v ':0$'
+
+
 
 ## Open a random file:
 find . -type f | sort -R | tail -1 | while read file; do echo "random file: $file"; done
