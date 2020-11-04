@@ -8,3 +8,6 @@ rf, --resume-from
 parallel build:
 ./mvnw package  -T 4
 
+
+## Check for updates of dependencies
+mvn versions:display-dependency-updates

@@ -20,13 +20,14 @@ defaults write com.apple.LaunchServices/com.apple.launchservices.secure LSHandle
 
 # Change Java Home on MacOS
 
+/usr/libexec/java_home -V   ## List all installed versions of Java
+
+
 alias set-java8='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home && export PATH=$JAVA_HOME/bin:$PATH && java -version'
 alias set-java9='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home && export PATH=$JAVA_HOME/bin:$PATH && java -version'
 alias set-java10='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home && export PATH=$JAVA_HOME/bin:$PATH && java -version'
 alias set-java11='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home && export PATH=$JAVA_HOME/bin:$PATH && java -version'
 
-
-/usr/libexec/java_home -V
 
 
 ## Brew
@@ -39,6 +40,9 @@ brew list --versions
 
 ## Show packages which can be updated
 brew outdated
+
+## Update all packages
+brew upgrade 
 
 ## Update a brew package
 brew upgrade git

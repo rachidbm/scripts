@@ -1,0 +1,1 @@
+git diff --name-only --cached --relative | grep '\.kt[s"]\?$' | xargs ktlint --relative .

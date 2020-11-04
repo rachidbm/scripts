@@ -12,3 +12,10 @@ Start Postgres:
     /opt/local/lib/postgresql93/bin/postgres -D /opt/local/var/db/postgresql93/defaultdb
 or
     /opt/local/lib/postgresql93/bin/pg_ctl -D /opt/local/var/db/postgresql93/defaultdb -l logfile start
+
+
+
+## show all tables
+\dt
+
+

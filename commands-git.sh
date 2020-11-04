@@ -56,6 +56,9 @@ git branch
 git branch -r
 # Create a local branch
 git branch <name_of_your_new_branch>
+# Create a branch for a tag
+git checkout -b 153.0.12.5079 153.0.12.5079
+
 # Switch to branch
 git checkout <name_of_your_new_branch>
 ## Checkout remote branch
