@@ -2,18 +2,32 @@ brew install \
  vim npm wget nmap pv p7zip xz watch jq hh rsync svn libusb ntfs-3g mounty
 
 brew cask install \
- osxfuse mounty paintbrush copyclip sublime-text brave-browser
+ osxfuse mounty paintbrush copyclip sublime-text \
+ brave-browser sleepwatcher imagemagick inkscape
+
+
+# brew tap aws/tap
+brew install awscli
 
 #brew cask install osxfuse
 brew cask install fork
 
 
+brew cask install graalvm/tap/graalvm-ce-java11
+# Install native image with:
+${GRAALVM_HOME}/bin/gu install native-image
+
+## Cask installs
+
+brew install discord
+
 # brew cask install insomnia
 ## Install atom
 brew cask install atom && apm install compare-files
+brew cask install virtualbox virtualbox-extension-pack
 
-# brew tap aws/tap
-# brew install aws-sam-cli
+## re route audio output
+brew cask install blackhole
 
 
 ## For ESP development:
@@ -23,9 +37,9 @@ brew cask install atom && apm install compare-files
 # brew tap cesanta/mos && brew install mos
 # brew cask install fritzing
 
+
 ## KeepPassXC
 # brew cask install keepassxc
-
 
 # brew cask install calibre
 

@@ -22,11 +22,11 @@ defaults write com.apple.LaunchServices/com.apple.launchservices.secure LSHandle
 
 /usr/libexec/java_home -V   ## List all installed versions of Java
 
+export GRAALVM_HOME=/Library/Java/JavaVirtualMachines/graalvm-ce-lts-java11-19.3.3/Contents/Home
 
 alias set-java8='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home && export PATH=$JAVA_HOME/bin:$PATH && java -version'
-alias set-java9='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home && export PATH=$JAVA_HOME/bin:$PATH && java -version'
-alias set-java10='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home && export PATH=$JAVA_HOME/bin:$PATH && java -version'
 alias set-java11='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home && export PATH=$JAVA_HOME/bin:$PATH && java -version'
+alias set-graalvm='export JAVA_HOME=$GRAALVM_HOME && export PATH=$GRAALVM_HOME/bin:$PATH && java -version'
 
 
 
@@ -116,8 +116,12 @@ time sudo dd if=ubuntu-18.04.2-desktop-amd64.img of=/dev/rdisk2 bs=1m
 diskutil unmountDisk /dev/disk3
 sudo dd bs=1m if=domoticz-raspberrypi-sdcard-3530.img  | pv | of=/dev/disk3
 
-## Mac ports uninstall all versions
-sudo port uninstall installed and nodejs npm
+## Erase partition scheme (when disk util Couldn’t modify partition map)
+diskutil eraseDisk free EMPTY /dev/disk4
+
+## Then format for FAT32
+diskutil eraseDisk FAT32 DISKLABEL MBRFormat /dev/disk2
+
 
 
 ## Find ports of USB devices

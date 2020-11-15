@@ -16,6 +16,7 @@ git config --global rebase.autoStash true
 git commit --allow-empty -m "Trigger build pipeline"
 
 
+
 # Start a new (fresh) project
 cd myproject
 git init
@@ -24,6 +25,11 @@ git commit
 
 # oneliner
 git init && git add . &&  git commit
+
+
+## Push to empty remote origin
+git push -u origin main
+
 
 # Set up bare repo (shared repo)
 cd ..  # this is important; you must be outside your project dir

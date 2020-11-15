@@ -12,7 +12,35 @@ security -q delete-internet-password -a "git-codecommit.eu-west-1.amazonaws.com"
 ##  CDK
 ####################################
 
+## Somehow be able to bootstrap CDK correctly
+cdk bootstrap --cloudformation-execution-policies \
+  arn:aws:iam::aws:policy/AdministratorAccess
+
+
 cdk deploy --require-approval=never
+
+#  Other Example
+cdk bootstrap aws://ACCOUNT_ID/eu-west-1
+
+
+####################################
+##  CloudFormation
+####################################
+
+
+## Retrieve Outputs of CloudFormation stacks for a specific key:
+aws cloudformation describe-stacks \
+  --stack-name Test-env-CdkLambdaStack \
+  --query "Stacks[0].Outputs[?OutputKey=='Url'].OutputValue" \
+  --output text
+
+
+## Retrieve all outputs values:
+aws cloudformation describe-stacks --stack-name Test-env-CdkLambdaStack \
+  --query "Stacks[0].Outputs[].OutputValue" --output text
+
+
+
 
 
 ####################################
@@ -126,6 +154,13 @@ aws lambda create-function --function-name RequestUnicorn \
 ##  S3
 ####################################
 
+## List buckets
+aws s3 ls
+
+## List bucket names via the API (without newlines)
+aws s3api list-buckets --query "Buckets[].Name" --output text
+
+
 ## Create bucket
 aws s3 mb s3://wildrydes-rachidbm
 
@@ -139,6 +174,7 @@ aws s3 rb s3://aws-course --force
 
 ## Sync buckets FROM to TO
 aws s3 sync s3://wildrydes-us-east-1/WebApplication/1_StaticWebHosting/website s3://wildrydes-rachidbm 
+
 
 
 
@@ -164,7 +200,15 @@ aws dynamodb put-item --table-name games --item file://game-finished.json
 ##  CloudWatch commands
 ####################################
 
-## Sert retention perdio for all log streams:
+
+## Simple download a complete log stream to a single text file
+export LOG_GROUP_NAME=/aws/codebuild/PipelineBuildSynthCdkBuildP-4McQiy5H32Tp
+
+read  -p "log-stream-name: " LOG_STREAM_NAME;  aws logs get-log-events --log-group-name $LOG_GROUP_NAME --log-stream-name $LOG_STREAM_NAME --output text > codepipeline-$LOG_STREAM_NAME.log
+
+
+
+## Set retention perdio for all log streams:
 node update_cloudwatch_log_group_retention.js -r eu-west-1 -R 30 -s
 
 # node update_cloudwatch_log_group_retention.js -r eu-west-1 -l /aws/ -R 30 -s
