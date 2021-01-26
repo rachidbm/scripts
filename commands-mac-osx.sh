@@ -108,11 +108,19 @@ networksetup -setdnsservers Wi-Fi
 ## Create Ubuntu LiveUSB from MacOS 
 
 # Convert ISO to IMG file
-time hdiutil convert -format UDRW ubuntu-18.04.2-desktop-amd64.iso -o ubuntu-18.04.2-desktop-amd64.img
+ISO_FILE=dban-2.3.0_i586.iso
+time hdiutil convert -format UDRW $ISO_FILE -o $ISO_FILE
 diskutil unmountDisk /dev/disk2
-time sudo dd if=ubuntu-18.04.2-desktop-amd64.img of=/dev/rdisk2 bs=1m
+time sudo dd if=$ISO_FILE.dmg of=/dev/rdisk2 bs=1m
+date
+
+## Install DBAN 
+Use unetbootin to create the boot USB 
+
+sed -i 's/ubninit/ISOLINUX.BIN/g' syslinux.cfg
 
 
+# Experimental
 diskutil unmountDisk /dev/disk3
 sudo dd bs=1m if=domoticz-raspberrypi-sdcard-3530.img  | pv | of=/dev/disk3
 

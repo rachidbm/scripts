@@ -1,5 +1,5 @@
 brew install \
- vim npm wget nmap pv p7zip xz watch jq hh rsync svn libusb ntfs-3g mounty
+ vim npm nvm wget nmap pv p7zip xz watch jq hh rsync svn libusb ntfs-3g mounty git-lfs
 
 brew cask install \
  osxfuse mounty paintbrush copyclip sublime-text \
