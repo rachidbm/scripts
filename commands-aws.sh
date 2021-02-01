@@ -2,9 +2,23 @@
 
 Common AWS CLI commands
 
+## Who am I?
+aws sts get-caller-identity --profile default
+
+
 ## Delete CodeCommit username from KeyChain
 security -q delete-internet-password -a "git-codecommit.eu-west-1.amazonaws.com"
 
+
+
+
+####################################
+##  Amplify
+####################################
+
+amplify status
+
+amplify push
 
 
 
