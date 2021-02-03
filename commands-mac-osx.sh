@@ -47,6 +47,10 @@ brew upgrade
 ## Update a brew package
 brew upgrade git
 
+## Link to an older version
+brew switch python 3.8.6_1
+
+
 
 
 # remove corrupted blue tooth files

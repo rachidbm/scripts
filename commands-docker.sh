@@ -10,7 +10,7 @@ docker run -it ubuntu bash
 
 
 ## Docker build examples
-docker build -t name .
+docker build -t app-local .
 docker run -v `pwd`:/opt/workingdir -t name
 
 ## Docker RUN examples

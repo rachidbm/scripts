@@ -29,6 +29,10 @@ brew cask install virtualbox virtualbox-extension-pack
 ## re route audio output
 brew cask install blackhole
 
+# brew tap aws/tap
+# brew install aws-sam-cli
+brew install python@3.8
+
 
 ## For ESP development:
 # brew tap adrianmihalko/ch340g-ch34g-ch34x-mac-os-x-driver https://github.com/adrianmihalko/ch340g-ch34g-ch34x-mac-os-x-driver
