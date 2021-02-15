@@ -21,13 +21,13 @@ fi
 
 # BACKUP_FILE=$BACKUP.tgz;
 BACKUP_FILE=$BACKUP.zip;
-if [ -f $BACKUP_FILE ]  # When BACKUP already exists
-then # Add current time to the filename
-  BACKUP_FILE=$BACKUP"_"$(date +%H%M%S)".tgz";
+if [ -f $BACKUP_FILE ]  # When BACKUP already exists, add current time to the filename
+then 
+  BACKUP_FILE=$BACKUP"_"$(date +%H%M%S)".zip";
 fi
 
 # CMD="tar -zcf $BACKUP_FILE $1";
-CMD="zip -rq $BACKUP $1";
+CMD="zip -rq $BACKUP_FILE $1";
 #echo $CMD;
 $CMD;
 chmod 400 $BACKUP_FILE

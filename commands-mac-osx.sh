@@ -16,6 +16,9 @@ defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE
 defaults write com.apple.LaunchServices/com.apple.launchservices.secure LSHandlers -array-add \
 '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
 
+## To get identifier for other apps:
+/usr/libexec/PlistBuddy -c 'Print CFBundleIdentifier' /Applications/Visual\ Studio\ Code.app/Contents/Info.plist 
+/usr/libexec/PlistBuddy -c 'Print CFBundleIdentifier'  /Applications/Sublime\ Text.app/Contents/Info.plist
 
 
 # Change Java Home on MacOS

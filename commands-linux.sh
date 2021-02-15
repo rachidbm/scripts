@@ -48,6 +48,13 @@ find . -type f ! -path \*CVS\* -exec rm {} \; -exec cvs remove {} \;\
 #  BASH snippets
 ###################################################
 
+## Ignore stderr 
+ 2>/dev/null
+
+## ignore all stderr for the current session in a bash script
+exec 2> /dev/null
+
+
 for DIR in `find . -maxdepth 1 -mindepth 1 -type d`; do
 	echo $DIR
 done;
