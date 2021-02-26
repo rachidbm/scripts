@@ -1,2 +1,3 @@
 # m h  dom mon dow   command
 1 * * * *  chmod +x ~/scripts/bin/*; chmod -R +x ~/scripts/*sh
+*/10 * * * * date >> ~/delete-aws-credentials.log; ~/scripts/bin/aws-delete-git-password.sh >> ~/delete-aws-credentials.log  2>&1

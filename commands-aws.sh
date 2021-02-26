@@ -20,6 +20,10 @@ amplify status
 
 amplify push
 
+amplify update api
+
+
+
 
 
 ####################################

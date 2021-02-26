@@ -13,8 +13,14 @@ git config core.fileMode false
 git config --global branch.autosetuprebase always
 git config --global rebase.autoStash true
 
+## Find in which file something is configured
+git config --show-origin --get credential.helper
+
 git commit --allow-empty -m "Trigger build pipeline"
 
+git remote add origin http://github.com/repo
+# git branch -M main
+git push -u origin master
 
 
 # Start a new (fresh) project
