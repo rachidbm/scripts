@@ -11,7 +11,7 @@ docker run -it ubuntu bash
 
 ## Docker build examples
 docker build -t app-local .
-docker run -v `pwd`:/opt/workingdir -t name
+docker run -v `pwd`:/opt/workingdir -t app-local
 
 ## Docker RUN examples
 docker run -it openjdk:8-jdk /bin/bash

@@ -10,4 +10,7 @@ parallel build:
 
 
 ## Check for updates of dependencies
-mvn versions:display-dependency-updates
+
+mvn versions:display-dependency-updates | grep " -> " | sort -u 
+
+mvn versions:use-latest-versions

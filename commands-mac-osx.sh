@@ -27,8 +27,8 @@ defaults write com.apple.LaunchServices/com.apple.launchservices.secure LSHandle
 
 export GRAALVM_HOME=/Library/Java/JavaVirtualMachines/graalvm-ce-lts-java11-19.3.3/Contents/Home
 
-alias set-java8='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home && export PATH=$JAVA_HOME/bin:$PATH && java -version'
-alias set-java11='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home && export PATH=$JAVA_HOME/bin:$PATH && java -version'
+alias set-java8='export JAVA_HOME=`/usr/libexec/java_home -v 1.8` && export PATH=$JAVA_HOME/bin:$PATH && java -version'
+alias set-java11='export JAVA_HOME=`/usr/libexec/java_home -v 11` && export PATH=$JAVA_HOME/bin:$PATH && java -version'
 alias set-graalvm='export JAVA_HOME=$GRAALVM_HOME && export PATH=$GRAALVM_HOME/bin:$PATH && java -version'
 
 
@@ -36,7 +36,8 @@ alias set-graalvm='export JAVA_HOME=$GRAALVM_HOME && export PATH=$GRAALVM_HOME/b
 ## Brew
 brew install mongodb@3.4
 brew search adoptopenjdk
-brew cask info adoptopenjdk
+brew --cask info adoptopenjdk
+brew --cask install adoptopenjdk
 
 ## list all packages and its versions installed via brew 
 brew list --versions

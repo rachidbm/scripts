@@ -1,5 +1,4 @@
 
-TODO: tar over SSH
 
 ## symlink all files in a folder:
 ln -s ../conf/* ./ 
@@ -15,6 +14,8 @@ curl http://ifconfig.me/ip
 ## Print the request and response headers only
 curl -sv http://sharing.luminis.eu/feed/?post_type=content > /dev/null
 
+## sudo with current user without password
+echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
 
 ###################################################

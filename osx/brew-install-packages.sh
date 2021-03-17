@@ -1,7 +1,7 @@
 brew install \
  vim npm nvm wget nmap pv p7zip xz watch jq hh rsync svn libusb ntfs-3g mounty git-lfs
 
-brew cask install \
+brew --cask install \
  osxfuse mounty paintbrush copyclip sublime-text \
  brave-browser sleepwatcher imagemagick inkscape
 
@@ -10,10 +10,10 @@ brew cask install \
 brew install awscli
 
 #brew cask install osxfuse
-brew cask install fork
+brew --cask install fork
 
 
-brew cask install graalvm/tap/graalvm-ce-java11
+brew --cask install graalvm/tap/graalvm-ce-java11
 # Install native image with:
 ${GRAALVM_HOME}/bin/gu install native-image
 
@@ -23,11 +23,11 @@ brew install discord
 
 # brew cask install insomnia
 ## Install atom
-brew cask install atom && apm install compare-files
-brew cask install virtualbox virtualbox-extension-pack
+brew --cask install atom && apm install compare-files
+brew --cask install virtualbox virtualbox-extension-pack
 
 ## re route audio output
-brew cask install blackhole
+brew --cask install blackhole
 
 # brew tap aws/tap
 # brew install aws-sam-cli
