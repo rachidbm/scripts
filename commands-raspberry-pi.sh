@@ -1,11 +1,16 @@
 
-diskutil unmountDisk /dev/disk5
+
+################################################################################
+## Installation
+
+diskutil unmountDisk /dev/disk2
+
 
 # Find disk nr with:
 diskutil list
 
 # Write image
-time sudo dd bs=1m of=/dev/disk3 if=retropie-4.5.1-rpi2_rpi3.img.gz
+time sudo dd bs=1m of=/dev/disk3 if=retropie-4.5.1-rpi2_rpi3.img
 
 time sudo dd bs=1m of=/dev/disk2 if=OSMC_TGT_rbp1_20180109.img 
 time sudo dd bs=1m of=/dev/rdisk5 if=
@@ -24,6 +29,30 @@ brew cask install osxfuse && brew install ext4fuse ntfs-3g
 
 sudo ntfs-3g /dev/disk3s2 /Volumes/barret -olocal -oallow_other
 rsync --progress -uv ./* /Volumes/
+
+################################################################################
+## post installation
+
+locale-gen en_US.UTF-8
+sudo update-locale en_US.UTF-8
+
+sudo raspi-config
+
+
+################################################################################
+## Monitoring resource usage
+
+
+################################################################################
+## Install tor
+
+sudo apt install tor -y
+
+sudo usermod -a -G debian-tor pi
+# exit and login so that usermod is applied
+exit 
+sudo systemctl enable tor
+sudo systemctl start tor
 
 
 ################################################################################

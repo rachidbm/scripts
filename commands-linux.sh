@@ -1,5 +1,9 @@
 
 
+2>&1
+
+$(date +%Y%m%d-%H%M%S)
+
 ## symlink all files in a folder:
 ln -s ../conf/* ./ 
 
@@ -70,6 +74,10 @@ PS1="\`if [ \$? != 0 ]; then echo \[\e[33m\]---=== \[\e[31m\]Oh noes, bad comman
 
 ID=${1-1}    # defaults to 1 when no argument was given
 ID=${1-LOCAL}    # defaults to LOCAL when no argument was given
+
+## Update locale
+locale-gen en_US.UTF-8
+sudo update-locale en_US.UTF-8
 
 
 ## Create timer / stopwatch
