@@ -38,6 +38,9 @@ sudo update-locale en_US.UTF-8
 
 sudo raspi-config
 
+## Last resort:
+sudo apt-get install locales-all
+
 
 ################################################################################
 ## Monitoring resource usage
