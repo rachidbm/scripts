@@ -6,7 +6,7 @@ cmd='sudo apt-get -y install '
 sudo apt-get update
 
 ## Essential (commandline tools)
-$cmd vim screen zip unzip pwgen nmap
+$cmd vim screen zip unzip pwgen nmap netcat
 $cmd aptitude openssh-server byobu nethogs mc bzip2 gzip unzip p7zip-full iptraf sysstat nmap sysv-rc-conf sl pwgen traceroute iotop htop whowatch vbindiff unrar
 
 

@@ -1,1 +1,1 @@
-ps -eo pcpu,size,comm,ni | grep $1 | colorwords $1
+ps -eo pcpu,size,comm,ni | grep $1

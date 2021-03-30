@@ -1,4 +1,21 @@
 
+################################################################################
+## post installation
+
+echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
+
+git clone https://github.com/rachidbm/scripts.git
+~/scripts/establish-homedir/install.sh  ~
+
+sudo locale-gen en_US.UTF-8
+sudo update-locale en_US.UTF-8
+
+sudo raspi-config
+
+sudo apt-get -y install nethogs vim screen zip unzip pwgen nmap netcat mc sysstat iotop htop atop byobu locales-all
+sudo apt upgrade -y
+
+
 
 ################################################################################
 ## Installation
@@ -21,7 +38,8 @@ time sudo dd bs=1m if=/dev/disk5 of=retropie-4.3-rpi2_rpi3_backup-`date +%Y%m%d`
 # Compress is directly
 time sudo dd bs=1m if=/dev/rdisk5 | gzip -c > retropie-4.3-rpi2_rpi3_backup-`date +%Y%m%d`.img.gz
 
-
+## format drive
+sudo mkfs -t ext4 /dev/sda1
 
 
 ## copy files
@@ -30,16 +48,7 @@ brew cask install osxfuse && brew install ext4fuse ntfs-3g
 sudo ntfs-3g /dev/disk3s2 /Volumes/barret -olocal -oallow_other
 rsync --progress -uv ./* /Volumes/
 
-################################################################################
-## post installation
 
-locale-gen en_US.UTF-8
-sudo update-locale en_US.UTF-8
-
-sudo raspi-config
-
-## Last resort:
-sudo apt-get install locales-all
 
 
 ################################################################################
@@ -49,7 +58,7 @@ sudo apt-get install locales-all
 ################################################################################
 ## Install tor
 
-sudo apt install tor -y
+sudo apt install torsocks -y
 
 sudo usermod -a -G debian-tor pi
 # exit and login so that usermod is applied
