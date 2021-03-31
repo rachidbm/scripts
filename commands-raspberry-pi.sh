@@ -2,6 +2,11 @@
 ################################################################################
 ## post installation
 
+password: moneyprintergobrrr
+
+sudo passwd umbrel
+
+## Copy paste the following commands: 
 echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
 git clone https://github.com/rachidbm/scripts.git
@@ -9,12 +14,17 @@ git clone https://github.com/rachidbm/scripts.git
 
 sudo locale-gen en_US.UTF-8
 sudo update-locale en_US.UTF-8
+sudo timedatectl set-timezone Europe/Amsterdam
+sudo dpkg-reconfigure locales
 
-sudo raspi-config
 
 sudo apt-get -y install nethogs vim screen zip unzip pwgen nmap netcat mc sysstat iotop htop atop byobu locales-all
+#sudo raspi-config
 sudo apt upgrade -y
 
+
+### Format external HD as ext4
+sudo fdisk /dev/sda
 
 
 ################################################################################
@@ -26,8 +36,10 @@ diskutil unmountDisk /dev/disk2
 # Find disk nr with:
 diskutil list
 
+diskutil unmountDisk /dev/disk2
 # Write image
 time sudo dd bs=1m of=/dev/disk3 if=retropie-4.5.1-rpi2_rpi3.img
+
 
 time sudo dd bs=1m of=/dev/disk2 if=OSMC_TGT_rbp1_20180109.img 
 time sudo dd bs=1m of=/dev/rdisk5 if=
@@ -47,7 +59,6 @@ brew cask install osxfuse && brew install ext4fuse ntfs-3g
 
 sudo ntfs-3g /dev/disk3s2 /Volumes/barret -olocal -oallow_other
 rsync --progress -uv ./* /Volumes/
-
 
 
 

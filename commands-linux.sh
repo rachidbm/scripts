@@ -21,6 +21,9 @@ curl -sv http://sharing.luminis.eu/feed/?post_type=content > /dev/null
 ## sudo with current user without password
 echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
+## set password for a user
+sudo passwd username
+
 ###################################################
 Find
 
