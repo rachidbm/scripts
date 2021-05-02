@@ -61,6 +61,19 @@ sudo ntfs-3g /dev/disk3s2 /Volumes/barret -olocal -oallow_other
 rsync --progress -uv ./* /Volumes/
 
 
+## Add to ~/.profile
+cat >>~/.profile <<EOL
+
+if [ ! -z "\$SSH_CONNECTION" ]; then
+   # screen -rd 
+   byobu
+fi
+
+EOL
+
+
+
+
 
 ################################################################################
 ## Monitoring resource usage

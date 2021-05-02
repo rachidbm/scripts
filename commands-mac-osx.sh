@@ -31,6 +31,7 @@ alias set-java8='export JAVA_HOME=`/usr/libexec/java_home -v 1.8` && export PATH
 alias set-java11='export JAVA_HOME=`/usr/libexec/java_home -v 11` && export PATH=$JAVA_HOME/bin:$PATH && java -version'
 alias set-graalvm='export JAVA_HOME=$GRAALVM_HOME && export PATH=$GRAALVM_HOME/bin:$PATH && java -version'
 
+/Library/Java/JavaVirtualMachines/graalvm-ce-java11-21.0.0.2
 
 
 ## Brew
@@ -54,8 +55,8 @@ brew upgrade git
 ## Link to an older version
 brew switch python 3.8.6_1
 
-
-
+## Install native image for GraalVM
+$GRAALVM_HOME/bin/gu install native-image
 
 # remove corrupted blue tooth files
 sudo rm /Library/Preferences/com.apple.Bluetooth.plist && \
@@ -101,7 +102,9 @@ plutil -convert xml1 -o - com.apple.Terminal.plist
 Or install BinaryPlist plugin for sublime
 
 ## Flush DNS cache
-sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache
+sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+# sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache
+
 
 # Get DNS settings
 networksetup -getdnsservers Wi-Fi

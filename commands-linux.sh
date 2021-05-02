@@ -382,6 +382,11 @@ echo "export PS1='[\033[41m\u@\h\033[0m \W]# '" >> ~/.bashrc
 
 
 ## Start screen on when login, put this in .profile
-if [ ! -z "$SSH_CONNECTION" ]; then
-   screen -rd 
+cat >>~/.profile <<EOL
+
+if [ ! -z "\$SSH_CONNECTION" ]; then
+   # screen -rd 
+   byobu
 fi
+
+EOL
