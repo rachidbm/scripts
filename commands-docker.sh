@@ -25,6 +25,7 @@ docker run -v `pwd`:/opt/workingdir:delegated -t name
 ## Docker exec examples, ie commands on/into running containers
 # Open shell in running container
 docker exec -i -t ubuntu /bin/bash
+docker exec -i -t docker-poop-148-docker-b559d75c /bin/bash
 
 docker exec -i -t zap bash
 # Import DB in running container
@@ -33,8 +34,15 @@ docker exec -i db.website.com mysql -uroot -proot  < ../db/export.sql
 
 
 
-## Tree view of images
+## Inspect Docker images
+## A tree:
 docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock nate/dockviz images -t
+
+docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock --rm chenzj/dfimage  d9229fcafffd
+## Dive
+docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock --rm wagoodman/dive:latest d9229fcafffd
+docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock --rm wagoodman/dive:latest 26144804fc6e
+
 
 
 ## Docker compose

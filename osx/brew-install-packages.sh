@@ -3,7 +3,7 @@ brew install \
 
 brew install --cask \
  osxfuse ext4fuse mounty paintbrush copyclip sublime-text \
- brave-browser sleepwatcher imagemagick inkscape
+ brave-browser sleepwatcher imagemagick inkscape stats
 
 
 # brew tap aws/tap

@@ -7,3 +7,6 @@ fi
 export EDITOR="/usr/bin/vim"
 export PAGER=less       # reader for MAN pages
 
+
+[[ -s "$HOME/scripts/git-completion.bash" ]] && source "$HOME/scripts/git-completion.bash" 
+

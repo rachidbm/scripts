@@ -2,11 +2,17 @@
 echo `wget -q http://www.whatismyip.com/automation/n09230945.asp -O-`
 
 ## Check open ports of a remote machine
-nmap -v -sT -Pn localhost
+# nmap -v -sT -Pn localhost
+nmap -p- -sV localhost
 
 ## Check open ports to the world outside
 #nmap -P0 $(curl www.whatismyip.org)
 nmap -P0 $(wget -q http://www.whatismyip.com/automation/n09230945.asp -O-)
+
+
+## Version of service on port
+
+nmap -sV -p65080 match4all.datemyports.certifiedsecure.org 
 
 ## Check local listening ports
 lsof -i:PORT

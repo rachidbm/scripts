@@ -14,7 +14,7 @@ defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE
 
 # Change default text editor, for High Sierra
 defaults write com.apple.LaunchServices/com.apple.launchservices.secure LSHandlers -array-add \
-'{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
+'{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.4;}'
 
 ## To get identifier for other apps:
 /usr/libexec/PlistBuddy -c 'Print CFBundleIdentifier' /Applications/Visual\ Studio\ Code.app/Contents/Info.plist 
@@ -55,6 +55,8 @@ brew upgrade git
 ## Link to an older version
 brew switch python 3.8.6_1
 
+brew uninstall sublime-text
+
 ## Install native image for GraalVM
 $GRAALVM_HOME/bin/gu install native-image
 
@@ -68,6 +70,9 @@ sudo mdutil -a -i off
 
 sudo fs_usage -w -f filesys eclipse | grep git
 
+
+## CPU temperature
+sudo powermetrics --samplers smc | grep -i "CPU die temperature"
 
 
 ## Notifiations from command line / Terminal

@@ -24,6 +24,10 @@ echo "$USER ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 ## set password for a user
 sudo passwd username
 
+## CPU temperature
+vcgencmd measure_temp
+
+
 ###################################################
 Find
 

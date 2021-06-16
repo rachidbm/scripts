@@ -22,6 +22,11 @@ git remote add origin http://github.com/repo
 # git branch -M main
 git push -u origin master
 
+## amend commit
+git commit --amend --no-edit
+
+git rev-list 36429063..master
+git log 36429063..master
 
 # Start a new (fresh) project
 cd myproject
