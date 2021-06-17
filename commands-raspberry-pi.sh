@@ -18,13 +18,17 @@ sudo timedatectl set-timezone Europe/Amsterdam
 sudo dpkg-reconfigure locales
 
 
-sudo apt-get -y install nethogs vim screen zip unzip pwgen nmap netcat mc sysstat iotop htop atop byobu locales-all
+sudo apt-get -y install nethogs vim screen zip unzip pwgen nmap netcat mc sysstat iotop htop atop byobu locales-all locate
 #sudo raspi-config
 sudo apt upgrade -y
 
 
 ### Format external HD as ext4
 sudo fdisk /dev/sda
+
+
+## Set static IP address
+
 
 
 ################################################################################
